@@ -1,0 +1,105 @@
+{% case grid %}
+    {% when 1 %}
+        {%- assign sizes = '(min-width: 981px) 50vw, 100vw' -%}
+    {% when 2 %}
+        {%- assign sizes = '(min-width: 768px) 50vw, 100vw' -%}
+    {% when 3 %}
+        {%- assign sizes = '(min-width: 768px) 50vw, (min-width: 981px) 33vw, 100vw' -%}
+{% endcase %}
+<div class="blog{% unless article.image %} blog--no-image{% endunless %}{% unless show_date %} blog--no-date{% endunless %}">
+    {% if article.image %}
+        <div class="blog__media-wrapper">
+            <a href="{{ article.url }}" class="home-blog__link blog-link">
+                <div class="blog__media">
+                    {% if crop %}
+                    <div class="o-ratio o-ratio--custom" style="padding-bottom:55%;">
+                        <div class="o-ratio__content">
+                            <img
+                                class="home-blog__media-img blog__img"
+                                src="{{ article.image | img_url: '360x200', crop: 'center' }}"
+                                srcset="
+                                    {{ article.image | img_url: '360x200', crop: 'center' }} 360w 200h,
+                                    {{ article.image | img_url: '540x300', crop: 'center' }} 540w 300h,
+                                    {{ article.image | img_url: '720x400', crop: 'center' }} 720w 400h,
+                                    {{ article.image | img_url: '900x500', crop: 'center' }} 900w 500h,
+                                    {{ article.image | img_url: '1080x600', crop: 'center' }} 1080w 600h,
+                                    {{ article.image | img_url: '1296x720', crop: 'center' }} 1296w 720h
+                                "
+                                sizes="{{ sizes }}"
+                                width="360"
+                                height="200"
+                                alt="{{ article.image.alt }}"
+                                loading="lazy"
+                            />
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="o-ratio o-ratio--custom" style="padding-bottom:{{ 1 | divided_by: article.image.aspect_ratio | times: 100 }}%;">
+                        <div class="o-ratio__content">
+                            <img
+                                class="home-blog__media-img blog__img"
+                                src="{{ article.image | img_url: '360x' }}"
+                                srcset="
+                                    {{ article.image | img_url: '360x' }} 360w {{ 360 | divided_by: article.image.aspect_ratio | round }}h,
+                                    {{ article.image | img_url: '540x' }} 540w {{ 540 | divided_by: article.image.aspect_ratio | round }}h,
+                                    {{ article.image | img_url: '720x' }} 720w {{ 720 | divided_by: article.image.aspect_ratio | round }}h,
+                                    {{ article.image | img_url: '900x' }} 900w {{ 900 | divided_by: article.image.aspect_ratio | round }}h,
+                                    {{ article.image | img_url: '1080x' }} 1080w {{ 1080 | divided_by: article.image.aspect_ratio | round }}h,
+                                    {{ article.image | img_url: '1296x' }} 1296w {{ 1296 | divided_by: article.image.aspect_ratio | round }}h
+                                "
+                                sizes="{{ sizes }}"
+                                width="360"
+                                height="{{ 360 | divided_by: article.image.aspect_ratio | round }}"
+                                alt="{{ article.image.alt }}"
+                                loading="lazy"
+                            />
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </a>
+        </div>
+    {% endif %}
+
+    <div class="blog__details">
+        {% if show_date %}
+            <div class="blog__date label label--brand">
+                <p class="blog__date-text label__text">{{ article.published_at | date: format: 'abbreviated_date' }}</p>
+            </div>
+        {% endif %}
+        <a href="{{ article.url }}" class="home-blog__link blog-link">
+            <h2 class="blog__title h4">{{ article.title }}</h2>
+        </a>
+        {% if show_author %}
+            <div class="blog__author">
+                <p class="blog__author__text">{{ article.author }}</p>
+            </div>
+        {% endif %}
+        <div class="blog__text rte">
+            {% if article.excerpt.size > 0 %}
+                {{ article.excerpt | strip_html }}
+            {% else %}
+                {{ article.content | strip_html | truncate: 120 }}
+            {% endif %}
+        </div>
+
+        <div class="blog__meta">
+            {% if article.comments_enabled? and show_comments %}
+                <div class="blog__meta-comment blog__meta__item">
+                    <a href="{{ article.comment_post_url }}" class="blog__meta-comment__link">
+                        <div class="blog__meta-comment__icon">
+                            <i class="icon icon--comment" aria-hidden="true"></i>
+                        </div>
+                        <span class="blog__meta-comment__link-text">{{ article.comments_count }}</span>
+                    </a>
+                </div>
+            {% endif %}
+
+            {% if article.tags.size > 0 and show_tags %}
+                <div class="blog__meta-tags blog__meta__item">
+                    {% for tag in article.tags %}<a href="{{ blog.url }}/tagged/{{ tag | handle }}" class="blog__meta-tags__link">{{ tag }}</a>{% unless forloop.last %} / {% endunless %}{% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

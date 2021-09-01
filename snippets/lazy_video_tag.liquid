@@ -1,0 +1,8 @@
+{%- assign liquid_video = media | external_video_tag  -%}
+{%- assign video_url_split = liquid_video | split: 'src="' -%}
+{%- assign video_url_split_rest = video_url_split[1] | split: '"' -%}
+{%- assign src = video_url_split_rest[0] -%}
+{%- assign video_with_empty_src = liquid_video | remove_first: src -%}
+{%- assign data_src = ' data-src="' | append: src | append: '">' -%}
+{%- assign video_tag = video_with_empty_src | replace_first: '>', data_src -%}
+{{ video_tag }}

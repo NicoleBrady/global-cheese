@@ -1,0 +1,235 @@
+<!doctype html>
+<html class="no-js" lang="{{ shop.locale }}">
+<head>
+  	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+  	<meta name="theme-color" content="{{ settings.color_brand }}">
+
+	{% render 'network' %}
+
+	{%- if canonical_url != blank  -%}
+    	<link rel="canonical" href="{{ canonical_url }}">
+  	{%- endif -%}
+
+  	{% if settings.favicon != blank %}
+	    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+	{% endif %}
+
+	<!-- Title and description ================================================== -->
+  	{%- capture seo_title -%}
+    	{%- if request.page_type == 'search' and search.performed == true -%}
+      		{{ 'general.search.heading' | t: count: search.results_count }}: {{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
+    	{%- else -%}
+      		{{ page_title }}
+    	{%- endif -%}
+    	{%- if current_tags -%}
+      		{%- assign meta_tags = current_tags | join: ', ' -%} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+    	{%- endif -%}
+    	{%- if current_page != 1 -%}
+      		&ndash; {{ 'general.meta.page' | t: page: current_page }}
+    	{%- endif -%}
+    	{%- assign escaped_page_title = page_title | escape -%}
+    	{%- unless escaped_page_title contains shop.name -%}
+      		&ndash; {{ shop.name }}
+    	{%- endunless -%}
+  	{%- endcapture -%}
+  	<title>{{ seo_title | strip }}</title>
+
+  	{%- if page_description -%}
+    	<meta name="description" content="{{ page_description | escape }}">
+  	{%- endif -%}
+
+  	{% render 'social-meta-tags' %}
+
+  	<!-- JS before CSSOM =================================================== -->
+  	<script type="text/javascript">
+		theme = {};
+		theme.t = {};
+		theme.map = {};
+		theme.map_settings_url="{{ 'map_settings.min.js' | asset_url }}";
+		theme.cart_type = '{{ settings.cart_type }}';
+		theme.cart_ajax = {% if settings.cart_type == 'modal' or settings.cart_type == 'notification' %}true{% else %}false{% endif %};
+		theme.routes = {
+			rootUrl: "{{ routes.root_url }}",
+			rootUrlSlash: "{% if routes.root_url == '/' %}{{ routes.root_url }}{% else %}{{ routes.root_url }}/{% endif %}",
+			cartUrl: "{{ routes.cart_url }}",
+			cartAddUrl: "{{ routes.cart_add_url }}",
+			cartChangeUrl: "{{ routes.cart_change_url }}"
+		};
+		theme.assets = {
+			plyr: "{{ 'plyr.min.js' | asset_url }}",
+			masonry: "{{ 'masonry.min.js' | asset_url }}",
+			autocomplete: "{{ 'autocomplete.min.js' | asset_url }}",
+			photoswipe: "{{ 'photoswipe.min.js' | asset_url }}",
+			fecha: "{{ 'fecha.min.js' | asset_url }}"
+		};
+	</script>
+	{% comment %} Device feature tests (Modernizr replacement) {% endcomment %}
+	<style id="fontsupporttest">@font-face{font-family:"font";src:url("https://")}</style>
+	<script type="text/javascript">
+		function supportsFontFace() {
+			function blacklist() {
+				var match = /(WebKit|windows phone.+trident)\/(\d+)/i.exec(navigator.userAgent);
+				return match && parseInt(match[2], 10) < (match[1] == 'WebKit' ? 533 : 6);
+			}
+			function hasFontFaceSrc() {
+				var style = document.getElementById('fontsupporttest');
+				var sheet = style.sheet || style.styleSheet;
+				var cssText = sheet ? (sheet.cssRules && sheet.cssRules[0] ? sheet.cssRules[0].cssText : sheet.cssText || '') : '';
+				return /src/i.test(cssText);
+			}
+			return !blacklist() && hasFontFaceSrc();
+		}
+		document.documentElement.classList.replace('no-js', 'js');
+		if (window.matchMedia("(pointer: coarse)").matches) {document.documentElement.classList.add('touchevents')} else {document.documentElement.classList.add('no-touchevents')}
+		if (supportsFontFace()) {document.documentElement.classList.add('fontface')}
+	</script>
+  	<script src="{{ 'jquery.min.js' | asset_url }}" defer="defer"></script>
+  	<script src="{{ 'vendor.min.js' | asset_url }}" defer="defer"></script>
+  	<script src="{{ 'ajax-cart.min.js' | asset_url }}" defer="defer"></script>
+
+  	<!-- CSS ================================================== -->
+  	{% render 'css-variables' %}
+	{% render 'css-include' %}
+
+	<!-- JS after CSSOM=================================================== -->
+  	<script src="{{ 'theme.min.js' | asset_url }}" defer="defer"></script>
+  	<script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
+
+	{% if request.design_mode %}
+		<script id="editor-scripts" src="{{ 'editor.min.js' | asset_url }}" defer="defer"></script>
+	{% endif %}
+
+  	{% if settings.anim_load %}
+		<script src="{{ 'scrollreveal.min.js' | asset_url }}"></script>
+	{% endif %}
+  	{% if template contains 'customers' %}
+  		<script src="{{ 'shopify_common.js' | shopify_asset_url }}"></script>
+  	{% endif %}
+
+	<!-- Header hook for plugins ================================================== -->
+  	{{ content_for_header }}
+</head>
+
+<body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" data-anim-load="{{ settings.anim_load }}" data-anim-interval-style="{{ settings.anim_interval_style }}" data-anim-zoom="{{ settings.anim_zoom }}" data-anim-interval="{% if settings.anim_load_style == 'interval' %}true{% else %}false{% endif %}" data-heading-border="{{ settings.type_header_underline }}">
+	<script type="text/javascript">
+		//loading class for animations
+		document.body.className += ' ' + 'js-theme-loading';
+		setTimeout(function(){
+			document.body.className = document.body.className.replace('js-theme-loading','js-theme-loaded');
+		}, 300);
+	</script>
+
+	<div class="page-transition"></div>
+
+	<div class="page-container">
+		{% section 'mobile-drawer' %}
+		{% section 'announcement' %}
+		{% section 'header' %}
+
+		<div class="main">
+			{{ content_for_layout }}
+		</div>
+
+		{% section 'footer' %}
+		{% section 'promo-pop' %}
+		{% section 'age-checker' %}
+	</div>
+
+	{% if settings.search_enable %}
+		<div class="search-draw js-search-draw mfp-hide">
+		    <div class="search-draw__wrapper">
+		        <div class="search__head">
+		            <div class="search__label">
+		                <h3 class="search__label-title">{{ 'general.search.label' | t }}</h3>
+		            </div>
+		        </div>
+		        <div class="search__inner">
+		            <form action="{{ routes.search_url }}" method="get" class="search__form" role="search">
+		                <input type="hidden" name="type" value="{{ settings.search_limit }}">
+		                <input type="search" name="q" class="search__form-input js-search-input" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.placeholder' | t }}" aria-label="{{ 'general.search.placeholder' | t }}">
+		                <button type="submit" class="search__form-submit">
+		                    <i class="icon icon--search" aria-hidden="true"></i>
+		                    <span class="icon-fallback__text">{{ 'general.search.submit' | t }}</span>
+		                </button>
+		            </form>
+		            {% assign search_nav = settings.search_linklist %}
+		            {% if linklists[search_nav].links.size > 0 %}
+		                <div class="search__nav">
+		                    <h4 class="search__nav-title h5">{{ linklists[search_nav].title }}</h4>
+		                    <ul class="search__nav-items o-list-bare">
+		                        {% for link in linklists[search_nav].links %}
+		                            <li class="search__nav-item">
+		                                <a href="{{ link.url }}" class="search__nav-link">{{ link.title }}</a>
+		                            </li>
+		                        {% endfor %}
+		                    </ul>
+		                </div>
+		            {% endif %}
+		        </div>
+		    </div>
+		</div>
+	{% endif %}
+
+	<div class="ajaxcart-draw js-cart-draw mfp-hide{% if settings.cart_type == 'notification' %} ajaxcart-draw--notification{% endif %}">
+		<div class="ajaxcart-draw__wrapper js-cart-draw-inner">
+			<div class="ajaxcart-draw__scroll">
+				<div class="ajaxcart__head">
+		            <div class="ajaxcart__label">
+		            	{% if settings.cart_type == 'modal' %}
+		                	<h3 class="ajaxcart__label-title">{{ 'cart.general.title' | t }}</h3>
+		                {% endif %}
+		                {% if settings.cart_type == 'notification' %}
+		                	<h3 class="ajaxcart__label-title">{{ 'cart.general.added_to_cart' | t }}</h3>
+		                {% endif %}
+		            </div>
+		        </div>
+	       		<div id="CartContainer"></div>
+	       		{% unless settings.cart_type == 'notification' %}
+		       		<div id="EmptyCart">
+		       			<div class="ajaxcart-empty">
+		       				<h5 class="ajaxcart-empty__title">{{ 'cart.general.empty' | t }}</h5>
+		       				<span class="emoji ajaxcart-empty__emoji">
+		       					<i class="icon icon--sad"></i>
+		       				</span>
+
+		       				<a href="{% if settings.cart_empty_link %}{{ settings.cart_empty_link }}{% else %}{{ routes.root_url }}{% endif %}" class="c-btn c-btn--primary c-btn--full">{{ 'cart.general.empty_link' | t }}</a>
+
+		       			</div>
+		       		</div>
+	       		{% endunless %}
+	       	</div>
+		</div>
+	</div>
+
+	{% render 'ajax-cart-template' %}
+
+	<script>
+		//cart functions
+		theme.ajaxCartInit = function() {
+			ajaxCart.init({
+				{% if settings.cart_type == 'modal' %}
+				sourceId: '#CartTemplate',
+				triggerSelector: '.js-cart-trigger',
+				formSelector: '.js-product-form',
+				addToCartSelector: '.js-product-add',
+				{% endif %}
+				{% if settings.cart_type == 'notification' %}
+				sourceId: '#NotificationTemplate',
+				triggerSelector: '.js-cart-trigger',
+				formSelector: '.js-product-form',
+				addToCartSelector: '.js-product-add',
+				{% endif %}
+				cartContainer: '#CartContainer',
+				cartCountSelector: '#CartCount',
+				cartCostSelector: '#CartCost',
+				emptySelector: '#EmptyCart',
+				moneyFormat: {{ shop.money_format | json }}
+			});
+		};
+	</script>
+	<!-- Venue theme by Safe As Milk - http://safeasmilk.co/ -->
+	<!-- Theme version 4.8.6 -->
+</body>
+</html>

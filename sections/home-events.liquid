@@ -1,0 +1,330 @@
+<style>
+.section--{{ section.id }} .home-event__media-img--cover:before,
+.section--{{ section.id }} .event__img--overlay:before {
+    {% if section.settings.overlay_strength == 100 %}
+        opacity: 1;
+    {% else %}
+        opacity: .{{ section.settings.overlay_strength }};
+    {% endif %}
+}
+
+{% if section.settings.mobile_layout == 'carousel' %}
+/* Loading states */
+@media screen and (max-width: 767px) {
+  .layout-slider--loading .o-layout__item:not(:first-of-type) {
+    display: none;
+  }
+}
+{% endif %}
+</style>
+
+{% if section.settings.mobile_layout == 'carousel' %}
+<style>
+    /* Loading states */
+    @media screen and (max-width: 767px) {
+    .layout-slider--loading .o-layout__item:not(:first-of-type) {
+        display: none;
+    }
+    }
+</style>
+<noscript>
+    <style>
+    /* Loading states */
+    @media screen and (max-width: 767px) {
+        .layout-slider--loading .o-layout__item:not(:first-of-type) {
+            display: initial;
+        }
+    }
+    </style>
+</noscript>
+{% endif %}
+
+{% if section.settings.bg_color == "rgba(0,0,0,0)" or section.settings.bg_color == settings.color_bg %}{% assign section_bg = false %}{% else %}{% assign section_bg = true %}{% endif %}
+{% capture margin_class %}{% if section.settings.link == blank and section_bg == false %}section--mb-s{% endif %}{% endcapture %}
+
+<section class="section section--{{ section.id }} {{ margin_class }} {% if section_bg %}section--has-bg{% else %}section--no-bg{% endif %}" data-section-id="{{ section.id }}" data-section-type="home-events">
+    <div class="container">
+        {% if section.settings.title != blank %}
+            <div class="section__title section__title--center{% unless section.settings.desc == blank %} section__title--desc{% endunless %}">
+                <h2 class="section__title-text">{{ section.settings.title | escape }}</h2>
+                {% unless section.settings.desc == blank %}
+                    <div class="section__title-desc rte">{{ section.settings.desc }}</div>
+                {% endunless %}
+            </div>
+        {% endif %}
+    </div>
+    <div class="container{% if section.settings.mobile_layout == 'carousel' %} container--mob-0{% endif %}">
+
+        <div class="section__bg" style="background-color: {{ section.settings.bg_color }}"></div>
+
+        {% if section.settings.api_key != blank %}
+            <div class="home-event js-events js-events-{{ section.id }}"
+                data-api-key="{{ section.settings.api_key }}"
+                data-section-id="{{ section.id }}">
+                <div id="eventContainer{{ section.id }}"></div>
+            </div>
+        {% elsif section.blocks.size > 0 %}
+            <div class="home-event js-events-onboarding" data-section-id="{{ section.id }}">
+                <div class="home-event__items home-event__items--{{ section.settings.mobile_layout }}">
+                    <div class="o-layout o-layout--center u-flex u-flex--center{% if section.settings.mobile_layout == 'carousel' %} layout-slider js-layout-slider js-layout-slider-{{ section.id }} layout-slider--loading{% endif %}">
+                        {% for block in section.blocks %}
+                            <div class="o-layout__item u-1/1 u-1/2@tab u-flex-parent">
+                                <div class="home-event__item event u-flex-child-strech">
+                                    <div class="event__media">
+                                        {% if block.settings.image == blank %}
+                                            <div class="home-event__media-img event__img u-bg-cover u-bg-overlay">
+                                                {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+                                                {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                                            </div>
+                                        {% else %}
+                                            <div class="home-event__media-img--cover u-bg-contain u-bg-overlay" style="background-image: url('{{ block.settings.image | img_url: '1x1' }}')"></div>
+                                            <img
+                                                class="home-event__media-img event__img"
+                                                src="{{ block.settings.image | img_url: '300x' }}"
+                                                srcset="
+                                                    {{ block.settings.image | img_url: '180x' }} 180w {{ 180 | divided_by: block.settings.image.aspect_ratio | round }}h,
+                                                    {{ block.settings.image | img_url: '360x' }} 360w {{ 360 | divided_by: block.settings.image.aspect_ratio | round }}h,
+                                                    {{ block.settings.image | img_url: '540x' }} 540w {{ 540 | divided_by: block.settings.image.aspect_ratio | round }}h,
+                                                    {{ block.settings.image | img_url: '720x' }} 720w {{ 720 | divided_by: block.settings.image.aspect_ratio | round }}h,
+                                                    {{ block.settings.image | img_url: '900x' }} 900w {{ 900 | divided_by: block.settings.image.aspect_ratio | round }}h,
+                                                    {{ block.settings.image | img_url: '1080x' }} 1080w {{ 1080 | divided_by: block.settings.image.aspect_ratio | round }}h,
+                                                    {{ block.settings.image | img_url: '1296x' }} 1296w {{ 1296 | divided_by: block.settings.image.aspect_ratio | round }}h,
+                                                    {{ block.settings.image | img_url: '1512x' }} 1512w {{ 1512 | divided_by: block.settings.image.aspect_ratio | round }}h,
+                                                    {{ block.settings.image | img_url: '1728x' }} 1728w {{ 1728 | divided_by: block.settings.image.aspect_ratio | round }}h,
+                                                    {{ block.settings.image | img_url: '2048x' }} 2048w {{ 20148 | divided_by: block.settings.image.aspect_ratio | round }}h
+                                                "
+                                                sizes="(min-width: 768px) 50vw, 100vw"
+                                                width="300"
+                                                height="{{ 300 | divided_by: block.settings.image.aspect_ratio | round }}"
+                                                alt="{{ block.settings.image.alt | escape }}"
+                                                loading="lazy"
+                                            />
+                                        {% endif %}
+                                        <div class="event__img--overlay u-bg-overlay"></div>
+                                        {% unless block.settings.subheading == blank %}
+                                            <div class="event__date u-flex u-flex--middle u-flex--center">
+                                                <h4 class="event__date-text h3">{{ block.settings.subheading | escape }}</h4>
+                                            </div>
+                                        {% endunless %}
+                                    </div>
+                                    <div class="event__details">
+                                        {% unless block.settings.title == blank %}
+                                            <h3 class="event__title{% unless block.settings.link == blank %} event__title--link{% endunless %}">{{ block.settings.title | escape }}</h3>
+                                        {% endunless %}
+                                        {% unless block.settings.desc == blank %}
+                                            <div class="event__desc rte{% unless block.settings.link == blank %} event__desc--link{% endunless %}">{{ block.settings.desc }}</div>
+                                        {% endunless %}
+                                        {% unless block.settings.link == blank %}
+                                            <a href="{{ block.settings.link }}" class="event__link link link--arrow">{{ 'sections.events.more_label' | t }}</a>
+                                        {% endunless %}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% unless section.settings.link == blank %}
+                    <div class="section__link section__link--center">
+                        <a href="{{ section.settings.link }}" class="link link--arrow section__link-link">{{ section.settings.link_title | escape }}</a>
+                    </div>
+                {% endunless %}
+            </div>
+        {% else %}
+            <div class="home-event js-events-onboarding" data-section-id="{{ section.id }}">
+                <div class="home-event__items home-event__items--{{ section.settings.mobile_layout }}">
+                    <div class="o-layout o-layout--center u-flex u-flex--center{% if section.settings.mobile_layout == 'carousel' %} layout-slider js-layout-slider js-layout-slider-{{ section.id }}{% endif %}">
+                        {% for i in (1..section.settings.events_limit) %}
+                            <div class="o-layout__item u-1/1 u-1/2@tab u-flex-parent">
+                                <div class="home-event__item event u-flex-child-strech">
+                                    <div class="event__media">
+                                        <div class="home-event__media-img event__img u-bg-cover u-bg-overlay">
+                                            {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+                                            {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                                        </div>
+                                        <div class="event__date u-flex u-flex--middle u-flex--center">
+                                            <h4 class="event__date-text h3">WED, 19 JUN, 18:30</h4>
+                                        </div>
+                                    </div>
+                                    <div class="event__details">
+                                        <h3 class="event__title">{{ 'sections.events.name' | t }}</h3>
+                                        <p class="event__desc event__desc--link">{{ 'sections.events.location' | t }}</p>
+                                        <span class="event__link link link--arrow">{{ 'sections.events.more_label' | t }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% unless section.settings.link == blank %}
+                    <div class="section__link section__link--center">
+                        <a href="{{ section.settings.link }}" class="link link--arrow section__link-link">{{ section.settings.link_title | escape }}</a>
+                    </div>
+                {% endunless %}
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+<script id="eventTemplate{{ section.id }}" type="text/template">
+{% raw %}
+    <div class="home-event__items home-event__items--{% endraw %}{{ section.settings.mobile_layout }}{% raw %}">
+        <div class="o-layout o-layout--center u-flex u-flex--center{% endraw %}{% if section.settings.mobile_layout == 'carousel' %}{% raw %} layout-slider js-layout-slider js-layout-slider-{% endraw %}{{ section.id }}{% raw %}{% endraw %}{% endif %}{% raw %}">
+            {{#each_upto events {% endraw %}{{ section.settings.events_limit }}{% raw %}}}
+            <div class="o-layout__item u-1/1 u-1/2@tab u-flex-parent">
+                <div class="home-event__item event u-flex-child-strech">
+                    <div class="event__media">
+                        <div class="home-event__media-img event__img u-bg-cover u-bg-overlay" style="background-image:url({{logo.url}})";>
+                        </div>
+                        <div class="event__img--overlay u-bg-overlay"></div>
+                        <div class="event__date u-flex u-flex--middle u-flex--center">
+                            <h4 class="event__date-text h3">{{formatDate start.local}}</h4>
+                        </div>
+                    </div>
+                    <div class="event__details">
+                        <h3 class="event__title">{{name.html}}</h3>
+                        <p class="event__desc event__desc--link">{{venue.name}}, {{venue.address.city}}</p>
+                        <a href="{{url}}" class="event__link link link--arrow" target="_blank" tabindex="0">{% endraw %}{{ 'sections.events.more_label' | t }}{% raw %}</a>
+                    </div>
+                </div>
+            </div>
+            {{/each_upto}}
+        </div>
+    </div>
+    {% endraw %}{% if section.settings.show_link %}{% raw %}
+        <div class="section__link section__link--center">
+            <a href="https://www.eventbrite.co.uk/o/{{ events.0.organizer_id }}" class="link link--arrow section__link-link" target="_blank">{% endraw %}{{ section.settings.link_title }}{% raw %}</a>
+        </div>
+    {% endraw %}{% endif %}{% raw %}
+{% endraw %}
+</script>
+
+{% schema %}
+{
+    "name": "Events",
+    "class": "js-section__home-events",
+    "max_blocks": 6,
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Events"
+        },
+        {
+            "type": "richtext",
+            "id": "desc",
+            "label": "Text"
+        },
+        {
+            "type": "text",
+            "id": "link_title",
+            "label": "Link label",
+            "default": "View all"
+        },
+        {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+        },
+        {
+            "type": "select",
+            "id": "mobile_layout",
+            "label": "Mobile layout",
+            "default": "carousel",
+            "options": [
+                {
+                    "value": "carousel",
+                    "label": "Carousel"
+                },
+                {
+                    "value": "grid",
+                    "label": "Grid"
+                }
+            ]
+        },
+        {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Background color",
+            "default": "rgba(0,0,0,0)"
+        },
+        {
+            "type": "range",
+            "id": "overlay_strength",
+            "label": "Overlay strength",
+            "unit": "%",
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "default": 50
+        },
+        {
+            "type": "header",
+            "content": "Eventbrite"
+        },
+        {
+            "type": "text",
+            "id": "api_key",
+            "label": "Eventbrite Access Token",
+            "info": "[Get your Eventbrite Access Token](http://eventbrite.safeasmilk.co/). For more information [click here](https://support.safeasmilk.co/article/37-events-generate-your-eventbrite-access-token)."
+        },
+        {
+            "type": "range",
+            "id": "events_limit",
+            "label": "Events",
+            "min": 2,
+            "max": 6,
+            "step": 2,
+            "default": 2
+        },
+        {
+            "type": "checkbox",
+            "id": "show_link",
+            "label": "Show a link to your Eventbrite page",
+            "default": true
+        }
+    ],
+    "blocks": [
+        {
+            "type": "event",
+            "name": "Event",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image",
+                    "info": "800px width recommended."
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Heading",
+                    "default": "Event name"
+                },
+                {
+                    "type": "text",
+                    "id": "subheading",
+                    "label": "Subheading"
+                },
+                {
+                    "type": "richtext",
+                    "id": "desc",
+                    "label": "Text",
+                    "default": "<p>Event information</p>"
+                },
+                {
+                    "type": "url",
+                    "id": "link",
+                    "label": "Link"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Events",
+            "category": "Promotional"
+        }
+    ]
+}
+{% endschema %}

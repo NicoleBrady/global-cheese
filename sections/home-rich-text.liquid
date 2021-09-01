@@ -1,0 +1,48 @@
+<section class="section section--rich-text section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="rich-text">
+    <div class="home-rich-text">
+        <div class="container{% if section.settings.full_width %} container--medium{% else %} container--tiny{% endif %}">
+            {% if section.settings.section_title != blank %}
+                <div class="section__title section__title--desc section__title--center home-rich-text__title">
+                    <h2 class="section__title-text">{{ section.settings.section_title | escape }}</h2>
+                </div>
+            {% endif %}
+            {% if section.settings.text != blank %}
+                <div class="home-rich-text__content u-text-center rte">
+                    {{ section.settings.text }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Rich text",
+    "class": "js-section__rich-text",
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "full_width",
+            "label": "Wide display"
+        },
+        {
+            "type": "text",
+            "id": "section_title",
+            "label": "Heading",
+            "default": "Talk about your brand"
+        },
+        {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Rich text",
+            "category": "Text"
+        }
+    ]
+}
+{% endschema %}

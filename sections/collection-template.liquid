@@ -1,0 +1,462 @@
+<style>
+.collection-sidebar.collection-sidebar,
+.collection-sidebar.collection-sidebar .mfp-close {
+    background-color: {{ settings.color_drawer_bg }};
+}
+</style>
+{%- assign limit = section.settings.grid | times: section.settings.rows -%}
+{% paginate collection.products by limit %}
+<section class="section" data-section-id="{{ section.id }}" data-section-type="collection-template">
+
+    <div class="collection collection--sidebar-{{ section.settings.sidebar_layout }}{% if collection.image and section.settings.show_collection_image %} collection--img{% endif %}{% if section.settings.center_title %} collection--center{% endif %}">
+
+        <div class="container">
+            <div class="collection__header{% if collection.image and section.settings.show_collection_image %} collection__header--img{% endif %}">
+                {% if collection.image and section.settings.show_collection_image %}
+                    <div class="collection__header-media o-ratio o-ratio--{{ section.settings.collection_image_height }}" style="background-image: url('{{ collection.image | img_url: '1x1' }}')">
+                        <img
+                            class="collection__header-img collection__header-img--{{ section.id }}"
+                            src="{{ collection.image | img_url: '600x' }}"
+                            srcset="{% render 'bgset', image: collection.image %}"
+                            width="600"
+                            height="{{ 600 | divided_by: collection.image.aspect_ratio | round }}"
+                            alt="{{ collection.image.alt }}"
+                            loading="lazy"
+                        />
+                    </div>
+                {% endif %}
+                <div class="collection__header-info">
+                    <div class="section__title collection__header-info__title{% if section.settings.center_title %} section__title--center{% endif %}">
+                        <h1 class="section__title-text collection__header-info__title-text">{{ collection.title }}</h1>
+                    </div>
+                    {% if collection.description != blank %}
+                        <div class="collection__header-info__text rte rte--header">
+                            {{ collection.description }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            {%- assign mobile_sizes = 100 | divided_by: section.settings.grid_mobile -%}
+            {%- assign sizes = mobile_sizes -%}
+            {% case section.settings.grid %}
+                {% when 2 %}
+                    {%- assign grid_item_width = 'u-1/2@phab' -%}
+                    {%- assign image_size = '740x' -%}
+                    {%- assign sizes = '(min-width: 561px) 50vw, ' | append: mobile_sizes | append: 'vw' -%}
+                    {% if section.settings.show_sidebar and section.blocks.size > 0 and section.settings.sidebar_layout == 'sidebar' %}
+                        {%- assign container_size = 'full' -%}
+                    {% else %}
+                        {%- assign container_size = 'large' -%}
+                    {% endif %}
+                {% when 3 %}
+                    {%- assign grid_item_width = 'u-1/2@phab u-1/3@tab' -%}
+                    {%- assign image_size = '520x' -%}
+                    {%- assign sizes = '(min-width: 561px) 50vw, (min-width: 768px) 33vw, ' | append: mobile_sizes | append: 'vw' -%}
+                    {% if section.settings.show_sidebar and section.blocks.size > 0 and section.settings.sidebar_layout == 'sidebar' %}
+                        {%- assign container_size = 'full' -%}
+                    {% else %}
+                        {%- assign container_size = 'large' -%}
+                    {% endif %}
+                {% when 4 %}
+                    {%- assign grid_item_width = 'u-1/3@tab u-1/4@desk' -%}
+                    {%- assign image_size = '380x' -%}
+                    {%- assign container_size = 'full' -%}
+                    {%- assign sizes = '(min-width: 768px) 33vw, (min-width: 981px) 25vw, ' | append: mobile_sizes | append: 'vw' -%}
+            {% endcase %}
+        </div>
+
+        <div class="container container--{{ container_size }}">
+            <div class="collection-main" id="collection-main">
+
+                <div class="collection-main__sort js-collection-sort{% if section.settings.sort_enable %} collection-main__sort--sort{% endif %}" data-default-sort="{{ collection.sort_by | default: collection.default_sort_by }}">
+                    <div class="o-layout o-layout--right{% if section.settings.grid == 4 %} o-layout--small{% endif %}{% if section.settings.grid_mobile == '2' %} o-layout--small@tab-down{% endif %}">
+
+                        {% comment %}Sidebar blocks count{% endcomment %}
+                        {% if section.settings.show_sidebar and section.blocks.size > 0 %}
+                            <div class="o-layout__item o-layout__item u-1/1 u-1/2@tab u-1/4@desk">
+                                <div class="collection-main__filter">
+                                    <a href="#" class="collection-main__filter-btn c-btn c-btn--primary c-btn--full js-collection-draw-trigger">{{ 'collections.general.filter_label' | t }}{% if current_tags %} ({{ current_tags | size }}){% endif %}</a>
+                                </div>
+                            </div>
+                        {% endif %}
+                        {% comment %}Sidebar blocks count{% endcomment %}
+
+                        {% if section.settings.sort_enable %}
+                            <div class="o-layout__item o-layout__item u-1/1 u-1/2@tab u-1/4@desk">
+
+                                <div class="selector-wrapper collection-main__sort__selector">
+                                    <label for="SortBy">{{ 'collections.sorting.title' | t }}</label>
+                                    <select name="SortBy" id="SortBy">
+                                        <option value="manual">{{ 'collections.sorting.featured' | t }}</option>
+                                        <option value="best-selling">{{ 'collections.sorting.best_selling' | t }}</option>
+                                        <option value="title-ascending">{{ 'collections.sorting.az' | t }}</option>
+                                        <option value="title-descending">{{ 'collections.sorting.za' | t }}</option>
+                                        <option value="price-ascending">{{ 'collections.sorting.price_ascending' | t }}</option>
+                                        <option value="price-descending">{{ 'collections.sorting.price_descending' | t }}</option>
+                                        <option value="created-descending">{{ 'collections.sorting.date_descending' | t }}</option>
+                                        <option value="created-ascending">{{ 'collections.sorting.date_ascending' | t }}</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="collection-products">
+
+                    {% comment %}Sidebar blocks count{% endcomment %}
+                    {% if section.settings.show_sidebar and section.blocks.size > 0 %}
+                    <div class="o-layout">
+
+                        <div class="o-layout__item u-1/1 u-1/4@desk">
+                            <aside class="collection-sidebar collection-sidebar--{{ section.settings.sidebar_layout }} collection-sidebar--{{ settings.color_drawer_style }} js-collection-draw">
+                                <div class="collection-sidebar__wrapper">
+                                    {% for block in section.blocks %}
+                                        {% if block.type == 'linklist' %}
+                                            {% if linklists[block.settings.linklist].links.size > 0 %}
+                                                <div class="collection-sidebar__section">
+                                                    <h4 class="collection-sidebar__title h5">{{ linklists[block.settings.linklist].title }}</h4>
+                                                    <ul class="collection-sidebar__items o-list-bare">
+                                                        {% for link in linklists[block.settings.linklist].links %}
+                                                            <li class="collection-sidebar__item{% if link.active %} collection-sidebar__item--active{% endif %}">
+                                                                <a href="{{ link.url }}" class="collection-sidebar__link">{{ link.title }}</a>
+                                                            </li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                </div>
+                                            {% endif %}
+                                        {% endif %}
+                                        {% if block.type == 'tags' %}
+                                            {% if collection.all_tags.size > 0 %}
+                                                <div class="collection-sidebar__section collection-sidebar__section--tags">
+                                                    <h4 class="collection-sidebar__title h5">
+                                                        {{ block.settings.title | escape }}
+                                                    </h4>
+                                                    <ul class="collection-sidebar__items o-list-bare">
+                                                        {% for tag in collection.all_tags %}
+                                                            {% if current_tags contains tag %}
+                                                                <li class="collection-sidebar__item collection-sidebar__item--active">
+                                                                    {{ tag | link_to_remove_tag: tag | replace: ' title', ' class="collection-sidebar__link" title' }}
+                                                                </li>
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                        {% for tag in collection.all_tags %}
+                                                            {% unless current_tags contains tag %}
+                                                                <li class="collection-sidebar__item">
+                                                                    {{ tag | link_to_add_tag: tag | replace: ' title', ' class="collection-sidebar__link" title' }}
+                                                                </li>
+                                                            {% endunless %}
+                                                        {% endfor %}
+                                                    </ul>
+                                                </div>
+                                                {% if current_tags %}
+                                                    <div class="collection-sidebar__section collection-sidebar__section--group-clear">
+                                                        <a href="{{ collection.url }}" class="c-btn c-btn--small c-btn--light c-btn--close">{{ 'collections.general.tags_clear_filters' | t }}</a>
+                                                    </div>
+                                                {% endif %}
+                                            {% endif %}
+                                        {% endif %}
+                                        {% if block.type == 'group' %}
+                                            {% if template contains 'collection' and collection.all_tags.size > 1 %}
+                                                <!-- A recursive loop to catch and filter out the different tag categories -->
+                                                {% assign c = 0 %}
+                                                {% for t in collection.all_tags %}
+                                                    {% capture cat %}{{ cat }}{% capture temp_cat %}{% if t contains '_' %}{% assign cat_grp = t | split: '_' %}{{ cat_grp.first }}{% endif %}{% endcapture %}{% unless cat contains temp_cat %}{% if t contains '_' %}{% assign new_cat_grp = t | split: '_' %}{{ new_cat_grp.first }}{% endif %}{% unless forloop.last %}+{% endunless %}{% assign c = c | plus: 1 %}{% endunless %}{% endcapture %}
+                                                {% endfor %}
+
+                                                <!-- create array of tag categories -->
+                                                {% assign cat_array = cat | split: '+' %}
+
+                                                <!-- loop through tag categories -->
+                                                {% for i in cat_array %}
+                                                    <!-- ignore if tag category is empty -->
+                                                    {% unless i == '' %}
+                                                        <div class="collection-sidebar__section collection-sidebar__section--tags collection-sidebar__section--group">
+                                                            <h4 class="collection-sidebar__title h5">{{ i }}</h4>
+                                                            <ul class="collection-sidebar__items o-list-bare">
+                                                                <!-- loop through collection tags -->
+                                                                {% for t in collection.all_tags %}
+                                                                    <!-- if tag contains the category title -->
+                                                                    {% if t contains i %}
+                                                                        <!-- strip out tag category prefix and add/remove link for tag filtering -->
+                                                                        {% if current_tags contains t %}
+                                                                          <li class="collection-sidebar__item collection-sidebar__item--active js-active" data-category-group="{{ i | downcase }}" data-tag-url="{{ t | handleize }}">
+                                                                              {{ t | remove: i | remove: '_' | link_to_remove_tag: t | replace: ' title', ' class="js-no-transition collection-sidebar__link js-collection-group-link" title' }}
+                                                                          </li>
+                                                                        {% else %}
+                                                                          <li class="collection-sidebar__item" data-category-group="{{ i | downcase }}" data-tag-url="{{ t | handleize }}">
+                                                                              {{ t | remove: i | remove: '_' | link_to_add_tag: t | replace: ' title', ' class="js-no-transition collection-sidebar__link js-collection-group-link" title' }}
+                                                                          </li>
+                                                                        {% endif %}
+                                                                    {% endif %}
+                                                                {% endfor %}
+                                                            </ul>
+                                                        </div>
+                                                    {% endunless %}
+                                                {% endfor %}
+
+                                                {% if current_tags %}
+                                                    <div class="collection-sidebar__section collection-sidebar__section--group-clear">
+                                                        <a href="{{ collection.url }}" class="c-btn c-btn--small c-btn--light c-btn--close">{{ 'collections.general.tags_clear_filters' | t }}</a>
+                                                    </div>
+                                                {% endif %}
+
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </aside>
+                        </div>
+
+                        <div class="o-layout__item u-1/1 {% if section.settings.sidebar_layout == 'sidebar' %}u-3/4@desk{% else %}u-1/1@desk{% endif %}">
+
+                    {% endif %}
+                    {% comment %}Sidebar blocks count{% endcomment %}
+
+                            <div class="o-layout{% if settings.product_grid_masonry %} o-layout--masonry{% endif %}{% if section.settings.grid == 4 %} o-layout--small{% endif %}{% if section.settings.grid_mobile == '2' %} o-layout--small@tab-down{% endif %}">
+                                {% for product in collection.products %}
+                                    <div class="o-layout__item u-1/{{ section.settings.grid_mobile }} {{ grid_item_width }}">
+                                        {% render 'product-grid-item', product: product, page: 'collection', image_sizes: sizes %}
+                                    </div>
+                                {% else %}
+                                    {% if collection.handle == 'all' and collection.all_vendors.size == 0 and collection.all_types.size == 0 %}
+                                        {% comment %}
+                                            Add default products to help with onboarding for collections/all only.
+                                        {% endcomment %}
+                                        {% for i in (1..8) %}
+                                            <div class="o-layout__item u-1/{{ section.settings.grid_mobile }} {{ grid_item_width }}">
+                                                <a href="#" class="product-link home-products__link">
+                                                    <div class="product product--{{ settings.product_grid_align }}">
+                                                        <div class="product__media">
+                                                            {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+                                                            {{ 'product-' | append: current | placeholder_svg_tag: 'product__img placeholder-svg placeholder-svg--light' }}
+                                                        </div>
+                                                        <div class="product__details product__details--{{ settings.product_grid_text_size }}">
+                                                            <h3 class="product__title">{{ 'homepage.onboarding.product_title' | t }}</h3>
+                                                            {% if settings.product_grid_vendor %}
+                                                                <p class="product__vendor">{{ 'homepage.onboarding.product_vendor' | t }}</p>
+                                                            {% endif %}
+                                                            <p class="product__price">
+                                                                {% render 'product-price', product: product %}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        {% endfor %}
+                                    {% else %}
+                                        <div class="o-layout__item 1/1">
+                                            <div class="collection-empty">
+                                                <h5 class="collection-empty__title">{{ 'collections.general.no_matches' | t }}</h5>
+                                                <span class="emoji collection-empty__emoji">
+                                                    <i class="icon icon--confused"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+
+                    {% comment %}Sidebar blocks count{% endcomment %}
+                    {% if section.settings.show_sidebar and section.blocks.size > 0 %}
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% comment %}Sidebar blocks count{% endcomment %}
+                </div>
+
+            </div>
+
+            {% if paginate.pages > 1 %}
+                <div class="collection-pagination">
+                    <div class="container">
+                        <div class="pagination">
+                            <div class="pagination__items">
+                                {{ paginate | default_pagination: 
+                                    next:'<i class="icon icon--right-t"></i><span class="icon-fallback__text">Next Page</span>',
+                                    previous: '<i class="icon icon--left-t"></i><span class="icon-fallback__text">Previous Page</span>'
+                                }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+
+        </div>
+
+    </div>
+</section>
+
+{% endpaginate %}
+
+{% schema %}
+{
+    "name": "Collection page",
+    "class": "js-section__collection",
+    "max_blocks": 6,
+    "settings": [
+        {
+            "type": "range",
+            "id": "grid",
+            "label": "Products per row (desktop)",
+            "min": 2,
+            "max": 4,
+            "step": 1,
+            "default": 3
+        },
+        {
+            "type": "select",
+            "id": "grid_mobile",
+            "label": "Products per row (mobile)",
+            "default": "1",
+            "options": [
+                {
+                    "label": "1",
+                    "value": "1"
+                },
+                {
+                    "label": "2",
+                    "value": "2"
+                }
+            ]
+        },
+        {
+            "type": "range",
+            "id": "rows",
+            "label": "Rows",
+            "min": 2,
+            "max": 12,
+            "step": 1,
+            "default": 6
+        },
+        {
+            "type": "checkbox",
+            "id": "center_title",
+            "label": "Center heading and text",
+            "default": false
+        },
+        {
+            "type": "checkbox",
+            "id": "sort_enable",
+            "label": "Enable sorting",
+            "default": true
+        },
+        {
+            "type": "header",
+            "content": "Collection image"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_collection_image",
+            "label": "Show image",
+            "default": true
+        },
+        {
+            "type": "select",
+            "id": "collection_image_height",
+            "label": "Image height",
+            "default": "3:1",
+            "options": [
+                {
+                    "label": "Small",
+                    "value": "4:1"
+                },
+                {
+                    "label": "Medium",
+                    "value": "3:1"
+                },
+                {
+                    "label": "Large",
+                    "value": "5:2"
+                }
+            ]
+        },
+        {
+            "type": "select",
+            "id": "image_alignment",
+            "label": "Image alignment",
+            "default": "center",
+            "options": [
+                {
+                    "value": "top",
+                    "label": "Top"
+                },
+                {
+                    "value": "center",
+                    "label": "Middle"
+                },
+                {
+                    "value": "bottom",
+                    "label": "Bottom"
+                }
+            ]
+        },
+        {
+            "type": "header",
+            "content": "Filters"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_sidebar",
+            "label": "Enable filters",
+            "default": false
+        },
+        {
+            "type": "select",
+            "id": "sidebar_layout",
+            "label": "Desktop layout",
+            "default": "sidebar",
+            "options": [
+                {
+                    "value": "sidebar",
+                    "label": "Sidebar"
+                },
+                {
+                    "value": "drawer",
+                    "label": "Drawer"
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "linklist",
+            "name": "Menu",
+            "settings": [
+                {
+                    "type": "link_list",
+                    "id": "linklist",
+                    "label": "Menu",
+                    "info": "This menu won't show dropdown items"
+                }
+            ]
+        },
+        {
+            "type": "tags",
+            "name": "All tags",
+            "limit": 1,
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Heading",
+                    "default": "Filter"
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "name": "Tag groups",
+            "limit": 1,
+            "settings": [
+                {
+                    "type": "paragraph",
+                    "content": "Filtering by tag groups requires tag formatting. [Learn more](https://support.safeasmilk.co/article/113-collection-page-add-custom-tag-groups-for-filtering)"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

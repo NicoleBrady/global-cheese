@@ -1,0 +1,118 @@
+{% comment %}
+  - List of custom color values
+  - Add your own custom colors or CSS overrides by following "swatch_color_" structure and ending with your color name
+  - Example 'swatch_color_black' or another example where color has multiple words 'swatch_color_rosegold'
+{% endcomment %}
+{%- assign swatch_color_black = '#111111' -%}
+{%- assign swatch_color_navy = '#132257' -%}
+{%- assign swatch_color_blue = '#0074D9' -%}
+{%- assign swatch_color_aqua = '#7FDBFF' -%}
+{%- assign swatch_color_teal = '#39CCCC' -%}
+{%- assign swatch_color_olive = '#808000' -%}
+{%- assign swatch_color_green = '#2ECC40' -%}
+{%- assign swatch_color_lime = '#01FF70' -%}
+{%- assign swatch_color_yellow = '#FFDC00' -%}
+{%- assign swatch_color_orange = '#FF851B' -%}
+{%- assign swatch_color_red = '#FF4136' -%}
+{%- assign swatch_color_fuchsia = '#F012BE' -%}
+{%- assign swatch_color_purple = '#B10DC9' -%}
+{%- assign swatch_color_maroon = '#85144B' -%}
+{%- assign swatch_color_silver = '#DDDDDD' -%}
+{%- assign swatch_color_gray = '#AAAAAA' -%}
+{%- assign swatch_color_white = '#FFFFFF' -%}
+{%- assign swatch_color_pink = '#FABEBE' -%}
+{%- assign swatch_color_brown = '#9A6324' -%}
+{%- assign swatch_color_mint = '#AAFFC3' -%}
+{%- assign swatch_color_lavender = '#E6BEFF' -%}
+{%- assign swatch_color_blue = '#1C4AEC' -%}
+{%- assign swatch_color_tan = '#A04E3B' -%}
+{%- assign swatch_color_cognac = '#A15732' -%}
+{%- assign swatch_color_indigo = '#2D2E33' -%}
+{%- assign swatch_color_military = '#766952' -%}
+{%- assign swatch_color_charcoal = '#656168' -%}
+{%- assign swatch_color_teal = '#1B8185' -%}
+{%- assign swatch_color_french = '#676D8D' -%}
+
+{% comment %}All valid CSS color names{% endcomment %}
+{%- assign css_color_names = 'aliceblue, antiquewhite, aqua, aquamarine, azure, beige, bisque, black, blanchedalmond, blue, blueviolet, brown, burlywood, cadetblue, chartreuse, chocolate, coral, cornflowerblue, cornsilk, crimson, cyan, darkblue, darkcyan, darkgoldenrod, darkgray, darkgreen, darkkhaki, darkmagenta, darkolivegreen, darkorange, darkorchid, darkred, darksalmon, darkseagreen, darkslateblue, darkslategray, darkturquoise, darkviolet, deeppink, deepskyblue, dimgray, dodgerblue, firebrick, floralwhite, forestgreen, fuchsia, gainsboro, ghostwhite, gold, goldenrod, gray, green, greenyellow, honeydew, hotpink, indianred, indigo, ivory, khaki, lavender, lavenderblush, lawngreen, lemonchiffon, lightblue, lightcoral, lightcyan, lightgoldenrodyellow, lightgreen, lightgrey, lightpink, lightsalmon, lightseagreen, lightskyblue, lightslategray, lightsteelblue, lightyellow, lime, limegreen, linen, magenta, maroon, mediumauqamarine, mediumblue, mediumorchid, mediumpurple, mediumseagreen, mediumslateblue, mediumspringgreen, mediumturquoise, mediumvioletred, midnightblue, mintcream, mistyrose, moccasin, navajowhite, navy, oldlace, olive, olivedrab, orange, orangered, orchid, palegoldenrod, palegreen, paleturquoise, palevioletred, papayawhip, peachpuff, peru, pink, plum, powderblue, purple, red, rosybrown, royalblue, saddlebrown, salmon, sandybrown, seagreen, seashell, sienna, silver, skyblue, slateblue, slategray, snow, springgreen, steelblue, tan, teal, thistle, tomato, turquoise, violet, wheat, white, whitesmoke, yellow, yellowgreen' | split: ', ' -%}
+
+{% for option in product.options %}
+    {%- assign option_name = option | downcase  -%}
+    {%- assign color_swatch_options = "color, colour, couleur, spalva, farbe, cor" | split: ", " -%}
+    {%- assign option_index = forloop.index0 -%}
+
+    {% if color_swatch_options contains option_name %}
+
+        <div class="product__swatch">
+            <ul class="product__swatch__items o-list-inline">
+
+                {% assign values = '' %}
+                {% for variant in product.variants %}
+                    {% assign value = variant.options[option_index] %}
+                    {% capture wrapped_value %},{{ value }},{% endcapture %}
+                    {% unless values contains wrapped_value %}
+
+                        {%- assign image_url = value | handle | append: '.png' | asset_img_url: '68x' -%}
+                        {%- assign swatch_color = value | handle | replace: '-', '' -%}
+                        {%- assign color_name = value | handle | downcase -%}
+
+                        {%- assign custom_color_var = 'swatch_color_' | append: swatch_color -%}
+                        {%- capture custom_color -%}{{ [custom_color_var] }}{%- endcapture -%}
+
+                        {%- if custom_color != blank -%}
+                            {%- assign swatch_css_color = custom_color -%}
+                        {%- elsif css_color_names contains swatch_color -%}
+                            {%- assign swatch_css_color = swatch_color -%}
+                        {%- else -%}
+                            {%- assign swatch_css_color = '#ddd' -%}
+                        {%- endif -%}
+
+                        {%- if variant.image -%}
+                            {%- assign variant_img = variant.image.src | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                            {%- assign variant_image_width = variant.image.width -%}
+                            {%- assign variant_image_height = variant.image.height -%}
+                        {%- else -%}
+                            {%- assign variant_img = product.featured_image.src | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                            {%- assign variant_image_width = product.featured_image.width -%}
+                            {%- assign variant_image_height = product.featured_image.height -%}
+                        {%- endif -%}
+
+                        <li class="product__swatch__item js-product-swatch-item o-list-inline__item" data-variant-image="{{ variant_img }}" data-variant-url="{{ variant.url }}" data-variant-image-width="{{ variant_image_width }}" data-variant-image-height="{{ variant_image_height }}">
+                            <span class="product__swatch__graphic{% if color_name == 'white' %} product__swatch__graphic--white{% endif %}" style="background-color: {{ swatch_css_color }};{% if settings.product_grid_swatch_image %}background-image: url({{  image_url }}){% endif %}"></span>
+                            <span class="u-hidden-visually">{{ color_name }}</span>
+                        </li>
+
+                        {% capture values %}{{ values }}{{ wrapped_value }}{% endcapture %}
+
+                    {% endunless %}
+
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+{% endfor %}
+
+{% if settings.secondary_images_hover == 'image_flip' %}
+  <script>
+    $('#product-listing-{{ product.id }} .col-swatch li').each(function(){
+
+      var Original = $('#product-listing-{{ product.id }} .prod-image img').attr('data-original');
+
+      $(this).hover(function() {
+        var newImage = $(this).attr('data-href');
+
+        $( '#product-listing-{{ product.id }} .prod-image img' ).attr({
+          srcset: newImage
+        });
+
+        return false;
+      },
+      function(){
+        $( '#product-listing-{{ product.id }} .prod-image img' ).attr({
+          srcset: Original
+        });
+      });
+    });
+  </script>
+{% endif %}

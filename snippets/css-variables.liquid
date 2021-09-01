@@ -1,0 +1,79 @@
+{% comment %}
+  	This is used to create CSS custom variables with Liquid references
+{% endcomment %}
+{% style %}
+{% assign base_font = settings.type_base_font %}
+{% assign header_font = settings.type_header_font %}
+{% assign nav_font = settings.type_nav_font %}
+{% assign button_font = settings.type_button_font %}
+
+:root {
+	--color--brand: {{ settings.color_brand }};
+	--color--brand-dark: {{ settings.color_brand | color_darken: 5 }};
+	--color--brand-light: {{ settings.color_brand | color_lighten: 5 }};
+
+	--color--accent: {{ settings.color_accent }};
+	--color--accent-dark: {{ settings.color_accent | color_darken: 5 }};
+
+	--color--link: {{ settings.color_brand | color_lighten: 30 }};
+	--color--link-dark: {{ settings.color_brand | color_darken: 30 }};
+
+	--color--text: {{ settings.color_text }};
+	--color--text-light: {{ settings.color_text | color_modify: 'alpha', 0.7 }};
+	--color--text-lighter: {{ settings.color_text | color_modify: 'alpha', 0.5 }};
+	--color--text-lightest: {{ settings.color_text | color_modify: 'alpha', 0.2 }};
+
+	--color--text-bg: {{ settings.color_text | color_modify: 'alpha', 0.1 }};
+
+	--color--headings: {{ settings.color_headings }};
+	--color--alt-text: {{ settings.color_alt_text }};
+	--color--btn: {{ settings.color_button }};
+
+	--color--product-bg: {{ settings.product_grid_bg }};
+	--color--product-sale: {{ settings.product_grid_sale_color }};
+
+	--color--bg: {{ settings.color_bg }};
+	--color--bg-alpha: {{ settings.color_bg | color_modify: 'alpha', 0.8 }};
+	--color--bg-light: {{ settings.color_bg | color_lighten: 5 }};
+	--color--bg-dark: {{ settings.color_bg | color_darken: 5 }};
+
+	--font--size-base: {{ settings.type_base_size }};
+	--font--line-base: 30;
+
+	--font--size-h1: {{ 40 | times: settings.type_header_size | round }};
+	--font--size-h2: {{ 30 | times: settings.type_header_size | round }};
+	--font--size-h3: {{ 24 | times: settings.type_header_size | round }};
+	--font--size-h4: {{ 22 | times: settings.type_header_size | round }};
+	--font--size-h5: {{ 19 | times: settings.type_header_size | round }};
+	--font--size-h6: {{ settings.type_base_size }};
+
+	--font--body: {{ base_font.family }}, {{ base_font.fallback_families }};
+	--font--body-style: {{ base_font.style }};
+    --font--body-weight: {{ base_font.weight }};
+
+    --font--title: {{ header_font.family }}, {{ header_font.fallback_families }};
+	--font--title-weight: {{ header_font.weight }};
+	--font--title-style: {{ header_font.style }};
+	--font--title-space: {{ settings.type_header_letterspace }}px;
+	--font--title-transform: {% if settings.type_header_capitalize %}uppercase{% else %}normal{% endif %};
+	--font--title-border: {% if settings.type_header_underline %}1{% else %}0{% endif %};
+	--font--title-border-size: {{ settings.type_header_underline_size }}px;
+
+	--font--nav: {{ nav_font.family }}, {{ nav_font.fallback_families }};
+	--font--nav-weight: {{ nav_font.weight }};
+	--font--nav-style: {{ nav_font.style }};
+	--font--nav-space: {{ settings.type_nav_letterspace }}px;
+	--font--nav-transform: {% if settings.type_nav_capitalize %}uppercase{% else %}normal{% endif %};
+	--font--nav-size: {{ settings.type_nav_size }}px;
+
+	--font--button: {{ button_font.family }}, {{ button_font.fallback_families }};
+	--font--button-weight: {{ button_font.weight }};
+	--font--button-style: {{ button_font.style }};
+	--font--button-space: {{ settings.type_button_letterspace }}px;
+	--font--button-transform: {% if settings.type_button_capitalize %}uppercase{% else %}normal{% endif %};
+	--font--button-size: {{ settings.type_button_size }}px;
+	--font--button-mobile-size: 12px;
+
+	--font--icon-url: {{ 'sb-icons.eot' | asset_url }};
+}
+{% endstyle %}

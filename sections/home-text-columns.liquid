@@ -1,0 +1,173 @@
+{% capture margin_class %}{% if section.settings.link == blank %}section--mb-s{% endif %}{% endcapture %}
+
+<section class="section section--{{ section.id }} {{ margin_class }}" data-section-id="{{ section.id }}" data-section-type="home-inline">
+    <div class="container">
+        {% if section.settings.title != blank %}
+            <div class="section__title section__title--center{% unless section.settings.desc == blank %} section__title--desc{% endunless %}">
+                <h2 class="section__title-text">{{ section.settings.title | escape }}</h2>
+                {% unless section.settings.desc == blank %}
+                    <div class="section__title-desc rte">{{ section.settings.desc }}</div>
+                {% endunless %}
+            </div>
+        {% endif %}
+    </div>
+
+    {% case section.settings.content_align %}
+        {% when 'inline' %}
+            {%- assign grid_item_width = 'u-1/1 u-1/2@tab' -%}
+            {%- assign container_size = 'medium' -%}
+            {%- assign layout_class = 'o-layout--large' -%}
+        {% when 'center' %}
+            {%- assign grid_item_width = 'u-1/1 u-1/3@tab' -%}
+            {%- assign container_size = 'large' -%}
+            {%- assign layout_class = 'o-layout--center' -%}
+    {% endcase %}
+
+    <div class="container container--{{ container_size }}">
+        <div class="home-inline home-inline--{{ section.settings.content_align }}">
+            <div class="home-inline__items">
+                <div class="o-layout {{ layout_class }}">
+                    {% for block in section.blocks %}
+                        <div class="o-layout__item u-1/1 {{ grid_item_width }}">
+                            <div class="home-inline__item">
+                                {% unless block.settings.image == blank %}
+                                    <div class="home-inline__media">
+                                        <img
+                                            class="home-inline__media-img"
+                                            src="{{ block.settings.image | img_url: '220x' }}"
+                                            width="220"
+                                            height="{{ 220 | divided_by: block.settings.image.aspect_ratio | round }}"
+                                            alt="{{ block.settings.image.alt | escape }}"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                {% endunless %}
+                                <div class="home-inline__text{% if block.settings.image == blank %} home-inline__text--full{% endif %}">
+                                    {% unless block.settings.title == blank %}
+                                        <h3 class="home-inline__title h4">{{ block.settings.title | escape }}</h3>
+                                    {% endunless %}
+                                    {% unless block.settings.sub_title == blank %}
+                                        <h4 class="home-inline__sub-title h5">{{ block.settings.sub_title | escape }}</h4>
+                                    {% endunless %}
+                                    {% unless block.settings.desc == blank %}
+                                        <div class="home-inline__desc">
+                                            <div class="rte">{{ block.settings.desc }}</div>
+                                        </div>
+                                    {% endunless %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        {% unless section.settings.link == blank %}
+            <div class="section__link section__link--center">
+                <a href="{{ section.settings.link }}" class="link link--arrow section__link-link">{{ section.settings.link_title | escape }}</a>
+            </div>
+        {% endunless %}
+    </div>
+</section>
+
+{% if section.blocks.size == 0 %}
+    <div class="placeholder-noblocks">
+        {{ 'homepage.onboarding.no_content' | t }}
+    </div>
+{% endif %}
+
+{% schema %}
+{
+    "name": "Text columns with images",
+    "class": "js-section__home-inline",
+    "max_blocks": 6,
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Text columns with images"
+        },
+        {
+            "type": "richtext",
+            "id": "desc",
+            "label": "Text"
+        },
+        {
+            "type": "select",
+            "id": "content_align",
+            "label": "Text alignment",
+            "options": [
+                {
+                    "value": "center",
+                    "label": "Center"
+                },
+                {
+                    "value": "inline",
+                    "label": "Inline"
+                }
+            ],
+            "default": "center"
+        },
+        {
+            "type": "text",
+            "id": "link_title",
+            "label": "Link label",
+            "default": "Learn more"
+        },
+        {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "text",
+            "name": "Text column",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Heading",
+                    "default": "Column heading"
+                },
+                {
+                    "type": "text",
+                    "id": "sub_title",
+                    "label": "Subheading",
+                    "default": "Subheading"
+                },
+                {
+                    "type": "richtext",
+                    "id": "desc",
+                    "label": "Text",
+                    "default": "<p>Describe the main features of your brand or products using a few lines of text along with images or icons.</p>"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Text columns with images",
+            "category": "Text",
+            "blocks": [
+                {
+                    "type": "text"
+                },
+                {
+                    "type": "text"
+                },
+                {
+                    "type": "text"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

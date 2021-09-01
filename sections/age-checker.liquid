@@ -1,0 +1,83 @@
+<div class="age-checker js-age-draw mfp-hide{% if section.settings.image != blank %} age-checker--img{% endif %}" data-age-check-enabled="{{ section.settings.enable }}">
+    <div class="age-checker__wrapper">
+
+        {% if section.settings.image != blank %}
+            <div class="age-checker__media">
+                <img
+                    class="age-checker__media-bg"
+                    src="{{ section.settings.image | img_url: '300x300' }}"
+                    srcset="{% render 'bgset_mobile', image: section.settings.image %}"
+                    width="300"
+                    height="300"
+                    alt="{{ section.settings.image.alt }}"
+                    loading="lazy"
+                />
+            </div>
+        {% endif %}
+
+        <div class="age-checker__content">
+            <div class="section__title section__title--center age-checker__title">
+                <h3 class="section__title-text">{{ section.settings.title | escape }}</h3>
+            </div>
+
+            <div class="age-checker__desc">{{ section.settings.text }}</div>
+
+            <div class="age-checker__actions">
+                <a href="#" class="age-checker__btn c-btn c-btn--primary c-btn--full js-age-close">{{ section.settings.enter_btn_label | escape }}</a>
+                {% unless section.settings.leave_link == blank %}
+                    <a href="{{ section.settings.leave_link }}" class="age-checker__btn c-btn c-btn--hollow c-btn--full">{{ section.settings.leave_btn_label | escape }}</a>
+                {% endunless %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Age checker",
+    "class": "js-section__age-checker",
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "enable",
+            "label": "Enable",
+            "default": false,
+            "info": "For more information on using this section [click here](https://support.safeasmilk.co/article/42-age-checker-ask-your-visitors-if-there-are-old-enough-to-buy-your-products)."
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Age verification"
+        },
+        {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>By clicking enter you are verifying that you are old enough to consume alcohol.</p>"
+        },
+        {
+            "type": "text",
+            "id": "enter_btn_label",
+            "label": "Enter button label",
+            "default": "Enter"
+        },
+        {
+            "type": "text",
+            "id": "leave_btn_label",
+            "label": "Leave button label",
+            "default": "Leave"
+        },
+        {
+            "type": "url",
+            "id": "leave_link",
+            "label": "Leave button link"
+        }
+    ]
+}
+{% endschema %}

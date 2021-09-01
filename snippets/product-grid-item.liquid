@@ -1,0 +1,197 @@
+{%- unless image_sizes -%}
+    {%- assign image_sizes = '100vw' -%}
+{%- endunless -%}
+<div class="product js-product{% if settings.product_grid_detail_style == 'hover' %} product--details-hover{% endif %}{% unless product.available %} product--sold-out{% endunless %}{% if product.compare_at_price > product.price and product.available %} product--sale{% endif %} product--{% if settings.product_grid_image_size contains "crop" %}crop{% elsif settings.product_grid_image_size contains "fit" %}fit{% else %}natural{% endif %} product--{{ settings.product_grid_align }}{% if page == 'home' %} home-products__item{% endif %} ">
+
+    {% if settings.product_grid_label %}
+
+        <!-- custom label -->
+        {% assign custom_label = false %}
+        {% for collection in product.collections %}
+            {% if collection.title == collections[settings.product_grid_label_collection].title %}
+                {% assign custom_label = true %}
+            {% endif %}
+        {% endfor %}
+
+        <!-- new label -->
+        {% assign new_label = false %}
+        {% assign product_created_at = product.created_at | date: '%s' %}
+        {% assign time_ago = 'now' | date: '%s' | minus: product_created_at | divided_by: 86400 %}
+        {% if time_ago < settings.product_grid_label_new_days %}
+           {% assign new_label = true %}
+        {% endif %}
+
+        {% if product.available == false %}
+            <div class="product__label product__label--sold label label--light">
+                <p class="product__label-text label__text">{{ 'products.product.sold_out' | t }}</p>
+            </div>
+        {% elsif custom_label %}
+            <div class="product__label product__label--custom label label--brand">
+                <p class="product__label-text label__text">{{ settings.product_grid_label_title }}</p>
+            </div>
+        {% elsif product.compare_at_price > product.price %}
+            <div class="product__label product__label--sale label label--brand">
+                {% if settings.product_grid_label_sale_style == 'text' %}
+                    <p class="product__label-text label__text">{{ 'products.product.on_sale' | t }}</p>
+                {% else %}
+                    <p class="product__label-text label__text">-{{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}%</p>
+                {% endif %}
+            </div>
+        {% elsif new_label and settings.product_grid_label_new %}
+            <div class="product__label product__label--new label label--brand">
+                <p class="product__label-text label__text">{{ 'products.product.new' | t }}</p>
+            </div>
+        {% endif %}
+
+    {% endif %}
+
+    <div class="product-top">
+        <a href="{{ product.url | within: collection }}" class="product-link js-product-link{% if page == 'home' %} home-products__link{% endif %}" title="{{ product.title }}" tabindex="-1">
+
+            {% if product.featured_media.preview_image == null %}
+                <img
+                    class="product__img"
+                    src="{{ 'placeholder.png' | asset_img_url: '300x' }}"
+                    srcset="{{ 'placeholder.png' | asset_img_url: '180x' }} 180w 180h,
+                            {{ 'placeholder.png' | asset_img_url: '360x' }} 360w 360h,
+                            {{ 'placeholder.png' | asset_img_url: '540x' }} 540w 540h,
+                            {{ 'placeholder.png' | asset_img_url: '720x' }} 720w 720h,
+                            {{ 'placeholder.png' | asset_img_url: '900x' }} 900w 900h,
+                            {{ 'placeholder.png' | asset_img_url: '1080x' }} 1080w 1080h,
+                            {{ 'placeholder.png' | asset_img_url: '1296x' }} 1296w 1296h,
+                            {{ 'placeholder.png' | asset_img_url: '1512x' }} 1512w 1512h
+                            "
+                    sizes="{{ image_sizes }}"
+                    width="300"
+                    height="300"
+                    alt="placeholder image"
+                    loading="lazy"
+                />
+            {% else %}
+
+            <div class="product__media{% if settings.product_grid_second_hover and product.media[1] != blank %} product__media--hover{% endif %}">
+
+                {% case settings.product_grid_image_size %}
+                    {% when 'natural' %}
+                        {%- assign product_ratio = 'custom' -%}
+                    {% when 'fit-square' or 'crop-square' %}
+                        {%- assign product_ratio = '1:1' -%}
+                    {% when 'fit-short' or 'crop-short' %}
+                        {%- assign product_ratio = '4:3' -%}
+                    {% when 'fit-tall' or 'crop-tall' %}
+                        {%- assign product_ratio = '2:3' -%}
+                {% endcase %}
+
+                <div class="o-ratio o-ratio--{{ product_ratio }}"{% if settings.product_grid_image_size == 'natural' %} style="padding-bottom:{{ 1 | divided_by: product.featured_media.preview_image.aspect_ratio | times: 100 }}%;"{% endif %}>
+
+                    <div class="o-ratio__content">
+
+                        <div class="theme-spinner"></div>
+
+                        {% if settings.product_grid_second_hover and product.media[1] != blank %}
+                            <img
+                                class="product__img-hover"
+                                src="{{ product.media[1].preview_image | img_url: '300x' }}"
+                                srcset="
+                                    {{ product.media[1].preview_image | img_url: '180x' }} 180w {{ 180 | divided_by: product.media[1].preview_image.aspect_ratio | round }}h,
+                                    {{ product.media[1].preview_image | img_url: '360x' }} 360w {{ 360 | divided_by: product.media[1].preview_image.aspect_ratio | round }}h,
+                                    {{ product.media[1].preview_image | img_url: '540x' }} 540w {{ 540 | divided_by: product.media[1].preview_image.aspect_ratio | round }}h,
+                                    {{ product.media[1].preview_image | img_url: '720x' }} 720w {{ 720 | divided_by: product.media[1].preview_image.aspect_ratio | round }}h,
+                                    {{ product.media[1].preview_image | img_url: '900x' }} 900w {{ 900 | divided_by: product.media[1].preview_image.aspect_ratio | round }}h,
+                                    {{ product.media[1].preview_image | img_url: '1080x' }} 1080w {{ 1080 | divided_by: product.media[1].preview_image.aspect_ratio | round }}h,
+                                    {{ product.media[1].preview_image | img_url: '1296x' }} 1296w {{ 1296 | divided_by: product.media[1].preview_image.aspect_ratio | round }}h,
+                                    {{ product.media[1].preview_image | img_url: '1512x' }} 1512w {{ 1512 | divided_by: product.media[1].preview_image.aspect_ratio | round }}h
+                                "
+                                sizes="{{ image_sizes }}"
+                                width="300"
+                                height="{{ 300 | divided_by: product.media[1].preview_image.aspect_ratio | round }}"
+                                alt="{{ product.media[1].preview_image.alt | escape }}"
+                                loading="lazy"
+                            />
+                        {% endif %}
+
+                        {%- assign img_url = product.featured_media.preview_image.src | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                        <img
+                            class="product__img"
+                            src="{{ product.featured_media.preview_image | img_url: '300x' }}"
+                            srcset="
+                                {{ product.featured_media.preview_image | img_url: '180x' }} 180w {{ 180 | divided_by: product.featured_media.preview_image.aspect_ratio | round }}h,
+                                {{ product.featured_media.preview_image | img_url: '360x' }} 360w {{ 360 | divided_by: product.featured_media.preview_image.aspect_ratio | round }}h,
+                                {{ product.featured_media.preview_image | img_url: '540x' }} 540w {{ 540 | divided_by: product.featured_media.preview_image.aspect_ratio | round }}h,
+                                {{ product.featured_media.preview_image | img_url: '720x' }} 720w {{ 720 | divided_by: product.featured_media.preview_image.aspect_ratio | round }}h,
+                                {{ product.featured_media.preview_image | img_url: '900x' }} 900w {{ 900 | divided_by: product.featured_media.preview_image.aspect_ratio | round }}h,
+                                {{ product.featured_media.preview_image | img_url: '1080x' }} 1080w {{ 1080 | divided_by: product.featured_media.preview_image.aspect_ratio | round }}h,
+                                {{ product.featured_media.preview_image | img_url: '1296x' }} 1296w {{ 1296 | divided_by: product.featured_media.preview_image.aspect_ratio | round }}h,
+                                {{ product.featured_media.preview_image | img_url: '1512x' }} 1512w {{ 1512 | divided_by: product.featured_media.preview_image.aspect_ratio | round }}h
+                            "
+                            sizes="{{ image_sizes }}"
+                            width="300"
+                            height="{{ 300 | divided_by: product.featured_media.preview_image.aspect_ratio | round }}"
+                            alt="{{ product.featured_media.preview_image.alt | escape }}"
+                            loading="lazy"
+                        />
+                    </div>
+                </div>
+
+            </div>
+
+            {% endif %}
+
+        </a>
+
+        {% unless settings.product_grid_quick_buy == 'disabled' %}
+            <div class="product-btn product-btn--{{ settings.product_grid_quick_buy }}">
+                {% if product.available == false %}
+                    <a href="{{ product.url | within: collection }}" class="c-btn c-btn--full c-btn--light c-btn--small-tab product-btn__btn">{{ 'products.product.sold_out' | t }}</a>
+                {% elsif product.variants.size > 1 %}
+                    <a href="{{ product.url | within: collection }}" class="c-btn c-btn--full c-btn--primary c-btn--arrow c-btn--small-tab product-btn__btn">{{ 'products.product.select_options' | t }}</a>
+                {% else %}
+                    {% form 'product', product, class: "js-product-form" %}
+                        <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                        <button type="submit" name="add" class="c-btn c-btn--full c-btn--primary c-btn--small-tab product-btn__btn js-product-add">
+                            <span class="product-btn__text">
+                                <span class="js-product-add-text">{{ 'products.product.add_to_cart' | t }}</span>
+                            </span>
+                            <span class="product-btn__tick"><i class="icon icon--tick"></i></span>
+                        </button>
+                    {% endform %}
+                {% endif %}
+            </div>
+        {% endunless %}
+    </div>
+
+    <a href="{{ product.url | within: collection }}" class="product-link js-product-link{% if page == 'home' %} home-products__link{% endif %}" title="{{ product.title }}">
+        <div class="product__details">
+            <h2 class="product__title h4">{{ product.title }}</h2>
+
+            {% if settings.product_grid_vendor %}
+                <h3 class="product__vendor h6">{{ product.vendor }}</h3>
+            {% endif %}
+
+            <div class="product__details__hover">
+                {% if settings.product_grid_price %}
+                    <p class="product__price h5">
+                        {% render 'product-price', product: product %}
+                    </p>
+                    {% if product.available and product.selected_or_first_available_variant.unit_price_measurement %}
+                        <p class="product__unit-price">
+                            {% render 'product-unit-price', product: product, variant: product.selected_or_first_available_variant %}
+                        </p>
+                    {% endif %}
+                {% endif %}
+
+                {% if settings.product_grid_swatch %}
+                    {% render 'product-grid-swatch', product: product %}
+                {% endif %}
+
+                {% if settings.product_reviews and settings.product_grid_reviews %}
+                    <div class="product__reviews">
+                        <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+                    </div>
+                {% endif %}
+            </div>
+
+        </div>
+    </a>
+
+</div>

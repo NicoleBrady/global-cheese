@@ -1,0 +1,127 @@
+{% paginate search.results by 12 %}
+<section class="section section--search search-page">
+    <div class="container container--small">
+
+        <div class="section__title section__title--center">
+            <h1 class="section__title-text h2">{% if search.performed %}{% if search.results_count == 0 %}{{ 'general.search.no_results_html' | t: terms: search.terms }}{% else %}{{ 'general.search.results_for_html' | t: terms: search.terms }}{% endif %}{% else %}{{ 'general.search.title' | t }}{% endif %}</h1>
+        </div>
+
+        <form action="{{ routes.search_url }}" method="get" class="search-page__form" role="search">
+
+            <input type="hidden" name="type" value="{{ settings.search_limit }}">
+
+            <input type="search" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.placeholder' | t }}" class="search-page__form-input" aria-label="{{ 'general.search.placeholder' | t }}">
+
+            <button type="submit" class="search-page__form-submit">
+                <i class="icon icon--search" aria-hidden="true"></i>
+                <span class="icon-fallback__text">{{ 'general.search.submit' | t }}</span>
+            </button>
+        </form>
+
+    </div>
+
+    {% if search.performed %}
+
+        {% assign products_found = false %}
+        {% assign others_found = false %}
+        {%- assign grid_item_width = 'u-1/1 u-1/2@phab u-1/3@tab' -%}
+
+        {% for item in search.results %}
+            {% if item.object_type == 'product' %}
+                 {% assign products_found = true %}
+            {% endif %}
+        {% endfor %}
+
+        {% for item in search.results %}
+            {% if item.object_type == 'article' or item.object_type == 'page' %}
+                 {% assign others_found = true %}
+            {% endif %}
+        {% endfor %}
+
+        {% if products_found %}
+            <div class="search-page__products">
+                <div class="container">
+
+                    <div class="o-layout o-layout--center{% if settings.product_grid_masonry %} o-layout--masonry{% endif %}">
+                        {% for product in search.results %}
+                            {% if product.object_type == 'product' %}
+                                <div class="o-layout__item {{ grid_item_width }}">
+                                    {% render 'product-grid-item', product: product, page: 'search' %}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if others_found %}
+            <div class="search-page__other">
+                <div class="container container--medium">
+
+                    <ul class="search-page__other-items o-list-bare">
+                        {% for item in search.results %}
+                            {% if item.object_type == 'article' or item.object_type == 'page' %}
+                                {% capture rotation %}{% cycle '1', '2' %}{% endcapture %}
+
+                                <li class="search-page__other-item{% if rotation == '2' %} search-page__other-item--reverse{% endif %}{% unless item.image %} search-page__other-item--no-img{% endunless %}">
+
+                                    {% if item.image %}
+                                    <div class="o-layout o-layout--tiny u-flex u-flex--middle{% if rotation == '2' %} o-layout--reverse{% endif %}">
+                                        <div class="o-layout__item u-1/1 u-1/2@tab">
+                                            <div class="search-page__other-media">
+                                                <img
+                                                    class="search-page__media-img" alt="{{ item.title }}"
+                                                    src="{{ item | img_url: '300x300', crop: 'center' }}"
+                                                    srcset="{{ item | img_url: '360x360', crop: 'center' }} 360w,
+                                                    {{ item | img_url: '540x540', crop: 'center' }} 540w,
+                                                    {{ item | img_url: '720x720', crop: 'center' }} 720w,
+                                                    {{ item | img_url: '900x900', crop: 'center' }} 900w,
+                                                    {{ item | img_url: '1080x1080', crop: 'center' }} 1080w,
+                                                    {{ item | img_url: '1296x1296', crop: 'center' }} 1296w"
+                                                    width="300"
+                                                    height="300"
+                                                    loading="lazy"
+                                                >
+                                            </div>
+                                        </div>
+                                        <div class="o-layout__item u-1/1 u-1/2@tab">
+                                    {% endif %}
+
+                                            <div class="search-page__other-info">
+                                                <h3 class="search-page__other-title"><a href="{{ item.url }}" class="search-page__other-title-link">{{ item.title }}</a></h3>
+                                                <p class="search-page__other-text">{{ item.content | strip_html | truncate: 140 | highlight: search.terms }}</p>
+                                                <div class="search-page__other-more">
+                                                    <a href="{{ item.url }}" class="link link--arrow">{{ 'general.search.more_label' | t }}</a>
+                                                </div>
+                                            </div>
+
+                                    {% if item.image %}
+                                        </div>
+                                    </div>
+                                    {% endif %}
+
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endif %}
+    {% endif %}
+    {% if paginate.pages > 1 %}
+        <div class="search-page-pagination">
+            <div class="container">
+                <div class="pagination">
+                    <div class="pagination__items">
+                        {{ paginate | default_pagination:
+                            next: '<i class="icon icon--right-t"></i><span class="icon-fallback__text">Next Page</span>',
+                            previous: '<i class="icon icon--left-t"></i><span class="icon-fallback__text">Previous Page</span>'
+                        }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</section>
+{% endpaginate %}

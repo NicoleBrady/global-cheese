@@ -1,0 +1,14 @@
+<!-- Network optimisations -->
+<link rel="preconnect" href="//cdn.shopify.com" crossorigin>
+<link rel="preconnect" href="//fonts.shopifycdn.com" crossorigin>
+<link rel="preconnect" href="https://monorail-edge.shopifysvc.com">
+
+<link rel="preload" as="style" href="{{ 'theme-critical.css?enable_css_minification=1' | asset_url }}">
+{%- if settings.anim_load -%}
+	<link rel="preload" as="script" href="{{ 'scrollreveal.min.js' | asset_url }}">
+{%- endif -%}
+
+<link rel="preload" href="{{ settings.type_base_font | font_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ settings.type_header_font | font_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ settings.type_nav_font | font_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ settings.type_button_font | font_url }}" as="font" type="font/woff2" crossorigin>

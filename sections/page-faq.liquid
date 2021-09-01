@@ -1,0 +1,163 @@
+<section class="section section--page page page--faq faq js-faq-page">
+    <div class="container container--tiny">
+        <div class="section__title section__title--center">
+            <h1 class="section__title-text h2">{{ page.title }}</h1>
+        </div>
+    </div>
+
+    <div class="container container--tiny">
+        <div class="faq__wrapper">
+
+            {% if section.settings.enable_sidebar %}
+                <div class="faq__categories js-faq-categories u-hidden@desk-down">
+                    <h2 class="faq__categories-title h5">{{ 'faq.general.categories_title' | t }}</h2>
+                    <ul class="faq__categories-items o-list-bare">
+                        {% for block in section.blocks %}
+                            {% if block.type == 'category' %}
+                                <li class="faq__categories-item"><a href="#cat-{{ forloop.index }}" class="faq__categories-link js-faq-category-link js-scroll-id">{{ block.settings.title }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
+            {% if page.content.size > 0 %}
+                <div class="faq__content page__content rte">
+                    {{ page.content }}
+                </div>
+            {% endif %}
+
+            {% if section.settings.enable_search %}
+                <div class="faq__search">
+                    <label for="faq-search" class="u-hidden-visually">Search: </label>
+                    <input id="faq-search" type="text" name="faq" class="faq__search-input js-faq-autocomplete" placeholder="{{ 'faq.general.search_placeholder' | t }}" autocomplete="off">
+                    <i class="icon icon--search" aria-hidden="true"></i>
+                </div>
+            {% endif %}
+
+            <div class="faq__accordion js-accordion">
+                {% for block in section.blocks %}
+                    {% if block.type == 'article' %}
+                        <a href="#faq-{{ forloop.index }}" class="faq__accordion__title js-accordion-trigger">
+                            <p class="faq__accordion__title-text">{{ block.settings.title }}</p>
+                            <span class="faq__accordion__title-icon icon-fallback">
+                                <i class="icon icon--plus" aria-hidden="true"></i>
+                                <span class="icon-fallback__text">{{ 'products.layout.tab_label' | t }}</span>
+                            </span>
+                        </a>
+                        <div id="faq-{{ forloop.index }}" class="faq__accordion__item js-accordion-info">
+                            {% unless block.settings.text == blank %}
+                                <div class="faq__accordion__item-wrap rte">
+                                    {{ block.settings.text }}
+                                </div>
+                            {% endunless %}
+                            {% if block.settings.image %}
+                                <img src="{{ block.settings.image | img_url: '1200x' }}" class="faq__accordion__item__image" alt="{{ block.settings.image.alt }}">
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                    {% if block.type == 'category' %}
+                        <div class="faq__category js-faq-category" id="cat-{{ forloop.index }}">
+                            <div class="section__title faq__category__title">
+                                <h2 class="section__title-text faq__category__title-text h4">{{ block.settings.title }}</h2>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            {% unless section.settings.cta_link == blank %}
+                <div class="faq__cta u-text-center"> 
+                    <div class="faq__cta-btn">
+                        <a href="{{ section.settings.cta_link }}" class="faq__cta-btn__btn c-btn c-btn--primary c-btn--arrow">{{ section.settings.cta_link_title | escape }}</a>
+                    </div>
+                </div>
+            {% endunless %}
+
+        </div>
+    </div>
+
+</section>
+
+<script type="text/javascript">
+    var faq_items = [
+        {% for block in section.blocks %}
+            {% if block.type == 'article' %}
+                { value: "{{ block.settings.title }}", content: "{{ block.settings.text | strip_html | strip_newlines | replace: '"', '&apos;' }}", data: "faq-{{ forloop.index }}" },
+            {% endif %}
+        {% endfor %}
+    ];
+</script>
+
+{% schema %}
+{
+    "name": "FAQ page",
+    "class": "js-section__faq-page",
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "enable_search",
+            "label": "Enable search",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "enable_sidebar",
+            "label": "Enable category sidebar",
+            "default": false
+        },
+        {
+            "type": "header",
+            "content": "Call to action"
+        },
+        {
+            "type": "text",
+            "id": "cta_link_title",
+            "label": "Link label",
+            "default": "Contact us"
+        },
+        {
+            "type": "url",
+            "id": "cta_link",
+            "label": "Link"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "article",
+            "name": "Article",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Heading",
+                    "default": "Article heading"
+                },
+                {
+                    "type": "richtext",
+                    "id": "text",
+                    "label": "Text",
+                    "default": "<p>Use these articles to answer questions that customers have about your products and services. You can use text, links and images and also group articles into categories.</p>"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                }
+            ]
+        },
+        {
+            "type": "category",
+            "name": "Category",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Heading",
+                    "default": "Category"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

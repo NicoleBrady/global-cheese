@@ -1,0 +1,28 @@
+<!-- snippet/product-price.liquid -->
+{% if product.title %}
+    {%- assign compare_at_price = product.compare_at_price -%}
+    {%- assign price = product.price -%}
+    {%- assign price_max = product.price_max -%}
+    {%- assign price_varies = product.price_varies -%}
+    {%- assign available = product.available -%}
+{% else %}
+    {%- assign compare_at_price = 1999 -%}
+    {%- assign price = 1999 -%}
+    {%- assign price_varies = false -%}
+    {%- assign available = true -%}
+{% endif %}
+
+{%- assign money_price = price | money -%}
+{%- assign money_price_max = price_max | money -%}
+
+{% if available %}
+    {% if compare_at_price > price %}
+        <span class="product__price-price product__price-price--sale">{% if price_varies %}{{ 'products.general.from_price' | t }} {% endif %}<span class="money">{{ money_price }}</span></span>
+        <strike class="product__price-cross"><span class="money">{{ compare_at_price | money }}</span></strike>
+    {% else %}
+        <span class="product__price-price">{% if price_varies %}{{ 'products.general.from_price' | t }} {% endif %}<span class="money">{{ money_price }}</span></span>
+    {% endif %}
+{% endif %}
+{% unless available %}
+    <span class="product__price-price product__price-price--sold">{{ 'products.product.sold_out' | t }}</span>
+{% endunless %}

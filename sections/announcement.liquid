@@ -1,0 +1,72 @@
+<style type="text/css">
+    {% if section.settings.message_show %}
+    .announcement {
+        background-color: {{ section.settings.message_color_bg }};
+    }
+    .announcement__text,
+    .announcement__text.rte a {
+        color: {{ section.settings.message_color_text }};
+    }
+    .announcement__text.rte a {
+        border-color: {{ section.settings.message_color_text }};
+    }
+    {% endif %}
+</style> 
+
+{% if section.settings.message_show %}
+    {% if section.settings.home_page_only == false or template.name == 'index' %}
+        {% unless section.settings.message_link == blank %}
+        <a href="{{ section.settings.message_link }}" class="announcement__link">
+        {% endunless %}
+            <div class="announcement">
+                <p class="announcement__text">{{ section.settings.message_text | escape }}</p>
+            </div>
+        {% unless section.settings.message_link == blank %}
+        </a>
+        {% endunless %}
+    {% endif %}
+{% endif %}
+
+{% schema %}
+{
+    "name": "Announcement bar",
+    "class": "js-section__announcement",
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "message_show",
+            "label": "Enable announcement bar",
+            "default": false
+        },
+        {
+            "type": "checkbox",
+            "id": "home_page_only",
+            "label": "Home page only",
+            "default": false
+        },
+        {
+            "type": "textarea",
+            "id": "message_text",
+            "label": "Text",
+            "default": "Use this announcement bar to share some news and link to page or product."
+        },
+        {
+            "type": "url",
+            "id": "message_link",
+            "label": "Link"
+        },
+        {
+            "type": "color",
+            "id": "message_color_bg",
+            "label": "Background color",
+            "default": "#222"
+        },
+        {
+            "type": "color",
+            "id": "message_color_text",
+            "label": "Text color",
+            "default": "#fff"
+        }
+    ]
+}
+{% endschema %}

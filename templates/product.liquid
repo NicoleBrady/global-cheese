@@ -1,0 +1,95 @@
+{% section 'product-template' %}
+{% section 'product-testimonials' %}
+{% section 'product-sections' %}
+{% section 'product-recommendations' %}
+
+<script type="application/json" id="ProductJson-1">
+    {{ product | json }}
+</script>
+<script>
+    theme.money_format = '{{ shop.money_format }}';
+    theme.t.add_to_cart = '{{ 'products.product.add_to_cart' | t }}';
+    theme.t.sold_out = '{{ 'products.product.sold_out' | t }}';
+    theme.t.unavailable = '{{ 'products.product.unavailable' | t }}';
+
+    document.addEventListener("DOMContentLoaded", function(event) { 
+        theme.productSelect('1','single', true);//sectionId, cssClass, historyState
+        theme.selectWrapper();
+    });
+</script>
+
+{% assign current_variant = product.selected_or_first_available_variant %}
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Product",
+  "name": {{ product.title | json }},
+  "url": {{ shop.url | append: product.url | json }},
+  {%- if product.featured_media -%}
+    {%- assign media_size = product.featured_media.preview_image.width | append: 'x' -%}
+    "image": [
+      {{ product.featured_media | img_url: media_size | prepend: "https:" | json }}
+    ],
+  {%- endif -%}
+  "description": {{ product.description | strip_html | json }},
+  {%- if current_variant.sku != blank -%}
+    "sku": {{ current_variant.sku | json }},
+  {%- endif -%}
+  "brand": {
+    "@type": "Thing",
+    "name": {{ product.vendor | json }}
+  },
+  "offers": [
+    {%- for variant in product.variants -%}
+      {
+        "@type" : "Offer",
+        {%- if variant.sku != blank -%}
+          "sku": {{ variant.sku | json }},
+        {%- endif -%}
+        "availability" : "http://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}",
+        "price" : {{ variant.price | divided_by: 100.00 | json }},
+        "priceCurrency" : {{ cart.currency.iso_code | json }},
+        "url" : {{ shop.url | append: variant.url | json }}
+      }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ]
+}
+</script>
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)">
+                    <i class="icon icon--close" aria-hidden="true"></i>
+                    <span class="icon-fallback__text">Close (Esc)</span>
+                </button>
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous">
+                <i class="icon icon--left" aria-hidden="true"></i>
+                <span class="icon-fallback__text">Arrow left</span>
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next">
+                <i class="icon icon--right" aria-hidden="true"></i>
+                <span class="icon-fallback__text">Arrow right</span>
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>

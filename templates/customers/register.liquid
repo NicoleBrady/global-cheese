@@ -1,0 +1,39 @@
+<section class="section section--account account account--register">
+    <div class="container container--tiny">
+
+        <div class="section__title section__title--center">
+            <h1 class="section__title-text h2">{{ 'customer.register.title' | t }}</h1>
+        </div>
+
+        <div class="account__form"> 
+            {% form 'create_customer' %}
+
+                {{ form.errors | default_errors }}
+
+                <div class="o-layout">
+                    <div class="o-layout__item u-1/1 u-1/2@tab">
+                        <label for="FirstName" class="hidden-label">{{ 'customer.register.first_name' | t }}</label>
+                        <input type="text" name="customer[first_name]" id="FirstName" {% if form.first_name %}value="{{ form.first_name }}"{% endif %} autocapitalize="words" autofocus>
+                    </div>
+                    <div class="o-layout__item u-1/1 u-1/2@tab">
+                        <label for="LastName" class="hidden-label">{{ 'customer.register.last_name' | t }}</label>
+                        <input type="text" name="customer[last_name]" id="LastName" {% if form.last_name %}value="{{ form.last_name }}"{% endif %} autocapitalize="words">
+                    </div>
+                </div>
+
+                <label for="Email" class="hidden-label">{{ 'customer.register.email' | t }}</label>
+                <input type="email" name="customer[email]" id="Email" class="{% if form.errors contains 'email' %} error{% endif %}" {% if form.email %} value="{{ form.email }}"{% endif %} autocorrect="off" autocapitalize="off">
+
+                <label for="CreatePassword" class="hidden-label">{{ 'customer.register.password' | t }}</label>
+                <input type="password" name="customer[password]" id="CreatePassword" class="{% if form.errors contains 'password' %} error{% endif %}">
+                
+                <div class="account__form-buttons">                    
+                    <input type="submit" class="c-btn c-btn--primary account__form-submit" value="{{ 'customer.register.submit' | t }}">
+                    <a href="{{ shop.url }}" class="link account__form-secondary-btn">{{ 'customer.register.cancel' | t }}</a>
+                </div>
+
+            {% endform %} 
+        </div>
+
+    </div>
+</section>

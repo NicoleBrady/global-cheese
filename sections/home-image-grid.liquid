@@ -1,0 +1,355 @@
+<style>
+.section--{{ section.id }} .home-image-grid__bg--overlay:before,
+.section--{{ section.id }} .home-image-grid__bg--cover:before {
+    {% if section.settings.overlay_strength == 100 %}
+        opacity: 1;
+    {% else %}
+        opacity: .{{ section.settings.overlay_strength }};
+    {% endif %}
+}
+</style>
+{% if section.blocks.size > 0 %}
+    <section class="section section--mb-s section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="home-image-grid">
+        <div class="home-image-grid home-image-grid--{{ section.settings.height }}{% if section.settings.featured %} home-image-grid--featured{% endif %}">
+            <div class="container">
+                <div class="home-image-grid__items">
+                    <div class="o-layout">
+                        {% for block in section.blocks %}
+
+                            {% case section.blocks.size %}
+                            {% when 1 %}
+                                {%- assign grid_item_width = '1/1' -%}
+                                {%- assign sizes = '100vw' -%}
+                            {% when 2 %}
+                                {% if section.settings.featured %}
+                                    {% if forloop.index == 1 %}
+                                        {%- assign grid_item_width = '2/3' -%}
+                                        {%- assign sizes = '(min-width: 768px) 66vw, 100vw' -%}
+                                    {% else %}
+                                        {%- assign grid_item_width = '1/3' -%}
+                                        {%- assign sizes = '(min-width: 768px) 33vw, 100vw' -%}
+                                    {% endif %}
+                                {% else %}
+                                    {%- assign grid_item_width = '1/2' -%}
+                                    {%- assign sizes = '(min-width: 768px) 50vw, 100vw' -%}
+                                {% endif %}
+                            {% when 3 %}
+                                {% if section.settings.featured %}
+                                    {% if forloop.index == 1 %}
+                                        {%- assign grid_item_width = '1/1' -%}
+                                        {%- assign sizes = '100vw' -%}
+                                    {% else %}
+                                        {%- assign grid_item_width = '1/2' -%}
+                                        {%- assign sizes = '(min-width: 768px) 50vw, 100vw' -%}
+                                    {% endif %}
+                                {% else %}
+                                    {%- assign grid_item_width = '1/3' -%}
+                                    {%- assign sizes = '(min-width: 768px) 33vw, 100vw' -%}
+                                {% endif %}
+                            {% when 4 %}
+                                {% if section.settings.featured %}
+                                    {% if forloop.index == 1 %}
+                                        {%- assign grid_item_width = '2/3' -%}
+                                        {%- assign sizes = '(min-width: 768px) 66vw, 100vw' -%}
+                                    {% elsif forloop.index == 2 %}
+                                        {%- assign grid_item_width = '1/3' -%}
+                                        {%- assign sizes = '(min-width: 768px) 33vw, 100vw' -%}
+                                    {% else %}
+                                        {%- assign grid_item_width = '1/2' -%}
+                                        {%- assign sizes = '(min-width: 768px) 50vw, 100vw' -%}
+                                    {% endif %}
+                                {% else %}
+                                    {%- assign grid_item_width = '1/2' -%}
+                                    {%- assign sizes = '(min-width: 768px) 50vw, 100vw' -%}
+                                {% endif %}
+                            {% when 5 %}
+                                {% if section.settings.featured %}
+                                    {% if forloop.index == 1 %}
+                                        {%- assign grid_item_width = '2/3' -%}
+                                        {%- assign sizes = '(min-width: 768px) 66vw, 100vw' -%}
+                                    {% else %}
+                                        {%- assign grid_item_width = '1/3' -%}
+                                        {%- assign sizes = '(min-width: 768px) 33vw, 100vw' -%}
+                                    {% endif %}
+                                {% else %}
+                                    {% if forloop.index == 1 or forloop.index == 2 %}
+                                        {%- assign grid_item_width = '1/2' -%}
+                                        {%- assign sizes = '(min-width: 768px) 50vw, 100vw' -%}
+                                    {% else %}
+                                        {%- assign grid_item_width = '1/3' -%}
+                                        {%- assign sizes = '(min-width: 768px) 33vw, 100vw' -%}
+                                    {% endif %}
+                                {% endif %}
+                            {% endcase %}
+
+                            <div class="o-layout__item u-1/1 u-{{ grid_item_width }}@tab">
+                                {% if block.type == 'image' %}
+                                    {% unless block.settings.link == blank %}
+                                    <a href="{{ block.settings.link }}" class="home-image-grid__link">
+                                    {% endunless %}
+                                        <div class="u-flex-parent">
+                                            <div class="home-image-grid__item home-image-grid__item--image u-flex u-flex--{{ block.settings.text_alignment }}{% if grid_item_width == '1/3' %} home-image-grid__item--p-{% endif %}">
+                                                {% if block.settings.image %}
+                                                <div class="home-image-grid__bg--cover u-bg-contain u-bg-overlay" style="background-image: url('{{ block.settings.image | img_url: '1x1' }}')"></div>
+                                                {% endif %}
+                                                {% if block.settings.image %}
+                                                    <picture>
+                                                        <source
+                                                            srcset="{% render 'bgset_mobile', image: block.settings.image %}"
+                                                            media="all and (max-width: 540px)"
+                                                        />
+                                                        <source
+                                                            srcset="{% render 'bgset', image: block.settings.image %}"
+                                                            sizes="{{ sizes }}"
+                                                            media="all and (min-width: 541px)"
+                                                        />
+                                                        <img
+                                                            class="home-image-grid__bg home-image-grid__bg--{{ block.id }} home-image-grid__bg--{{ block.settings.image_alignment }}"
+                                                            src="{{ block.settings.image | img_url: '300x' }}"
+                                                            width="300"
+                                                            height="{{ 300 | divided_by: block.settings.image.aspect_ratio | round }}"
+                                                            alt="{{ block.settings.image.alt }}"
+                                                            loading="lazy"
+                                                        />
+                                                    </picture>
+                                                {% else %}
+                                                        {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+                                                        {{ 'collection-' | append: current | placeholder_svg_tag: 'home-image-grid__bg placeholder-svg' }}
+                                                {% endif %}
+                                                <div class="home-image-grid__bg--overlay u-bg-overlay"></div>
+                                                <div class="home-image-grid__content">
+                                                    {% unless block.settings.title == blank %}
+                                                        <h3 class="home-image-grid__title {% if section.settings.featured and forloop.index == 1 %}h1{% else %}h2{% endif %}{% if settings.type_header_underline %} home-image-grid__title--underline{% endif %}">{{ block.settings.title }}</h3>
+                                                    {% endunless %}
+                                                    {% unless block.settings.text == blank %}
+                                                        <p class="home-image-grid__desc">{{ block.settings.text | escape }}</p>
+                                                    {% endunless %}
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    {% unless block.settings.link == blank %}
+                                    </a>
+                                    {% endunless %}
+                                {% else %}
+                                    <div class="u-flex-parent">
+                                        <div class="home-image-grid__item home-image-grid__item--text u-flex u-flex--middle u-flex--center{% if grid_item_width == '1/3' %} home-image-grid__item--p-{% endif %}" style="background-color:{{ block.settings.bg_color }};">
+                                            <div class="home-image-grid__content home-image-grid__content--{{ block.settings.text_color }}">
+                                                {% unless block.settings.title == blank %}
+                                                    <h3 class="home-image-grid__title {% if section.settings.featured and forloop.index == 1 %}h1{% else %}h2{% endif %}{% if settings.type_header_underline %} home-image-grid__title--underline{% endif %}">{{ block.settings.title }}</h3>
+                                                {% endunless %}
+                                                {% unless block.settings.text == blank %}
+                                                    <div class="home-image-grid__desc rte">{{ block.settings.text }}</div>
+                                                {% endunless %}
+                                                {% unless block.settings.link == blank %}
+                                                    <a href="{{ block.settings.link }}" class="c-btn c-btn--primary c-btn--{{ block.settings.text_color }} home-image-grid__btn">{{ block.settings.link_text }}</a>
+                                                {% endunless %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}
+
+{% if section.blocks.size == 0 %}
+    <div class="placeholder-noblocks">
+        {{ 'homepage.onboarding.no_content' | t }}
+    </div>
+{% endif %}
+
+{% schema %}
+{
+    "name": "Image grid with text",
+    "class": "js-section__home-image-grid",
+    "max_blocks": 5,
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "featured",
+            "label": "Emphasize first block",
+            "default": true
+        },
+        {
+            "type": "select",
+            "id": "height",
+            "label": "Section height",
+            "default": "medium",
+            "options": [
+                {
+                    "label": "Small",
+                    "value": "small"
+                },
+                {
+                    "label": "Medium",
+                    "value": "medium"
+                },
+                {
+                    "label": "Large",
+                    "value": "large"
+                }
+            ]
+        },
+        {
+            "type": "range",
+            "id": "overlay_strength",
+            "label": "Overlay strength",
+            "unit": "%",
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "default": 30
+        }
+    ],
+    "blocks": [
+        {
+            "type": "image",
+            "name": "Image block",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image",
+                    "info": "2200px width recommended."
+                },
+                {
+                    "type": "select",
+                    "id": "image_alignment",
+                    "label": "Image alignment",
+                    "default": "center",
+                    "options": [
+                        {
+                            "value": "top",
+                            "label": "Top"
+                        },
+                        {
+                            "value": "center",
+                            "label": "Middle"
+                        },
+                        {
+                            "value": "bottom",
+                            "label": "Bottom"
+                        }
+                    ]
+                },
+                {
+                    "type": "select",
+                    "id": "text_alignment",
+                    "label": "Text alignment",
+                    "default": "bottom",
+                    "options": [
+                        {
+                            "value": "top",
+                            "label": "Top"
+                        },
+                        {
+                            "value": "middle",
+                            "label": "Middle"
+                        },
+                        {
+                            "value": "bottom",
+                            "label": "Bottom"
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Heading",
+                    "default": "Image block"
+                },
+                {
+                    "type": "textarea",
+                    "id": "text",
+                    "label": "Text",
+                    "default": "Use these image blocks to tell your story, promote your products or create a beautiful gallery."
+                },
+                {
+                    "type": "url",
+                    "id": "link",
+                    "label": "Link"
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "name": "Text block",
+            "settings": [
+                {
+                    "type": "color",
+                    "id": "bg_color",
+                    "label": "Background color",
+                    "default": "#f0f0f0"
+                },
+                {
+                    "type": "select",
+                    "id": "text_color",
+                    "label": "Text color",
+                    "default": "default",
+                    "options": [
+                        {
+                            "value": "default",
+                            "label": "Default"
+                        },
+                        {
+                            "value": "default-light",
+                            "label": "Default light"
+                        },
+                        {
+                            "value": "dark",
+                            "label": "Dark"
+                        },
+                        {
+                            "value": "white",
+                            "label": "Light"
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Heading",
+                    "default": "Text block"
+                },
+                {
+                    "type": "richtext",
+                    "id": "text",
+                    "label": "Text",
+                    "default": "<p>Use these text blocks to promote seasonal sales, store events or to tell your brand's story.</p>"
+                },
+                {
+                    "type": "text",
+                    "id": "link_text",
+                    "label": "Button label",
+                    "default": "Learn more"
+                },
+                {
+                    "type": "url",
+                    "id": "link",
+                    "label": "Button link"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Image grid with text",
+            "category": "Image",
+            "blocks": [
+                {
+                    "type": "image"
+                },
+                {
+                    "type": "image"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

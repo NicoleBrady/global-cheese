@@ -1,0 +1,34 @@
+<section class="section section--account account account--activate">
+    <div class="container container--tiny">
+
+        <div class="section__title section__title--center section__title--desc">
+            <h1 class="section__title-text h2">{{ 'customer.activate_account.title' | t }}</h1>
+            <p class="section__title-desc">{{ 'customer.activate_account.subtext' | t }}</p>
+        </div>
+
+        <div class="account__form">
+            {% form 'activate_customer_password' %}
+
+                {{ form.errors | default_errors }}
+
+                <label for="CustomerPassword" class="hidden-label">{{ 'customer.activate_account.password' | t }}</label>
+                <input type="password" value="" name="customer[password]" id="CustomerPassword">
+
+                <label for="CustomerPasswordConfirmation" class="hidden-label">{{ 'customer.activate_account.password_confirm' | t }}</label>
+                <input type="password" value="" name="customer[password_confirmation]" id="CustomerPasswordConfirmation">
+
+                <div class="account__form-buttons">    
+                    <div class="o-layout o-layout--tiny">
+                        <div class="o-layout__item u-1/1 u-1/2@tab">
+                            <input type="submit" class="c-btn c-btn--primary c-btn--full" value="{{ 'customer.activate_account.submit' | t }}">
+                        </div>
+                        <div class="o-layout__item u-1/1 u-1/2@tab">
+                            <input type="submit" class="c-btn c-btn--light" name="decline" value="{{ 'customer.activate_account.cancel' | t }}">
+                        </div>
+                    </div>
+                </div>
+
+            {% endform %}
+        </div>
+    </div>
+</section>

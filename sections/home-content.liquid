@@ -1,0 +1,157 @@
+{% if section.blocks.size > 0 %}
+<section class="section section--{{ section.id }} section--full-bg" data-section-id="{{ section.id }}" data-section-type="home-promo">
+    <div class="home-promo">
+
+        {% for block in section.blocks %}
+        <div class="home-promo__item {% if block.settings.bg_color == '#ffffff' %} block--no-bg{% else %} block--has-bg{% endif %}" {{ block.shopify_attributes }}>
+            <div class="home-promo__item-bg" style="background-color: {{ block.settings.bg_color }}"></div>
+            <div class="container container--mob-0">
+
+                <div class="home-promo__content">
+                    <div class="o-layout u-flex u-flex--middle">
+
+                        <div class="o-layout__item u-1/1 u-1/2@desk">
+                            <div class="home-promo__media">
+                                {% unless block.settings.image == blank %}
+                                    {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+                                    <div class="o-ratio o-ratio--custom" style="padding-bottom:{{ 1 | divided_by: block.settings.image.aspect_ratio | times: 100 }}%;">
+                                        <div class="o-ratio__content img-lazyload-cover" style="background: url({{ block.settings.image | img_url: '1x1' }})">
+                                            <img
+                                                class="home-promo__media-img"
+                                                src="{{ block.settings.image | img_url: '300x' }}"
+                                                srcset="{% render 'bgset', image: block.settings.image %}"
+                                                width="300"
+                                                height="{{ 300 | divided_by: block.settings.image.aspect_ratio | round }}"
+                                                alt="{{ block.settings.image.alt }}"
+                                                loading="lazy"
+                                            />
+                                        </div>
+                                    </div>
+
+                                {% else %}
+                                    {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+                                    {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                                {% endunless %}
+                                {% unless block.settings.video == blank %}
+
+                                    {% capture video_url %}{% if block.settings.video.type == 'youtube' %}//www.youtube.com/watch?v={{ block.settings.video.id }}{% elsif block.settings.video.type == 'vimeo' %}//vimeo.com/{{ block.settings.video.id }}{% endif %}{% endcapture %}
+
+                                    <div class="home-promo__media-video">
+                                        <a href="{{ video_url }}" class="home-promo__media-video__btn c-btn c-btn--primary c-btn--play icon-fallback js-no-transition js-pop-video">
+                                            <i class="icon icon--play" aria-hidden="true"></i>
+                                            <span class="icon-fallback__text">{{ 'sections.video.play_label' | t }}</span>
+                                        </a>
+                                    </div>
+                                {% endunless %}
+                            </div>
+                        </div>
+                        <div class="o-layout__item u-1/1 u-1/2@desk">
+                            <div class="home-promo__box{% if block.settings.link != blank %} home-promo__box--btn{% endif %}">
+                                {% unless block.settings.title == blank %}
+                                    <div class="home-promo__title section__title">
+                                        <h3 class="section__title-text">{{ block.settings.title | escape }}</h3>
+                                    </div>
+                                {% endunless %}
+                                {% unless block.settings.desc == blank %}
+                                    <div class="home-promo__text rte">{{ block.settings.desc }}</div>
+                                {% endunless %}
+                                {% unless block.settings.link == blank %}
+                                    <a href="{{ block.settings.link }}" class="home-promo__btn c-btn c-btn--primary c-btn--arrow">{{ block.settings.link_title | escape }}</a>
+                                {% endunless %}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</section>
+{% endif %}
+
+{% if section.blocks.size == 0 %}
+    <div class="placeholder-noblocks">
+        {{ 'homepage.onboarding.no_content' | t }}
+    </div>
+{% endif %}
+
+{% schema %}
+{
+    "name": "Image with text",
+    "class": "js-section__home-promo",
+    "max_blocks": 5,
+    "blocks": [
+        {
+            "type": "image",
+            "name": "Image block",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image",
+                    "info": "800px width recommended."
+                },
+                {
+                    "type": "color",
+                    "id": "bg_color",
+                    "label": "Background color",
+                    "default": "#f0f0f0"
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Heading",
+                    "default": "Image with text"
+                },
+                {
+                    "type": "richtext",
+                    "id": "desc",
+                    "label": "Text",
+                    "default": "<p>Use these blocks to share your brand's story. You can focus on a particular collection, a product detail, or even embed a video.</p>"
+                },
+                {
+                    "type": "video_url",
+                    "id": "video",
+                    "label": "YouTube or Vimeo link",
+                    "accept": [
+                        "youtube",
+                        "vimeo"
+                    ]
+                },
+                {
+                    "type": "text",
+                    "id": "link_title",
+                    "label": "Button label",
+                    "default": "More info"
+                },
+                {
+                    "type": "url",
+                    "id": "link",
+                    "label": "Button link"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Image with text",
+            "category": "Image",
+            "blocks": [
+                {
+                    "type": "image"
+                },
+                {
+                    "type": "image",
+                    "settings": {
+                        "bg_color": "rgba(0,0,0,0)"
+                    }
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

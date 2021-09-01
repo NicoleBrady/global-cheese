@@ -1,0 +1,418 @@
+<style>
+.mobile-draw,
+.mobile-draw .mfp-close {
+    background-color: {{ settings.color_drawer_bg }};
+}
+.mobile-draw__localize {
+    background-color: {{ settings.color_drawer_bg | color_darken: 5 }};
+}
+</style>
+
+<div class="mobile-draw mobile-draw--{{ settings.color_drawer_style }} js-menu-draw mfp-hide">
+
+    {%- assign locale_selector = false -%}
+    {%- assign currency_selector = false -%}
+    {%- assign show_selectors = false -%}
+    {%- assign both_selectors = false -%}
+
+    {%- if section.settings.show_locale_selector and shop.published_locales.size > 1 -%}
+        {%- assign locale_selector = true -%}
+    {%- endif -%}
+
+    {%- if section.settings.show_currency_selector and shop.enabled_currencies.size > 1 -%}
+        {%- assign currency_selector = true -%}
+    {%- endif -%}
+
+    {%- if currency_selector or locale_selector -%}
+        {%- assign show_selectors = true -%}
+    {%- endif -%}
+
+    {%- if currency_selector and locale_selector -%}
+        {%- assign both_selectors = true -%}
+    {%- endif -%}
+
+    {%- if show_selectors -%}
+        <div class="mobile-draw__localize localize localize--always-center mobile-localize{% if both_selectors %} localize--double{% else %} localize--single{% endif %}">
+            {%- form 'localization', class: 'localize__form' -%}
+
+                {%- if locale_selector -%}
+                    <div class="localize__item__wrapper js-localize-wrapper">
+
+                        <h2 class="u-hidden-visually" id="lang-heading-mobile">
+                          {{ 'general.language.dropdown_label' | t }}
+                        </h2>
+
+                        <button type="button" class="localize__toggle js-localize-trigger" aria-expanded="false" aria-controls="lang-list-mobile" aria-describedby="lang-heading-mobile">{{ form.current_locale.endonym_name }}<i class="icon icon--down"></i></button>
+
+                        <ul id="lang-list-mobile" class="localize__items localize__items--lang js-localize-box o-list-bare">
+                            {% for locale in form.available_locales %}
+                                <li class="localize__item">
+                                    <a class="localize__item__link js-localize-item{% if locale.iso_code == form.current_locale.iso_code %} selected{% endif %}" href="#" {% if locale.iso_code == form.current_locale.iso_code %}aria-current="true"{% endif %} data-value="{{ locale.iso_code }}">{{ locale.endonym_name }}</a>
+                                </li>
+                            {%- endfor -%}
+                        </ul>
+
+                        <input type="hidden" name="locale_code" id="LocaleSelector" value="{{ form.current_locale.iso_code }}" data-disclosure-input/>
+                    </div>
+                {%- endif -%}
+
+                {%- if currency_selector -%}
+                    <div class="localize__item__wrapper js-localize-wrapper">
+                        <h2 class="u-hidden-visually" id="currency-heading-mobile-drawer">
+                          {{ 'general.currency.dropdown_label' | t }}
+                        </h2>
+
+                        <button type="button" class="localize__toggle js-localize-trigger" aria-expanded="false" aria-controls="currency-list-mobile" aria-describedby="currency-heading-mobile-drawer">{{ form.current_currency.iso_code }} {%- if form.current_currency.symbol -%}{{ form.current_currency.symbol }}{%- endif -%}<i class="icon icon--down"></i></button>
+
+                        <ul id="currency-list-mobile" class="localize__items localize__items--currency js-localize-box o-list-bare">
+                            {% for currency in form.available_currencies %}
+                                <li class="localize__item">
+                                    <a class="localize__item__link js-localize-item{% if currency == cart.currency %} selected{% endif %}" href="#" {% if currency.iso_code == form.current_currency.iso_code %}aria-current="true"{% endif %} data-value="{{ currency.iso_code }}">{{ currency.iso_code }} {%- if currency.symbol -%}{{ currency.symbol }}{%- endif -%}</a>
+                                </li>
+                            {%- endfor -%}
+                        </ul>
+
+                        <input type="hidden" name="currency_code" id="CurrencySelector" value="{{ form.current_currency.iso_code }}" data-disclosure-input/>
+                    </div>
+                {%- endif -%}
+
+            {%- endform -%}
+        </div>
+    {%- endif -%}
+
+    <div class="mobile-draw__wrapper">
+
+        <nav class="mobile-draw__nav mobile-nav">
+            <ul class="mobile-nav__items o-list-bare">
+
+                {% for link in linklists[section.settings.main_linklist].links %}
+                    {% capture parentIndex %}{{ forloop.index }}{% endcapture %}
+                    <li class="mobile-nav__item{% if link.active %} mobile-nav__item--active{% endif %}{% if link.links != blank %} mobile-nav__item--sub{% endif %}"{% if link.links != blank %} aria-has-popup="true" aria-expanded="false" aria-controls="mobile-sub-{{ forloop.index }}"{% endif %}>
+                        <a href="{% if link.links != blank %}#mobile-sub-{{ forloop.index }}{% else %}{{ link.url }}{% endif %}" class="mobile-nav__link{% if link.links != blank %} mobile-nav__link--sub js-toggle-trigger{% endif %}">{{ link.title }}</a>
+
+                        {% if link.links != blank %}
+                            <div class="mobile-nav__sub js-toggle-target" id="mobile-sub-{{ forloop.index }}">
+                                <ul class="mobile-nav__sub__items o-list-bare">
+
+                                    {% for sub_link in link.links %}
+                                        <li class="mobile-nav__sub__item{% if sub_link.active %} mobile-nav__sub__item--active{% endif %}{% if sub_link.links != blank %} mobile-nav__sub__item--sub{% endif %}"{% if link.links != blank %} aria-has-popup="true" aria-expanded="false" aria-controls="mobile-sub-t-{{ parentIndex }}-{{ forloop.index }}"{% endif %}>
+                                            <a href="{% if sub_link.links != blank %}#mobile-sub-t-{{ parentIndex }}-{{ forloop.index }}{% else %}{{ sub_link.url }}{% endif %}" class="mobile-nav__sub__link{% if sub_link.links != blank %} mobile-nav__sub__link--t js-toggle-trigger{% endif %}">{{ sub_link.title | escape }}</a>
+
+                                            {% if sub_link.links != blank %}
+                                                <div class="mobile-nav__sub-t js-toggle-target" id="mobile-sub-t-{{ parentIndex }}-{{ forloop.index }}">
+                                                    <ul class="mobile-nav__sub-t__items o-list-bare">
+
+                                                        {% for sub_sub_link in sub_link.links %}
+                                                            <li class="mobile-nav__sub-t__item{% if sub_sub_link.active %} mobile-nav__sub-t__item--active{% endif %}">
+                                                                <a href="{{ sub_sub_link.url }}" class="mobile-nav__sub-t__link">{{ sub_sub_link.title | escape }}</a>
+                                                            </li>
+                                                        {% endfor %}
+
+                                                    </ul>
+                                                </div>
+                                            {% endif %}
+
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+
+                {% if shop.customer_accounts_enabled %}
+                    {% if customer %}
+                        <li class="mobile-nav__item">
+                            <a href="{{ routes.account_url }}" class="mobile-nav__link">{{ 'layout.customer.account' | t }}</a>
+                        </li>
+                        <li class="mobile-nav__item">
+                            <a href="{{ routes.account_logout_url }}" class="mobile-nav__link">{{ 'layout.customer.log_out' | t }}</a>
+                        </li>
+                    {% else %}
+                        <li class="mobile-nav__item">
+                            <a href="{{ routes.account_login_url }}" class="mobile-nav__link">{{ 'layout.customer.log_in' | t }}</a>
+                        </li>
+                    {% endif %}
+                {% endif %}
+            </ul>
+        </nav>
+
+        {% if settings.search_enable %}
+            <div class="mobile-draw__search mobile-search">
+                <form action="{{ routes.search_url }}" method="get" class="mobile-search__form" role="search">
+                    <input type="hidden" name="type" value="{{ settings.search_limit }}">
+                    <input type="search" name="q" class="mobile-search__input" value="{{ search.terms | escape }}" aria-label="{{ 'general.search.placeholder' | t }}" placeholder="{{ 'general.search.placeholder' | t }}">
+                    <button type="submit" class="mobile-search__submit">
+                        <i class="icon icon--search" aria-hidden="true"></i>
+                        <span class="icon-fallback__text">{{ 'general.search.submit' | t }}</span>
+                    </button>
+                </form>
+            </div>
+        {% endif %}
+
+        <div class="mobile-draw__footer mobile-footer">
+            {% if section.settings.show_contact_number or section.settings.show_contact_email %}
+                <div class="mobile-footer__contact">
+                    {% unless section.settings.contact_title == blank %}
+                        <h4 class="mobile-footer__title">{{ section.settings.contact_title | escape }}</h4>
+                    {% endunless %}
+                    {% if section.settings.show_contact_number %}
+                        <p class="mobile-footer__text"><a href="tel:{{ shop.address.phone }}" class="mobile-footer__text-link">{{ shop.address.phone }}</a></p>
+                    {% endif %}
+                    {% if section.settings.show_contact_email %}
+                        <p class="mobile-footer__text"><a href="mailto:{{ shop.email }}" class="mobile-footer__text-link">{{ shop.email }}</a></p>
+                    {% endif %}
+                </div>
+            {% endif %}
+            {% if section.settings.show_social %}
+                <ul class="mobile-footer__social-items o-list-bare">
+                    {% unless settings.social_facebook_link == blank %}
+                        <li class="mobile-footer__social-item">
+                            <a href="{{ settings.social_facebook_link }}" class="mobile-footer__social-link icon-fallback" target="_blank" rel="noopener">
+                                <i class="icon icon--facebook" aria-hidden="true"></i>
+                                <span class="icon-fallback__text">Facebook</span>
+                            </a>
+                        </li>
+                    {% endunless %}
+                    {% unless settings.social_twitter_link == blank %}
+                        <li class="mobile-footer__social-item">
+                            <a href="{{ settings.social_twitter_link }}" class="mobile-footer__social-link icon-fallback" target="_blank" rel="noopener">
+                                <i class="icon icon--twitter" aria-hidden="true"></i>
+                                <span class="icon-fallback__text">Twitter</span>
+                            </a>
+                        </li>
+                    {% endunless %}
+                    {% unless settings.social_pinterest_link == blank %}
+                        <li class="mobile-footer__social-item">
+                            <a href="{{ settings.social_pinterest_link }}" class="mobile-footer__social-link icon-fallback" target="_blank" rel="noopener">
+                                <i class="icon icon--pinterest" aria-hidden="true"></i>
+                                <span class="icon-fallback__text">Pinterest</span>
+                            </a>
+                        </li>
+                    {% endunless %}
+                    {% unless settings.social_instagram_link == blank %}
+                        <li class="mobile-footer__social-item">
+                            <a href="{{ settings.social_instagram_link }}" class="mobile-footer__social-link icon-fallback" target="_blank" rel="noopener">
+                                <i class="icon icon--instagram" aria-hidden="true"></i>
+                                <span class="icon-fallback__text">Instagram</span>
+                            </a>
+                        </li>
+                    {% endunless %}
+                    {% unless settings.social_tiktok_link == blank %}
+                        <li class="mobile-footer__social-item">
+                            <a href="{{ settings.social_tiktok_link }}" class="mobile-footer__social-link icon-fallback" target="_blank" rel="noopener">
+                                <i class="icon icon--tiktok" aria-hidden="true"></i>
+                                <span class="icon-fallback__text">TikTok</span>
+                            </a>
+                        </li>
+                    {% endunless %}
+                    {% unless settings.social_tumblr_link == blank %}
+                        <li class="mobile-footer__social-item">
+                            <a href="{{ settings.social_tumblr_link }}" class="mobile-footer__social-link icon-fallback" target="_blank" rel="noopener">
+                                <i class="icon icon--tumblr" aria-hidden="true"></i>
+                                <span class="icon-fallback__text">Tumblr</span>
+                            </a>
+                        </li>
+                    {% endunless %}
+                    {% unless settings.social_snapchat_link == blank %}
+                        <li class="mobile-footer__social-item">
+                            <a href="{{ settings.social_snapchat_link }}" class="mobile-footer__social-link icon-fallback" target="_blank" rel="noopener">
+                                <i class="icon icon--snapchat" aria-hidden="true"></i>
+                                <span class="icon-fallback__text">Snapchat</span>
+                            </a>
+                        </li>
+                    {% endunless %}
+                    {% unless settings.social_youtube_link == blank %}
+                        <li class="mobile-footer__social-item">
+                            <a href="{{ settings.social_youtube_link }}" class="mobile-footer__social-link icon-fallback" target="_blank" rel="noopener">
+                                <i class="icon icon--youtube" aria-hidden="true"></i>
+                                <span class="icon-fallback__text">YouTube</span>
+                            </a>
+                        </li>
+                    {% endunless %}
+                    {% unless settings.social_vimeo_link == blank %}
+                        <li class="mobile-footer__social-item">
+                            <a href="{{ settings.social_vimeo_link }}" class="mobile-footer__social-link icon-fallback" target="_blank" rel="noopener">
+                                <i class="icon icon--vimeo" aria-hidden="true"></i>
+                                <span class="icon-fallback__text">Vimeo</span>
+                            </a>
+                        </li>
+                    {% endunless %}
+                    {% unless settings.social_fancy_link == blank %}
+                        <li class="mobile-footer__social-item">
+                            <a href="{{ settings.social_fancy_link }}" class="mobile-footer__social-link icon-fallback" target="_blank" rel="noopener">
+                                <i class="icon icon--fancy" aria-hidden="true"></i>
+                                <span class="icon-fallback__text">Fancy</span>
+                            </a>
+                        </li>
+                    {% endunless %}
+                    {% unless settings.social_untappd_link == blank %}
+                        <li class="mobile-footer__social-item">
+                            <a href="{{ settings.social_untappd_link }}" class="mobile-footer__social-link icon-fallback" target="_blank" rel="noopener">
+                                <i class="icon icon--untappd" aria-hidden="true"></i>
+                                <span class="icon-fallback__text">Untappd</span>
+                            </a>
+                        </li>
+                    {% endunless %}
+                    {% unless settings.social_linkedin_link == blank %}
+                        <li class="mobile-footer__social-item">
+                            <a href="{{ settings.social_linkedin_link }}" class="mobile-footer__social-link icon-fallback" target="_blank" rel="noopener">
+                                <i class="icon icon--linkedin" aria-hidden="true"></i>
+                                <span class="icon-fallback__text">LinkedIn</span>
+                            </a>
+                        </li>
+                    {% endunless %}
+                </ul>
+            {% endif %}
+        </div>
+
+        {% if section.settings.cta_image or section.settings.cta_title != blank or section.settings.cta_text != blank or section.settings.cta_link != blank %}
+            <div class="mobile-draw__cta mobile-cta">
+                {% unless section.settings.cta_image_link == blank %}
+                <a href="{{ section.settings.cta_image_link }}" class="mobile-cta__image-link">
+                {% endunless %}
+                    {% if section.settings.cta_image %}
+                        <img
+                            class="mobile-cta__image"
+                            src="{{ section.settings.cta_image | img_url: '300x' }}"
+                            srcset="
+                                {{ section.settings.cta_image | img_url: '180x' }} 180w {{ 180 | divided_by: section.settings.cta_image.aspect_ratio | round }}h,
+                                {{ section.settings.cta_image | img_url: '360x' }} 360w {{ 360 | divided_by: section.settings.cta_image.aspect_ratio | round }}h,
+                                {{ section.settings.cta_image | img_url: '540x' }} 540w  {{ 540 | divided_by: section.settings.cta_image.aspect_ratio | round }}h,
+                                {{ section.settings.cta_image | img_url: '720x' }} 720w  {{ 720 | divided_by: section.settings.cta_image.aspect_ratio | round }}h,
+                                {{ section.settings.cta_image | img_url: '900x' }} 900w  {{ 900 | divided_by: section.settings.cta_image.aspect_ratio | round }}h
+                            "
+                            width="300"
+                            height=" {{ 300 | divided_by: section.settings.cta_image.aspect_ratio | round }}"
+                            alt="{{ section.settings.cta_image.alt | escape }}"
+                            loading="lazy"
+                        />
+                    {% endif %}
+                {% unless section.settings.cta_image_link == blank %}
+                </a>
+                {% endunless %}
+                {% unless section.settings.cta_title == blank %}
+                    <h4 class="mobile-cta__title h5">{{ section.settings.cta_title  | escape }}</h4>
+                {% endunless %}
+                {% unless section.settings.cta_text == blank %}
+                    <div class="mobile-cta__text rte">
+                        {{ section.settings.cta_text }}
+                    </div>
+                {% endunless %}
+                {% unless section.settings.cta_link == blank %}
+                    <div class="mobile-cta__link">
+                        <a href="{{ section.settings.cta_link }}" class="link link--arrow">{{ section.settings.cta_link_title | escape }}</a>
+                    </div>
+                {% endunless %}
+            </div>
+        {% endif %}
+
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Sidebar menu",
+    "class": "js-section__mobile-draw",
+    "settings": [
+        {
+            "type": "link_list",
+            "id": "main_linklist",
+            "label": "Menu",
+            "default": "main-menu"
+        },
+        {
+            "type": "header",
+            "content": "Contact info",
+            "info": "Edit content in shop settings 'General'."
+        },
+        {
+            "type": "text",
+            "id": "contact_title",
+            "label": "Heading",
+            "default": "Contact"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_contact_number",
+            "label": "Show phone number",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "show_contact_email",
+            "label": "Show email",
+            "default": true
+        },
+        {
+            "type": "header",
+            "content": "Language Selector",
+            "info": "To add a language, go to your [language settings.](/admin/settings/languages)"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_locale_selector",
+            "label": "Show language selector",
+            "default": true
+        },
+        {
+            "type": "header",
+            "content": "Currency Selector",
+            "info": "To add a currency, go to your [currency settings.](/admin/settings/payments)"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_currency_selector",
+            "label": "Show currency selector",
+            "default": true
+        },
+        {
+            "type": "header",
+            "content": "Social links",
+            "info": "Edit content in theme 'Theme settings > Social'."
+        },
+        {
+            "type": "checkbox",
+            "id": "show_social",
+            "label": "Show social links",
+            "default": true
+        },
+        {
+            "type": "header",
+            "content": "Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "cta_image",
+            "label": "Image",
+            "info": "600px width recommended."
+        },
+        {
+            "type": "url",
+            "id": "cta_image_link",
+            "label": "Image link"
+        },
+        {
+            "type": "text",
+            "id": "cta_title",
+            "label": "Heading"
+        },
+        {
+            "type": "richtext",
+            "id": "cta_text",
+            "label": "Text"
+        },
+        {
+            "type": "text",
+            "id": "cta_link_title",
+            "label": "Link label",
+            "default": "Learn more"
+        },
+        {
+            "type": "url",
+            "id": "cta_link",
+            "label": "Link"
+        }
+    ]
+}
+{% endschema %}

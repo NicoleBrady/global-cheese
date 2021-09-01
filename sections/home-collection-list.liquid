@@ -1,0 +1,238 @@
+<style>
+.section--{{ section.id }} .collection-list__overlay:before {
+    {% if section.settings.overlay_strength == 100 %}
+        opacity: 1;
+    {% else %}
+        opacity: .{{ section.settings.overlay_strength }};
+    {% endif %}
+}
+</style>
+
+{% capture bg_class %}{% if section.settings.show_bg %}section--has-bg{% else %}section--no-bg{% endif %}{% endcapture %}
+{% capture margin_class %}{% if section.settings.link == blank and section.settings.show_bg == false %}section--mb-s{% endif %}{% endcapture %}
+
+{% if section.settings.bg_color == "rgba(0,0,0,0)" or section.settings.bg_color == settings.color_bg %}{% assign section_bg = false %}{% else %}{% assign section_bg = true %}{% endif %}
+{% capture margin_class %}{% if section.settings.link == blank and section_bg == false %}section--mb-s{% endif %}{% endcapture %}
+
+{% if section.blocks.size > 0 %}
+{% if section.settings.mobile_layout == 'carousel' %}
+<style>
+/* Loading states */
+@media screen and (max-width: 767px) {
+  .layout-slider--loading .o-layout__item:not(:first-of-type) {
+    display: none;
+  }
+}
+</style>
+<noscript>
+    <style>
+    /* Loading states */
+    @media screen and (max-width: 767px) {
+        .layout-slider--loading .o-layout__item:not(:first-of-type) {
+            display: initial;
+        }
+    }
+    </style>
+</noscript>
+{% endif %}
+<section class="section section--{{ section.id }} {{ margin_class }} {% if section_bg %}section--has-bg{% else %}section--no-bg{% endif %}" data-section-id="{{ section.id }}" data-section-type="home-collection-list">
+    <div class="container{% if section.settings.mobile_layout == 'carousel' %} container--mob-0{% endif %}">
+        {% if section.settings.title != blank %}
+        <div class="section__title section__title--center">
+            <h2 class="section__title-text">{{ section.settings.title | escape }}</h2>
+        </div>
+        {% endif %}
+
+        <div class="section__bg" style="background-color: {{ section.settings.bg_color }}"></div>
+
+        <div class="collection-list collection-list--{{ section.settings.mobile_layout }} js-home-collection-list" data-section-id="{{ section.id }}">
+            {%- assign sizes = '100vw' -%}
+            {% case section.settings.grid %}
+            {% when 2 %}
+                {%- assign grid_item_width = 'u-1/1 u-1/2@tab' -%}
+                {%- assign sizes = '(min-width: 768px) 50vw, 100vw' -%}
+            {% when 3 %}
+                {%- assign grid_item_width = 'u-1/1 u-1/3@tab' -%}
+                {%- assign sizes = '(min-width: 768px) 33vw, 100vw' -%}
+            {% when 4 %}
+                {%- assign grid_item_width = 'u-1/1 u-1/2@tab u-1/4@desk' -%}
+                {%- assign sizes = '(min-width: 768px) 50vw, (min-width: 981px) 25vw, 100vw' -%}
+            {% endcase %}
+
+            <div class="collection-list__items">
+                <div class="o-layout o-layout--center{% if section.settings.mobile_layout == 'carousel' %} layout-slider js-layout-slider js-layout-slider-{{ section.id }} layout-slider--loading{% endif %}">
+                    {% for block in section.blocks limit: section.blocks.size %}
+                        <div class="o-layout__item {{ grid_item_width }}" {{ block.shopify_attributes }}>
+                            {%- assign collection = collections[block.settings.collection] -%}
+
+                            {% if collection.empty? %}
+                                {% assign collection_image_url = '' %}
+                            {% else %}
+                                {% if block.settings.image %}
+                                    {%- assign collection_image_url = block.settings.image -%}
+                                {% elsif collection.image %}
+                                    {%- assign collection_image_url = collection.image -%}
+                                {% elsif collection.products.first %}
+                                    {%- assign collection_image_url = collection.products.first.featured_image -%}
+                                {% endif %}
+                            {% endif %}
+
+                            {% unless collection.empty? %}
+                            <a href="{{ collection.url }}" class="collection-list__link">
+                            {% endunless %}
+                                <div class="collection-list__item "{% unless collection.empty? %} style="background-image: url('{{ collection_image_url | img_url: '1x1' }}')"{% endunless %}>
+                                    {% if collection_image_url != '' %}
+                                        <img
+                                            class="collection-list__bg"
+                                            src="{{ collection_image_url | img_url: '300x' }}"
+                                            srcset="{% render 'bgset', image: collection_image_url %}"
+                                            sizes="{{ sizes }}"
+                                            width="300"
+                                            height="{{ 300 | divided_by: collection_image_url.aspect_ratio | round }}"
+                                            alt="{{ collection_image_url.alt }}"
+                                            loading="lazy"
+                                        />
+                                    {% else %}
+                                        {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+                                        {{ 'collection-' | append: current | placeholder_svg_tag: 'collection-list__bg placeholder-svg' }}
+                                    {% endif %}
+                                    <div class="collection-list__overlay u-bg-cover u-bg-overlay"></div>
+                                    <div class="collection-list__title u-flex u-flex--middle u-flex--center{% if settings.type_header_underline %} collection-list__title--border{% endif %}">
+                                        <h3 class="collection-list__title-text h2">
+                                            {%- if collection.empty? -%}
+                                                {{ 'homepage.onboarding.collection_title' | t }}
+                                            {%- else -%}
+                                                {{ collection.title }}
+                                            {%- endif -%}
+                                        </h3>
+                                    </div>
+                                </div>
+                            {% unless collection.empty? %}
+                            </a>
+                            {% endunless %}
+
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+        {% unless section.settings.link == blank %}
+            <div class="section__link section__link--center">
+                <a href="{{ section.settings.link }}" class="link link--arrow section__link-link">{{ section.settings.link_title | escape }}</a>
+            </div>
+        {% endunless %}
+    </div>
+</section>
+{% endif %}
+
+{% if section.blocks.size == 0 %}
+    <div class="placeholder-noblocks">
+        {{ 'homepage.onboarding.no_content' | t }}
+    </div>
+{% endif %}
+
+{% schema %}
+{
+    "name": "Collection list",
+    "class": "js-section__home-collection-list",
+    "max_blocks": 9,
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Collection list"
+        },
+        {
+            "type": "range",
+            "id": "grid",
+            "label": "Collections per row",
+            "min": 2,
+            "max": 4,
+            "step": 1,
+            "default": 2
+        },
+        {
+            "type": "select",
+            "id": "mobile_layout",
+            "label": "Mobile layout",
+            "default": "carousel",
+            "options": [
+                {
+                    "value": "carousel",
+                    "label": "Carousel"
+                },
+                {
+                    "value": "grid",
+                    "label": "Grid"
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "id": "link_title",
+            "label": "Link label",
+            "default": "View all"
+        },
+        {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+        },
+        {
+            "type": "range",
+            "id": "overlay_strength",
+            "label": "Overlay strength",
+            "unit": "%",
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "default": 30
+        },
+        {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Background color",
+            "default": "rgba(0,0,0,0)"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "featured_collection",
+            "name": "Collection",
+            "settings": [
+                {
+                    "label": "Collection",
+                    "id": "collection",
+                    "type": "collection"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Replacement image",
+                    "info": "800px width recommended."
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Collection list",
+            "category": "Collection",
+            "settings": {
+                "grid": 2
+            },
+            "blocks": [
+                {
+                    "type": "featured_collection"
+                },
+                {
+                    "type": "featured_collection"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,290 @@
+<section class="section section--page page section--{{ section.id }} section--no-bg" data-section-id="{{ section.id }}" data-section-type="page-contact">
+
+    <div class="container container--tiny">
+        <div class="section__title section__title--center">
+            <h1 class="section__title-text h2">{{ page.title }}</h1>
+        </div>
+
+        {% if page.content.size > 0 %}
+            <div class="page__content rte">
+                {{ page.content }}
+            </div>
+        {% endif %}
+    </div>
+
+    {% if section.settings.show_map %}
+        {% if section.blocks.size > 0 %}
+        <div class="home-map js-map u-mt u-mb+ js-map--{{ section.id }}">
+
+            <div class="container">
+
+                <div class="home-map__content">
+                    <div class="o-layout u-flex u-flex--middle">
+
+                        <div class="o-layout__item u-1/1 u-1/2@tab">
+                            <div class="home-map__items">
+                                {% for block in section.blocks %}
+                                <a href="#map-info-{{ section.id }}-{{ forloop.index }}" class="home-map__title js-map-trigger">
+                                    <h2 class="home-map__title-text h3">{{ block.settings.title | escape }}</h2>
+                                    {% if section.blocks.size > 1 %}
+                                        <span class="home-map__title-icon icon-fallback">
+                                            <i class="icon icon--plus" aria-hidden="true"></i>
+                                            <span class="icon-fallback__text">{{ 'sections.map.open' | t }}</span>
+                                        </span>
+                                    {% endif %}
+                                </a>
+                                <div id="map-info-{{ section.id }}-{{ forloop.index }}" class="home-map__item js-map-info" {{ block.shopify_attributes }}>
+                                    <div class="home-map__item-wrap">
+                                        <div class="o-layout">
+                                            <div class="o-layout__item u-1/1 u-1/2@desk">
+                                                <div class="home-map__text rte">
+                                                    {{ block.settings.desc }}
+                                                </div>
+                                            </div>
+                                            <div class="o-layout__item u-1/1 u-1/2@desk">
+                                                <div class="home-map__sub-text u-small rte">
+                                                    {{ block.settings.sub_desc }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="u-hidden@tab-up" data-set="map-replace-{{ section.id }}-{{ forloop.index }}"></div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="o-layout__item u-1/1 u-1/2@tab">
+                            <div class="home-map__media js-lazy-map">
+                                {% for block in section.blocks %}
+                                <div class="home-map__media-map js-map-media{% if forloop.index == 1 %} home-map__media-map--first js-active{% endif %}" data-map-id="#map-info-{{ section.id }}-{{ forloop.index }}">
+                                    <div class="u-hidden@tab-down" data-set="map-replace-{{ section.id }}-{{ forloop.index }}">
+                                        <div class="home-map__media-replace js-map-replace">
+                                            {% if section.settings.google_api_key == blank %}
+                                                {% if block.settings.map_image %}
+                                                    <div class="home-map__media-canvas home-map__media-canvas--img">
+                                                        <div class="home-map__media--cover u-bg-contain" style="background-image: url('{{ block.settings.map_image | img_url: '1x1' }}')"></div>
+                                                        <img
+                                                            class="home-map__media__bg"
+                                                            src="{{ block.settings.map_image | img_url: '720x' }}"
+                                                            srcset="{% render 'bgset', image: block.settings.map_image %}"
+                                                            sizes="(min-width: 768px) 50vw, 100vw"
+                                                            width="720"
+                                                            height="{{ 720 | divided_by: block.settings.map_image.aspect_ratio | round }}"
+                                                            alt="{{ block.settings.map_image.alt }}"
+                                                            loading="lazy"
+                                                        />
+                                                    </div>
+                                                {% else %}
+                                                    <div class="home-map__media-canvas home-map__media-canvas--placeholder">
+                                                        <div class="u-bg-cover">
+                                                            {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+                                                            {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                                                        </div>
+                                                    </div>
+                                                {% endif %}
+                                            {% else %}
+                                                <div id="map-{{ section.id }}-{{ forloop.index }}"
+                                                class="js-map-ids home-map__media-canvas"
+                                                data-map-id="map-{{ section.id }}-{{ forloop.index }}"
+                                                data-map-section="{{ section.id }}"
+                                                data-map-address="{{ block.settings.address | escape }}"
+                                                data-map-style="{{ section.settings.map_style }}"
+                                                data-map-pin="{% if section.settings.map_style == 'dark' or section.settings.map_style == 'minimal_dark' %}mapPinLight{% else %}mapPinDark{% endif %}"></div>
+                                            {% endif %}
+                                            {% if section.settings.show_directions_btn %}
+                                                <a href="https://maps.google.com?daddr={{ block.settings.address | escape }}" class="c-btn c-btn--primary c-btn--arrow home-map__media-btn" target="_blank">{{ 'sections.map.directions' | t }}</a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% else %}
+            <div class="placeholder-noblocks">
+                {{ 'homepage.onboarding.no_content' | t }}
+            </div>
+        {% endif %}
+    {% endif %}
+
+    {% if section.settings.show_form %}
+        <div class="page__contact-form">
+            <div class="container container--tiny container--mob-0">
+
+                {% unless section.settings.form_title == blank %}
+                <div class="section__title section__title--center">
+                    <h2 class="section__title-text h3">{{ section.settings.form_title }}</h2>
+                </div>
+                {% endunless %}
+
+                {% form 'contact' %}
+                    {% if form.posted_successfully? %}
+                        <h4 class="page__contact-form__note form-success">{{ 'contact.form.post_success' | t }}</h4>
+                    {% endif %}
+
+                    {{ form.errors | default_errors }}
+
+                    <div class="o-layout">
+                        <div class="o-layout__item u-1/1 u-1/2@tab">
+                            <label for="ContactFormName">{{ 'contact.form.name' | t }}</label>
+                            <input type="text" id="ContactFormName" name="contact[name]" value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+                        </div>
+                        <div class="o-layout__item u-1/1 u-1/2@tab">
+                            <label for="ContactFormEmail" class="{% if form.errors contains 'email' %}label--error{% endif %}">{{ 'contact.form.email' | t }}</label>
+                            <input type="email" id="ContactFormEmail" name="contact[email]" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" class="{% if form.errors contains 'email' %}input--error{% endif %}">
+                        </div>
+                    </div>
+
+                    <label for="ContactFormPhone">{{ 'contact.form.phone' | t }}</label>
+                    <input type="tel" id="ContactFormPhone" name="contact[phone]" pattern="[0-9\-]*" value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+
+                    <label for="ContactFormMessage">{{ 'contact.form.message' | t }}</label>
+                    <textarea rows="10" id="ContactFormMessage" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+
+                    <input type="submit" class="c-btn c-btn--primary c-btn--center c-btn--full u-mt u-mb-" value="{{ 'contact.form.send' | t }}">
+                {% endform %}
+            </div>
+        </div>
+    {% endif %}
+
+</section>
+
+{% unless section.settings.google_api_key == blank %}
+<script type="text/javascript">
+theme.map = {
+    key: {{ section.settings.google_api_key | json }}
+};
+</script>
+{% endunless %}
+
+{% schema %}
+{
+    "name": "Page contact",
+    "class": "js-section__page-contact",
+    "max_blocks": 3,
+    "settings": [
+        {
+            "type": "header",
+            "content": "Contact form"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_form",
+            "label": "Enable contact form",
+            "default": true
+        },
+        {
+            "id": "form_title",
+            "type": "text",
+            "label": "Heading",
+            "default": "Send us an email"
+        },
+        {
+            "type": "header",
+            "content": "Map"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_map",
+            "label": "Enable map",
+            "default": false
+        },
+        {
+            "type": "checkbox",
+            "id": "show_directions_btn",
+            "label": "Show directions button",
+            "default": false
+        },
+        {
+            "type": "header",
+            "content": "Google maps"
+        },
+        {
+            "type": "text",
+            "id": "google_api_key",
+            "label": "API key",
+            "info": "You’ll need to register a [Google Maps API Key](https://help.shopify.com/en/manual/using-themes/change-the-layout/theme-settings/map-section-api-key) to display Google map."
+        },
+        {
+            "type": "select",
+            "id": "map_style",
+            "label": "Map style",
+            "default": "light",
+            "options": [
+                {
+                    "label": "Default",
+                    "value": "default"
+                },
+                {
+                    "label": "Blue water",
+                    "value": "blue_water"
+                },
+                {
+                    "label": "Clean cut",
+                    "value": "clean_cut"
+                },
+                {
+                    "label": "Dark",
+                    "value": "dark"
+                },
+                {
+                    "label": "Flat",
+                    "value": "flat"
+                },
+                {
+                    "label": "Light",
+                    "value": "light"
+                },
+                {
+                    "label": "Minimal dark",
+                    "value": "minimal_dark"
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "map",
+            "name": "Map",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Heading",
+                    "default": "Map"
+                },
+                {
+                    "type": "richtext",
+                    "id": "desc",
+                    "label": "Address",
+                    "default": "<p>273 Street Lane<br/>San Francisco, CA 94102<br/>(415) 557-4400<br/>store@email.com</p>"
+                },
+                {
+                    "type": "richtext",
+                    "id": "sub_desc",
+                    "label": "Hours",
+                    "default": "<p>Monday - Thursday, 12:00 to 23:00<br/>Friday &amp; Saturday, 12:00 to 00:00<br/>Sunday, Closed</p>"
+                },
+                {
+                    "type": "text",
+                    "id": "address",
+                    "label": "Map address",
+                    "info": "Used for Google map and directions button",
+                    "default": "100 Larkin St, San Francisco, CA 94102, USA"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "map_image",
+                    "label": "Image",
+                    "info": "Displayed if Google map is not in use"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

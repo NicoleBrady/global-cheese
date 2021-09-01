@@ -1,0 +1,232 @@
+<style>
+.section--{{ section.id }} .home-delivery__bg--placeholder:before,
+.section--{{ section.id }} .home-delivery__bg--cover:before,
+.section--{{ section.id }} .home-delivery__bg--overlay:before {
+    {% if section.settings.overlay_strength == 100 %}
+        opacity: 1;
+    {% else %}
+        opacity: .{{ section.settings.overlay_strength }};
+    {% endif %}
+}
+</style>
+<section class="section section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="home-delivery">
+    <div class="container container--mob-0">
+
+    <div class="u-flex-parent">
+        <div class="home-delivery home-delivery--{{ section.settings.section_height }} u-flex u-flex--middle u-flex--center">
+            {% if section.settings.bg_image != blank %}
+                <div class="home-delivery__bg--cover u-bg-contain u-bg-overlay" style="background-image: url('{{ section.settings.bg_image | img_url: '1x1' }}')"></div>
+                <img
+                    class="home-delivery__bg home-delivery__bg--{{ section.id }} home-delivery__bg--{{ section.settings.image_alignment }}"
+                    src="{{ section.settings.bg_image | img_url: '600x' }}"
+                    srcset="{% render 'bgset', image: section.settings.bg_image %}"
+                    width="600"
+                    height="{{ 600 | divided_by: section.settings.bg_image.aspect_ratio | round }}"
+                    alt="{{ section.settings.bg_image.alt }}"
+                    loading="lazy"
+                />
+            {% else %}
+                <div class="home-delivery__bg--placeholder placeholder-svg__wrapper u-bg-overlay u-bg-overlay--light">
+                    {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                </div>
+            {% endif %}
+            <div class="home-delivery__bg--overlay u-bg-overlay"></div>
+            <div class="home-delivery__content">
+                {% capture delivery-service-img %}delivery-logo-{{ section.settings.delivery_service }}.png{% endcapture %}
+                {% if section.settings.logo_override == blank %}
+                    {% unless section.settings.delivery_service == 'none' %}
+                        <div class="home-delivery__media">
+                            <img src="{{ delivery-service-img | asset_url }}" class="home-delivery__media-img" alt="{{ section.settings.delivery_service }} logo">
+                        </div>
+                    {% endunless %}
+                {% else %}
+                    <div class="home-delivery__media">
+                        <img
+                            class="home-delivery__media-img"
+                            src="{{ section.settings.logo_override | img_url: '240x' }}"
+                            srcset="
+                                {{ section.settings.logo_override | img_url: '180x' }} 180w {{ 180 | divided_by: section.settings.logo_override.aspect_ratio | round }}h,
+                                {{ section.settings.logo_override | img_url: '360x' }} 360w {{ 360 | divided_by: section.settings.logo_override.aspect_ratio | round }}h,
+                                {{ section.settings.logo_override | img_url: '540x' }} 540w {{ 540 | divided_by: section.settings.logo_override.aspect_ratio | round }}h,
+                                {{ section.settings.logo_override | img_url: '720x' }} 720w {{ 720 | divided_by: section.settings.logo_override.aspect_ratio | round }}h,
+                                {{ section.settings.logo_override | img_url: '900x' }} 900w {{ 900 | divided_by: section.settings.logo_override.aspect_ratio | round }}h
+                            "
+                            width="240"
+                            height="{{ 240 | divided_by: section.settings.logo_override.aspect_ratio | round }}"
+                            alt="{{ section.settings.logo_override.alt }}"
+                            loading="lazy"
+                        />
+                    </div>
+                {% endif %}
+
+                {% if section.settings.title != blank or section.settings.desc != blank %}
+                    <div class="section__title section__title--center home-delivery__title{% if section.settings.title != blank %} section__title--desc{% endif %}">
+                        {% if section.settings.title != blank %}
+                            <h2 class="section__title-text">{{ section.settings.title | escape }}</h2>
+                        {% endif %}
+                        {% if section.settings.desc != blank %}
+                            <div class="section__title-desc rte">{{ section.settings.desc }}</div>
+                        {% endif %}
+                    </div>
+                {% endif %}
+
+                {% if section.settings.link != blank %}
+                    <a href="{{ section.settings.link }}" class="home-delivery__btn c-btn c-btn--primary c-btn--arrow" target="_blank">{{ section.settings.link_title | escape }}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% schema %}
+{
+    "name": "Delivery",
+    "class": "js-section__home-delivery",
+    "settings": [
+        {
+            "type": "paragraph",
+            "content": "Link to your delivery partner such as UberEATS or Favor. This section is not intended for use with products ordered through your Shopify store. For more information [click here](https://support.safeasmilk.co/article/40-delivery-create-a-link-to-your-delivery-partner)."
+        },
+        {
+            "type": "image_picker",
+            "id": "bg_image",
+            "label": "Background Image",
+            "info": "2200px width recommended."
+        },
+        {
+            "type": "select",
+            "id": "image_alignment",
+            "label": "Image alignment",
+            "default": "center",
+            "options": [
+                {
+                    "value": "top",
+                    "label": "Top"
+                },
+                {
+                    "value": "center",
+                    "label": "Middle"
+                },
+                {
+                    "value": "bottom",
+                    "label": "Bottom"
+                }
+            ]
+        },
+        {
+            "type": "select",
+            "id": "delivery_service",
+            "label": "Delivery logo",
+            "default": "deliveroo",
+            "options": [
+                {
+                    "label": "Caviar",
+                    "value": "caviar"
+                },
+                {
+                    "label": "Deliveroo",
+                    "value": "deliveroo"
+                },
+                {
+                    "label": "Doordash",
+                    "value": "doordash"
+                },
+                {
+                    "label": "EAT24",
+                    "value": "eat24"
+                },
+                {
+                    "label": "Favour",
+                    "value": "favour"
+                },
+                {
+                    "label": "Instacart",
+                    "value": "instacart"
+                },
+                {
+                    "label": "Just Eat",
+                    "value": "just-eat"
+                },
+                {
+                    "label": "Postmates",
+                    "value": "postmates"
+                },
+                {
+                    "label": "Prime Now",
+                    "value": "prime-now"
+                },
+                {
+                    "label": "UberEATS",
+                    "value": "uber-eats"
+                },
+                {
+                    "label": "No logo",
+                    "value": "none"
+                }
+            ]
+        },
+        {
+            "type": "image_picker",
+            "id": "logo_override",
+            "label": "Custom logo"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Heading"
+        },
+        {
+            "type": "richtext",
+            "id": "desc",
+            "label": "Text",
+            "default": "<p>Use a logo and text to link to a delivery partner such as UberEATS or Favor. This section is not intended for products ordered through your Shopify store.</p>"
+        },
+        {
+            "type": "text",
+            "id": "link_title",
+            "label": "Button label",
+            "default": "Learn more"
+        },
+        {
+            "type": "text",
+            "id": "link",
+            "label": "Button link"
+        },
+        {
+            "type": "select",
+            "id": "section_height",
+            "label": "Section height",
+            "default": "medium",
+            "options": [
+                {
+                    "label": "Small",
+                    "value": "small"
+                },
+                {
+                    "label": "Medium",
+                    "value": "medium"
+                },
+                {
+                    "label": "Large",
+                    "value": "large"
+                }
+            ]
+        },
+        {
+            "type": "range",
+            "id": "overlay_strength",
+            "label": "Overlay strength",
+            "unit": "%",
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "default": 30
+        }
+    ],
+    "presets": [
+        {
+            "name": "Delivery",
+            "category": "Store information"
+        }
+    ]
+}
+{% endschema %}

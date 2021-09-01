@@ -1,0 +1,94 @@
+{% comment %}
+  - List of custom color values
+  - Add your own custom colors or CSS overrides by following "swatch_color_" structure and ending with your color name
+  - Example 'swatch_color_black' or another example where color has multiple words 'swatch_color_rosegold'
+{% endcomment %}
+{%- assign swatch_color_black = '#111111' -%}
+{%- assign swatch_color_navy = '#132257' -%}
+{%- assign swatch_color_blue = '#0074D9' -%}
+{%- assign swatch_color_aqua = '#7FDBFF' -%}
+{%- assign swatch_color_teal = '#39CCCC' -%}
+{%- assign swatch_color_olive = '#808000' -%}
+{%- assign swatch_color_green = '#2ECC40' -%}
+{%- assign swatch_color_lime = '#01FF70' -%}
+{%- assign swatch_color_yellow = '#FFDC00' -%}
+{%- assign swatch_color_orange = '#FF851B' -%}
+{%- assign swatch_color_red = '#FF4136' -%}
+{%- assign swatch_color_fuchsia = '#F012BE' -%}
+{%- assign swatch_color_purple = '#B10DC9' -%}
+{%- assign swatch_color_maroon = '#85144B' -%}
+{%- assign swatch_color_silver = '#DDDDDD' -%}
+{%- assign swatch_color_gray = '#AAAAAA' -%}
+{%- assign swatch_color_white = '#FFFFFF' -%}
+{%- assign swatch_color_pink = '#FABEBE' -%}
+{%- assign swatch_color_brown = '#9A6324' -%}
+{%- assign swatch_color_mint = '#AAFFC3' -%}
+{%- assign swatch_color_lavender = '#E6BEFF' -%}
+{%- assign swatch_color_blue = '#1C4AEC' -%}
+{%- assign swatch_color_tan = '#A04E3B' -%}
+{%- assign swatch_color_cognac = '#A15732' -%}
+{%- assign swatch_color_indigo = '#2D2E33' -%}
+{%- assign swatch_color_military = '#766952' -%}
+{%- assign swatch_color_charcoal = '#656168' -%}
+{%- assign swatch_color_teal = '#1B8185' -%}
+{%- assign swatch_color_french = '#676D8D' -%}
+
+{% comment %}All valid CSS color names{% endcomment %}
+{%- assign css_color_names = 'aliceblue, antiquewhite, aqua, aquamarine, azure, beige, bisque, black, blanchedalmond, blue, blueviolet, brown, burlywood, cadetblue, chartreuse, chocolate, coral, cornflowerblue, cornsilk, crimson, cyan, darkblue, darkcyan, darkgoldenrod, darkgray, darkgreen, darkkhaki, darkmagenta, darkolivegreen, darkorange, darkorchid, darkred, darksalmon, darkseagreen, darkslateblue, darkslategray, darkturquoise, darkviolet, deeppink, deepskyblue, dimgray, dodgerblue, firebrick, floralwhite, forestgreen, fuchsia, gainsboro, ghostwhite, gold, goldenrod, gray, green, greenyellow, honeydew, hotpink, indianred, indigo, ivory, khaki, lavender, lavenderblush, lawngreen, lemonchiffon, lightblue, lightcoral, lightcyan, lightgoldenrodyellow, lightgreen, lightgrey, lightpink, lightsalmon, lightseagreen, lightskyblue, lightslategray, lightsteelblue, lightyellow, lime, limegreen, linen, magenta, maroon, mediumauqamarine, mediumblue, mediumorchid, mediumpurple, mediumseagreen, mediumslateblue, mediumspringgreen, mediumturquoise, mediumvioletred, midnightblue, mintcream, mistyrose, moccasin, navajowhite, navy, oldlace, olive, olivedrab, orange, orangered, orchid, palegoldenrod, palegreen, paleturquoise, palevioletred, papayawhip, peachpuff, peru, pink, plum, powderblue, purple, red, rosybrown, royalblue, saddlebrown, salmon, sandybrown, seagreen, seashell, sienna, silver, skyblue, slateblue, slategray, snow, springgreen, steelblue, tan, teal, thistle, tomato, turquoise, violet, wheat, white, whitesmoke, yellow, yellowgreen' | split: ', ' -%}
+
+{%- assign option_name = option.name | downcase -%}
+{%- assign color_swatch_options = "color, colour, souleur, spalva, farbe, cor" | split: ", " -%}
+{%- assign current_option = "option" | append: option.position -%}
+
+<div class="product-single__swatch js-product-single-swatch" data-option-index="{{ option.position }}">
+
+    <h2 class="product-single__swatch__title h6">
+        {{ option.name }}
+        {% if color_swatch_options contains option_name and style == 'swatches' %}
+            <span class="product-single__swatch__sub-title js-swatch-variant-title"></span>
+        {% endif %}
+    </h2>
+
+    {% for value in option.values %}
+
+        {%- assign image_url = value | handle | append: '.png' | asset_img_url: '68x' -%}
+        {%- assign swatch_color = value | handle | replace: '-', '' -%}
+        {%- assign color_name = value | handle | downcase -%}
+
+        {%- assign custom_color_var = 'swatch_color_' | append: swatch_color -%}
+        {%- capture custom_color -%}{{ [custom_color_var] }}{%- endcapture -%}
+
+        {%- if custom_color != blank -%}
+            {%- assign swatch_css_color = custom_color -%}
+        {%- elsif css_color_names contains swatch_color -%}
+            {%- assign swatch_css_color = swatch_color -%}
+        {%- else -%}
+            {%- assign swatch_css_color = '#ddd' -%}
+        {%- endif -%}
+
+        {% capture id %}product-single__swatch-{{ section.id }}-{{ option.position }}-{{ value | handle }}{% endcapture %}
+
+        {% assign checked = "" %}
+        {% if current_variant[current_option] == value %}
+            {% assign checked = 'checked="checked"' %}
+        {% endif %}
+
+        {% comment %} if color swatch {% endcomment %}
+        {% if color_swatch_options contains option_name and style == 'swatches' %}
+            <div class="product-single__swatch__item product-single__swatch__item--color js-swatch-color-item">
+                <input type="radio" class="product-single__swatch__input u-hidden-visually" id="{{ id }}" name="{{ option_name }}-c" value="{{ value | escape }}" data-position="{{ option.position }}" {{ checked }}/>
+                <label for="{{ id }}" class="product-single__swatch__label">
+                    <span class="product-single__swatch__label__graphic{% if color_name == 'white' %} product-single__swatch__label__graphic--white{% endif %}" style="background-color: {{ swatch_css_color }};{% if section.settings.use_swatch_images %}background-image: url({{ image_url }}){% endif %}"></span>
+                    <span class="u-hidden-visually">{{ value }}</span>
+                </label>
+              </div>
+        {% comment %} if regular swatch {% endcomment %}
+        {% else %}
+            <div class="product-single__swatch__item">
+                <input type="radio" class="product-single__swatch__input u-hidden-visually" id="{{ id }}" name="{{ option_name }}-b" value="{{ value | escape }}" data-position="{{ option.position }}" {{ checked }} />
+                <label for="{{ id }}" class="product-single__swatch__label">{{ value }}</label>
+              </div>
+        {% endif %}
+
+    {% endfor %}
+</div>

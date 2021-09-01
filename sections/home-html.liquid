@@ -1,0 +1,30 @@
+<section class="section section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="home-html">
+    <div class="home-html">
+        <div class="container">
+            {% if section.settings.code != blank %}
+                {{ section.settings.code }}
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Custom HTML",
+    "class": "js-section__home-html",
+    "settings": [
+        {
+            "type": "html",
+            "id": "code",
+            "label": "HTML",
+            "default": "<div class=placeholder-noblocks>Use this section to create or embed advanced HTML content.</div>"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Custom HTML",
+            "category": "Advanced"
+        }
+    ]
+}
+{% endschema %}
