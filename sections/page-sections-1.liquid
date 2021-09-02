@@ -317,6 +317,64 @@
             ]
         },
         {
+            "name": "Newsletter",
+            "class": "js-section__newsletter",
+            "settings": [
+                {
+                    "type": "color",
+                    "id": "newsletter_bg",
+                    "label": "Background color",
+                    "default": "#f0f0f0"
+                },
+                {
+                    "type": "select",
+                    "id": "newsletter_style",
+                    "label": "Text color",
+                    "default": "default",
+                    "options": [
+                        {
+                            "value": "default",
+                            "label": "Default"
+                        },
+                        {
+                            "value": "default-light",
+                            "label": "Default light"
+                        },
+                        {
+                            "value": "dark",
+                            "label": "Dark"
+                        },
+                        {
+                            "value": "light",
+                            "label": "Light"
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "id": "footer_newsletter_title",
+                    "label": "Heading",
+                    "default": "Newsletter"
+                },
+                {
+                    "type": "richtext",
+                    "id": "footer_newsletter_desc",
+                    "label": "Subheading",
+                    "default": "<p>Let your customers know what to expect if they sign up to your mailing list.</p>"
+                },
+                {
+                    "type": "paragraph",
+                    "content": "Every sign up will create a 'Customer account' in this store. [Manage customers](/admin/customers?query=&accepts_marketing=1)"
+                }
+            ],
+            "presets": [
+                {
+                    "name": "Newsletter",
+                    "category": "Promotional"
+                }
+            ]
+        }
+        {
             "type": "image",
             "name": "Image",
             "settings": [
