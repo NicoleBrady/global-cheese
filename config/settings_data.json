@@ -409,12 +409,6 @@
           "overlay_strength": 50
         }
       },
-      "1566456304723": {
-        "type": "home-content",
-        "disabled": true,
-        "settings": {
-        }
-      },
       "1566456346591": {
         "type": "home-map",
         "blocks": {
@@ -647,15 +641,56 @@
           "height": "small",
           "overlay_strength": 60
         }
+      },
+      "163069294512253ecf": {
+        "type": "home-text-columns",
+        "blocks": {
+          "163069294512253ecf-0": {
+            "type": "text",
+            "settings": {
+              "title": "Column heading",
+              "sub_title": "Subheading",
+              "desc": "<p>Describe the main features of your brand or products using a few lines of text along with images or icons.<\/p>"
+            }
+          },
+          "163069294512253ecf-1": {
+            "type": "text",
+            "settings": {
+              "title": "Column heading",
+              "sub_title": "Subheading",
+              "desc": "<p>Describe the main features of your brand or products using a few lines of text along with images or icons.<\/p>"
+            }
+          },
+          "163069294512253ecf-2": {
+            "type": "text",
+            "settings": {
+              "title": "Column heading",
+              "sub_title": "Subheading",
+              "desc": "<p>Describe the main features of your brand or products using a few lines of text along with images or icons.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "163069294512253ecf-0",
+          "163069294512253ecf-1",
+          "163069294512253ecf-2"
+        ],
+        "settings": {
+          "title": "Our Products & Services",
+          "desc": "",
+          "content_align": "center",
+          "link_title": "",
+          "link": ""
+        }
       }
     },
     "content_for_index": [
       "1566456250311",
       "163069274704821749",
+      "163069294512253ecf",
       "1628281022f633a5c6",
       "1566456346591",
-      "1628279961315ebf5e",
-      "1566456304723"
+      "1628279961315ebf5e"
     ]
   },
   "presets": {
