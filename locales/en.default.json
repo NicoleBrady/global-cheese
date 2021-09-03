@@ -75,7 +75,7 @@
       "newer_post": "Newer Post",
       "by_author": "by {{ author }}"
     },
-    "comments": { 
+    "comments": {
       "title": "Leave a comment",
       "name": "Name",
       "email": "Email",
@@ -163,7 +163,7 @@
       "blog_title": "Your post's title",
       "blog_excerpt": "Your store hasn’t published any blog posts yet. A blog can be used to talk about new product launches, tips, or other news you want to share with your customers.",
       "blog_author": "Author name",
-      "blog_date": "07/12/17",
+      "blog_date": "07\/12\/17",
       "no_content": "This section doesn’t currently include any content. Add content to this section using the sidebar."
     }
   },
@@ -205,7 +205,7 @@
       "quantity": "Quantity",
       "add_to_cart": "Add to Cart",
       "select_options": "Select Options",
-      "qty_notice_html": "only <span>{{ count }}</span> left in stock",
+      "qty_notice_html": "only <span>{{ count }}<\/span> left in stock",
       "view_in_space": "View in your space",
       "view_in_space_label": "View in your space, loads item in augmented reality window",
       "gallery_thumbnail_alt": "Load image into Gallery viewer, {{ imageAlt }}",
