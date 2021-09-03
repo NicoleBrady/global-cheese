@@ -1,3 +1,15 @@
+<!-- <style>
+     .section--{{ section.id }} .home-custom-image__bg--overlay:before,
+     .section--{{ section.id }} .home-custom__image:before,
+     .section--{{ section.id }} .home-custom__img--cover:before {
+    {% if block.settings.overlay_strength == 100 %}
+        opacity: 1;
+    {% else %}
+        opacity: .{{ block.settings.overlay_strength }};
+    {% endif %}
+}
+</style> -->
+
 <section class="section section--mb-s section--page page section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="page-custom">
 
     <div class="section">
@@ -64,6 +76,7 @@
                                                 <div class="o-ratio__content">
 
                                                     <div class="home-custom__img--cover u-bg-contain" style="background-image: url('{{ block.settings.image | img_url: '1x1' }}')"></div>
+                                                    
                                                     <img
                                                         class="home-custom__img"
                                                         src="{{ block.settings.image | img_url: '300x' }}"
@@ -85,7 +98,9 @@
                                                         alt="{{ block.settings.image.alt | escape }}"
                                                         loading="lazy"
                                                     />
+                                                    
                                                 </div>
+                                                <!-- <div class="home-custom-image__bg--overlay u-bg-overlay"></div> -->
                                             </div>
                                         {% else %}
                                             {% capture current %}{% cycle 1, 2 %}{% endcapture %}
@@ -94,8 +109,12 @@
                                     {% unless block.settings.link == blank %}
                                         </a>
                                     {% endunless %}
+                                    
                                 </div>
+                                
                             </div>
+
+                            
 
                         {% elsif block.type == 'button' %}
 
@@ -317,64 +336,6 @@
             ]
         },
         {
-            "name": "Newsletter",
-            "class": "js-section__newsletter",
-            "settings": [
-                {
-                    "type": "color",
-                    "id": "newsletter_bg",
-                    "label": "Background color",
-                    "default": "#f0f0f0"
-                },
-                {
-                    "type": "select",
-                    "id": "newsletter_style",
-                    "label": "Text color",
-                    "default": "default",
-                    "options": [
-                        {
-                            "value": "default",
-                            "label": "Default"
-                        },
-                        {
-                            "value": "default-light",
-                            "label": "Default light"
-                        },
-                        {
-                            "value": "dark",
-                            "label": "Dark"
-                        },
-                        {
-                            "value": "light",
-                            "label": "Light"
-                        }
-                    ]
-                },
-                {
-                    "type": "text",
-                    "id": "footer_newsletter_title",
-                    "label": "Heading",
-                    "default": "Newsletter"
-                },
-                {
-                    "type": "richtext",
-                    "id": "footer_newsletter_desc",
-                    "label": "Subheading",
-                    "default": "<p>Let your customers know what to expect if they sign up to your mailing list.</p>"
-                },
-                {
-                    "type": "paragraph",
-                    "content": "Every sign up will create a 'Customer account' in this store. [Manage customers](/admin/customers?query=&accepts_marketing=1)"
-                }
-            ],
-            "presets": [
-                {
-                    "name": "Newsletter",
-                    "category": "Promotional"
-                }
-            ]
-        },
-        {
             "type": "image",
             "name": "Image",
             "settings": [
@@ -415,6 +376,16 @@
                             "value": "2/3"
                         }
                     ]
+                },
+                {
+                    "type": "range",
+                    "id": "overlay_strength",
+                    "label": "Overlay strength",
+                    "unit": "%",
+                    "min": 0,
+                    "max": 100,
+                    "step": 10,
+                    "default": 10
                 }
             ]
         },
@@ -836,3 +807,4 @@
     ]
 }
 {% endschema %}
+
