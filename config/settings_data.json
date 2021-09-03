@@ -640,18 +640,29 @@
       "page-sections-1": {
         "type": "page-sections-1",
         "blocks": {
-          "51a43099-2037-447c-a729-8ac0706db7c1": {
+          "7223c9c7-88e3-42d7-a36b-2e78d4927ef9": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/global-cheese-delivery-truck.jpg",
               "link": "",
-              "width": "1\/1",
+              "width": "1\/2",
               "overlay_strength": 10
+            }
+          },
+          "1cc4447c-e1da-4d88-82ea-b2130c3ae695": {
+            "type": "text",
+            "settings": {
+              "title": "",
+              "text": "<p>Promote your brand by using a powerful combination of buttons, custom text, page content and images.<\/p>",
+              "link_title": "Learn more",
+              "link": "",
+              "align": "center",
+              "width": "1\/2"
             }
           }
         },
         "block_order": [
-          "51a43099-2037-447c-a729-8ac0706db7c1"
+          "7223c9c7-88e3-42d7-a36b-2e78d4927ef9",
+          "1cc4447c-e1da-4d88-82ea-b2130c3ae695"
         ],
         "settings": {
           "container": "medium"
