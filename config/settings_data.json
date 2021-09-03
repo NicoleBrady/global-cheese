@@ -629,33 +629,23 @@
           "163069274704821749-1": {
             "type": "image",
             "settings": {
+              "image": "shopify:\/\/shop_images\/global-cheese-toronto-old-2.jpg",
               "image_alignment": "center",
               "text_alignment": "bottom",
-              "title": "Image block",
-              "text": "Use these image blocks to tell your story, promote your products or create a beautiful gallery.",
-              "link": ""
-            }
-          },
-          "b0b212e0-305e-4810-a156-112bccbb4b23": {
-            "type": "image",
-            "settings": {
-              "image_alignment": "center",
-              "text_alignment": "bottom",
-              "title": "Image block",
-              "text": "Use these image blocks to tell your story, promote your products or create a beautiful gallery.",
+              "title": "",
+              "text": "",
               "link": ""
             }
           }
         },
         "block_order": [
           "163069274704821749-0",
-          "163069274704821749-1",
-          "b0b212e0-305e-4810-a156-112bccbb4b23"
+          "163069274704821749-1"
         ],
         "settings": {
           "featured": true,
-          "height": "medium",
-          "overlay_strength": 30
+          "height": "small",
+          "overlay_strength": 60
         }
       }
     },
