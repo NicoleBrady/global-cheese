@@ -498,10 +498,11 @@
           "72f508a3-4591-45c1-8465-9c9738b0cb04": {
             "type": "map",
             "settings": {
-              "title": "Map",
-              "desc": "<p>273 Street Lane<br\/>San Francisco, CA 94102<br\/>(415) 557-4400<br\/>store@email.com<\/p>",
-              "sub_desc": "<p>Monday - Thursday, 12:00 to 23:00<br\/>Friday &amp; Saturday, 12:00 to 00:00<br\/>Sunday, Closed<\/p>",
-              "address": "100 Larkin St, San Francisco, CA 94102, USA"
+              "title": "Etobicoke",
+              "desc": "<p>224 Norseman St<br\/>Etobicoke, ON M8Z 2R4<br\/><strong>(416) 239-3000<\/strong><\/p>",
+              "sub_desc": "<p>Tuesday - Friday, 10:00 to 18:00<br\/>Saturday, 9:00 to 17:00<br\/><em>Sunday & Monday, Closed<\/em><\/p>",
+              "address": "224 Norseman St, Etobicoke, ON M8Z 2R4",
+              "map_image": "shopify:\/\/shop_images\/global-cheese-etobicoke.jpg"
             }
           }
         },
