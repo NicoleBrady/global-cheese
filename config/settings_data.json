@@ -484,6 +484,31 @@
       },
       "page-contact": {
         "type": "page-contact",
+        "blocks": {
+          "d7b9364c-1dd6-49e7-bcba-d07d2d57319f": {
+            "type": "map",
+            "settings": {
+              "title": "Kensington Market",
+              "desc": "<p>76 Kensington Ave<br\/>Toronto, ON M5T 2K1<br\/><strong>(416) 593-9251<\/strong><\/p>",
+              "sub_desc": "<p>Monday - Friday, 9:00 to 18:00<br\/>Saturday, 8:00 to 18:00<br\/>Sunday, 9:00 to 17:00<\/p>",
+              "address": "76 Kensington Ave, Toronto, ON M5T 2K1",
+              "map_image": "shopify:\/\/shop_images\/global-cheese-kensington.jpg"
+            }
+          },
+          "72f508a3-4591-45c1-8465-9c9738b0cb04": {
+            "type": "map",
+            "settings": {
+              "title": "Map",
+              "desc": "<p>273 Street Lane<br\/>San Francisco, CA 94102<br\/>(415) 557-4400<br\/>store@email.com<\/p>",
+              "sub_desc": "<p>Monday - Thursday, 12:00 to 23:00<br\/>Friday &amp; Saturday, 12:00 to 00:00<br\/>Sunday, Closed<\/p>",
+              "address": "100 Larkin St, San Francisco, CA 94102, USA"
+            }
+          }
+        },
+        "block_order": [
+          "d7b9364c-1dd6-49e7-bcba-d07d2d57319f",
+          "72f508a3-4591-45c1-8465-9c9738b0cb04"
+        ],
         "settings": {
           "show_form": true,
           "form_title": "Send us an email",
