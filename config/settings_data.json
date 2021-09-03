@@ -652,9 +652,9 @@
             "type": "text",
             "settings": {
               "title": "",
-              "text": "<p>Promote your brand by using a powerful combination of buttons, custom text, page content and images.<\/p>",
-              "link_title": "Learn more",
-              "link": "",
+              "text": "<p>The Global Cheese team is working to develop an online store for our customers. Please be patient while we develop an extraordinary online shopping experience. Please come visit us at either of our in-person locations. <\/p>",
+              "link_title": "Visit us",
+              "link": "shopify:\/\/pages\/contact",
               "align": "center",
               "width": "1\/2"
             }
@@ -676,7 +676,7 @@
             "settings": {
               "title": "Map",
               "desc": "<p>273 Street Lane<br\/>San Francisco, CA 94102<br\/>(415) 557-4400<br\/>store@email.com<\/p>",
-              "sub_desc": "<p>Monday - Thursday, 12:00 to 23:00<br\/>Friday &amp; Saturday, 12:00 to 00:00<br\/>Sunday, Closed<\/p>",
+              "sub_desc": "<p>Monday - Thursday, 12:00 to 23:00<br\/>Friday & Saturday, 12:00 to 00:00<br\/>Sunday, Closed<\/p>",
               "address": "100 Larkin St, San Francisco, CA 94102, USA"
             }
           }
