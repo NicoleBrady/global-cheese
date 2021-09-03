@@ -510,10 +510,10 @@
           "72f508a3-4591-45c1-8465-9c9738b0cb04"
         ],
         "settings": {
-          "show_form": true,
-          "form_title": "Send us an email",
-          "show_map": false,
-          "show_directions_btn": false,
+          "show_form": false,
+          "form_title": "",
+          "show_map": true,
+          "show_directions_btn": true,
           "google_api_key": "",
           "map_style": "light"
         }
