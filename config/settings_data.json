@@ -643,8 +643,9 @@
           "7223c9c7-88e3-42d7-a36b-2e78d4927ef9": {
             "type": "image",
             "settings": {
+              "image": "shopify:\/\/shop_images\/global-cheese-delivery-truck.jpg",
               "link": "",
-              "width": "1\/3",
+              "width": "1\/2",
               "overlay_strength": 10
             }
           },
