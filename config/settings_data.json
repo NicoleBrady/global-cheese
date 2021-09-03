@@ -409,51 +409,9 @@
           "overlay_strength": 50
         }
       },
-      "1566456269728": {
-        "type": "home-collection",
-        "disabled": true,
-        "settings": {
-          "title": "Featured collection",
-          "collection": "",
-          "mobile_layout": "carousel",
-          "grid": 3,
-          "grid_mobile": "1",
-          "rows": 1,
-          "link_title": "View all",
-          "link": ""
-        }
-      },
       "1566456304723": {
         "type": "home-content",
         "disabled": true,
-        "blocks": {
-          "1566456304723-0": {
-            "type": "image",
-            "settings": {
-              "bg_color": "#f0f0f0",
-              "title": "Image with text",
-              "desc": "<p>Use these blocks to share your brand's story. You can focus on a particular collection, a product detail, or even embed a video.<\/p>",
-              "video": "",
-              "link_title": "More info",
-              "link": ""
-            }
-          },
-          "1566456304723-1": {
-            "type": "image",
-            "settings": {
-              "bg_color": "#ffffff",
-              "title": "Image with text",
-              "desc": "<p>Use these blocks to share your brand's story. You can focus on a particular collection, a product detail, or even embed a video.<\/p>",
-              "video": "",
-              "link_title": "More info",
-              "link": ""
-            }
-          }
-        },
-        "block_order": [
-          "1566456304723-0",
-          "1566456304723-1"
-        ],
         "settings": {
         }
       },
@@ -476,7 +434,7 @@
         ],
         "settings": {
           "show_directions_btn": true,
-          "bg_color": "#FFFFFF",
+          "bg_color": "#ffffff",
           "google_api_key": "",
           "map_style": "light"
         }
@@ -527,64 +485,6 @@
           "map_style": "light"
         }
       },
-      "1566460870233": {
-        "type": "home-image-text",
-        "disabled": true,
-        "settings": {
-          "image_alignment": "center",
-          "text": "<p>Offer some insight into your brand and history. Use images, text and video to describe your value proposition.<\/p>",
-          "inline_image_width": 200,
-          "video": "",
-          "link_title": "Learn more",
-          "link": "",
-          "section_height": "small",
-          "overlay_color": "#ffffff",
-          "overlay_strength": 30,
-          "content_style": "dark"
-        }
-      },
-      "1566460912234": {
-        "type": "home-text-columns",
-        "disabled": true,
-        "blocks": {
-          "1566460912234-0": {
-            "type": "text",
-            "settings": {
-              "title": "Column heading",
-              "sub_title": "Subheading",
-              "desc": "<p>Describe the main features of your brand or products using a few lines of text along with images or icons.<\/p>"
-            }
-          },
-          "1566460912234-1": {
-            "type": "text",
-            "settings": {
-              "title": "Column heading",
-              "sub_title": "Subheading",
-              "desc": "<p>Describe the main features of your brand or products using a few lines of text along with images or icons.<\/p>"
-            }
-          },
-          "1566460912234-2": {
-            "type": "text",
-            "settings": {
-              "title": "Column heading",
-              "sub_title": "Subheading",
-              "desc": "<p>Describe the main features of your brand or products using a few lines of text along with images or icons.<\/p>"
-            }
-          }
-        },
-        "block_order": [
-          "1566460912234-0",
-          "1566460912234-1",
-          "1566460912234-2"
-        ],
-        "settings": {
-          "title": "Text columns with images",
-          "desc": "",
-          "content_align": "center",
-          "link_title": "Learn more",
-          "link": ""
-        }
-      },
       "announcement": {
         "type": "announcement",
         "settings": {
@@ -615,7 +515,7 @@
         ],
         "settings": {
           "show_directions_btn": true,
-          "bg_color": "#FFFFFF",
+          "bg_color": "#ffffff",
           "google_api_key": "",
           "map_style": "light"
         }
@@ -711,17 +611,60 @@
           "google_api_key": "",
           "map_style": "light"
         }
+      },
+      "163069274704821749": {
+        "type": "home-image-grid",
+        "blocks": {
+          "163069274704821749-0": {
+            "type": "image",
+            "settings": {
+              "image_alignment": "center",
+              "text_alignment": "bottom",
+              "title": "Image block",
+              "text": "Use these image blocks to tell your story, promote your products or create a beautiful gallery.",
+              "link": ""
+            }
+          },
+          "163069274704821749-1": {
+            "type": "image",
+            "settings": {
+              "image_alignment": "center",
+              "text_alignment": "bottom",
+              "title": "Image block",
+              "text": "Use these image blocks to tell your story, promote your products or create a beautiful gallery.",
+              "link": ""
+            }
+          },
+          "b0b212e0-305e-4810-a156-112bccbb4b23": {
+            "type": "image",
+            "settings": {
+              "image_alignment": "center",
+              "text_alignment": "bottom",
+              "title": "Image block",
+              "text": "Use these image blocks to tell your story, promote your products or create a beautiful gallery.",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "163069274704821749-0",
+          "163069274704821749-1",
+          "b0b212e0-305e-4810-a156-112bccbb4b23"
+        ],
+        "settings": {
+          "featured": true,
+          "height": "medium",
+          "overlay_strength": 30
+        }
       }
     },
     "content_for_index": [
       "1566456250311",
-      "1566456269728",
-      "1566456304723",
-      "1566460870233",
-      "1566460912234",
+      "163069274704821749",
       "1628281022f633a5c6",
       "1566456346591",
-      "1628279961315ebf5e"
+      "1628279961315ebf5e",
+      "1566456304723"
     ]
   },
   "presets": {
