@@ -1,1 +1,2639 @@
-{"current":{"color_headings":"#260707","color_text":"#260707","color_alt_text":"#661111","color_brand":"#e42727","color_accent":"#ffa6a6","color_button":"#000000","product_grid_sale_color":"#c00000","product_grid_bg":"#f0f0f0","color_drawer_bg":"#fef7d7","color_drawer_style":"dark","type_base_font":"muli_n4","type_base_size":"15","type_header_font":"oswald_n4","type_header_size":"0.85","type_header_letterspace":1,"type_header_capitalize":true,"type_header_underline":true,"type_header_underline_size":3,"type_nav_font":"oswald_n4","type_nav_size":"13","type_nav_letterspace":1,"type_nav_capitalize":true,"type_button_font":"oswald_n4","type_button_size":"13","type_button_letterspace":1,"type_button_capitalize":true,"product_grid_vendor":false,"product_grid_second_hover":true,"product_grid_quick_buy":"hover","product_grid_align":"center","product_grid_image_size":"natural","product_grid_masonry":false,"product_grid_label":true,"product_grid_label_sale_style":"text","product_grid_label_new":true,"product_grid_label_new_days":14,"product_grid_label_title":"Hot","product_grid_label_collection":"","product_grid_detail_style":"default","product_grid_price":true,"product_grid_swatch":false,"product_grid_swatch_image":false,"product_grid_reviews":false,"product_reviews":false,"anim_load":true,"anim_load_style":"interval","anim_interval_style":"fade_down","anim_zoom":true,"cart_type":"modal","cart_notes_enable":false,"cart_vendor_enable":false,"cart_continue":true,"search_enable":true,"search_limit":"product,article,page","search_linklist":"main-menu","share_facebook":true,"share_twitter":true,"share_pinterest":true,"share_fancy":true,"share_mail":true,"social_facebook_link":"","social_twitter_link":"","social_pinterest_link":"","social_instagram_link":"","social_tumblr_link":"","social_snapchat_link":"","social_youtube_link":"","social_vimeo_link":"","social_fancy_link":"","social_untappd_link":"","favicon":"","checkout_header_image":"","checkout_logo_image":"","checkout_logo_position":"left","checkout_logo_size":"medium","checkout_body_background_image":"","checkout_body_background_color":"#fff","checkout_input_background_color_mode":"white","checkout_sidebar_background_image":"","checkout_sidebar_background_color":"#fafafa","checkout_heading_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'","checkout_body_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'","checkout_accent_color":"#197bbd","checkout_button_color":"#197bbd","checkout_error_color":"#e32c2b","sections":{"footer":{"type":"footer","blocks":{"1494343961341":{"type":"linklist","settings":{"title":"Menu","linklist":"main-menu"}},"1494343958665":{"type":"contact","settings":{"title":"Contact","show_email":false,"show_number":true,"show_address":true,"show_social":true}},"4da3f61a-2da8-4c05-b74d-1b82999927c8":{"type":"social","settings":{"title":"Social"}}},"block_order":["1494343961341","1494343958665","4da3f61a-2da8-4c05-b74d-1b82999927c8"],"settings":{"footer_newsletter_enable":false,"footer_newsletter_home":false,"newsletter_bg":"#f0f0f0","newsletter_style":"default","footer_newsletter_title":"Newsletter","footer_newsletter_desc":"<p>Let your customers know what to expect if they sign up to your mailing list.<\/p>","footer_bg":"#222222","footer_style":"light","show_payment_icons":true,"show_locale_selector":true,"show_currency_selector":true}},"header":{"type":"header","settings":{"show_border":true,"header_bg":"#ffffff","header_style":"dark","logo":"shopify:\/\/shop_images\/global-cheese-logo.png","logo_size":8,"logo_size_mobile":5,"logo_spacing":3,"main_linklist":"main-menu","layout":"left","style":"static","parent_links":true,"mega_nav":false,"mega_image_link":"","mega_title":"","mega_text":"","mega_link_title":"Learn more","mega_link":"","show_locale_selector":true,"show_currency_selector":true}},"mobile-drawer":{"type":"mobile-drawer","settings":{"main_linklist":"main-menu","contact_title":"Contact","show_contact_number":true,"show_contact_email":true,"show_locale_selector":true,"show_currency_selector":true,"show_social":true,"cta_image_link":"","cta_title":"","cta_text":"","cta_link_title":"Learn more","cta_link":""}},"promo-pop":{"type":"promo-pop","settings":{"enable":false,"mobile":false,"title":"Popup","text":"<p>Use this popup to embed a mailing list sign up form. Alternatively use it as a simple call to action with a link to a product or a page.<\/p>","link_title":"More info","link":"","delay":10,"expiry":30,"enable_newsletter":false}},"age-checker":{"type":"age-checker","settings":{"enable":false,"title":"Age verification","text":"<p>By clicking enter you are verifying that you are old enough to consume alcohol.<\/p>","enter_btn_label":"Enter","leave_btn_label":"Leave","leave_link":""}},"collection-template":{"type":"collection-template","settings":{"grid":3,"grid_mobile":"2","rows":6,"center_title":true,"sort_enable":true,"show_collection_image":true,"collection_image_height":"4:1","image_alignment":"center","show_sidebar":false,"sidebar_layout":"drawer"}},"product-template":{"type":"product-template","settings":{"layout":"full","show_breadcrumbs":true,"show_vendor":false,"product_variant_style":"buttons","use_swatch_images":false,"show_quantity_selector":true,"enable_payment_button":true,"image":"","show_share_buttons":true,"enable_zoom":true,"image_size":"large","bg_color":"rgba(0,0,0,0)","text_color":"default","bg_height":"default"}},"password-header":{"type":"password-header","settings":{"logo":"","logo_size":5,"logo_spacing":3,"show_border":true}},"password-content":{"type":"password-content","settings":{"bg_image":"","show_newsletter":true,"newsletter_text":"","newsletter_button_text":"Sign up","show_social":true}},"page-faq":{"type":"page-faq","blocks":{"1563305378357":{"type":"category","settings":{"title":"Category"}},"1563305326608":{"type":"article","settings":{"title":"Article heading","text":"<p>Use these articles to answer questions that customers have about your products and services. You can use text, links and images and also group articles into categories.<\/p>","image":""}},"1563305341300":{"type":"article","settings":{"title":"Article heading","text":"<p>Use these articles to answer questions that customers have about your products and services. You can use text, links and images and also group articles into categories.<\/p>","image":""}},"1563305384180":{"type":"category","settings":{"title":"Category"}},"1563305386011":{"type":"article","settings":{"title":"Article heading","text":"<p>Use these articles to answer questions that customers have about your products and services. You can use text, links and images and also group articles into categories.<\/p>","image":""}}},"block_order":["1563305378357","1563305326608","1563305341300","1563305384180","1563305386011"],"settings":{"enable_search":true,"enable_sidebar":true,"cta_link_title":"Contact us","cta_link":""}},"blog-template":{"type":"blog-template","settings":{"show_tags":true,"show_rss":false,"grid":2,"crop":true,"show_blog_date":true,"show_blog_author":false,"show_blog_comments":false,"show_blog_tags":false,"coll":"","coll_title":"Featured collection","coll_mobile_layout":"carousel","coll_grid":3,"coll_grid_mobile":"2","coll_rows":1,"coll_link_title":"View all","coll_link":""}},"product-recommendations":{"type":"product-recommendations","settings":{"show_related_products":true,"related_title":"You may also like","related_mobile_layout":"carousel","related_grid_num":3,"grid_mobile":"1","related_grid_row":1}},"article-template":{"type":"article-template","settings":{"show_img":true,"show_date":true,"show_author":true,"show_tags":true,"show_sharing":true,"coll":"","coll_title":"Featured collection","coll_mobile_layout":"carousel","coll_grid":3,"coll_grid_mobile":"1","coll_rows":1,"coll_link_title":"View all","coll_link":""}},"product-testimonials":{"type":"product-testimonials","settings":{"title":"Testimonials","style_desktop":"carousel","style_mobile":"carousel","link_title":"Shop now","link":""}},"product-sections":{"type":"product-sections","settings":{"container":"medium"}},"1566456250311":{"type":"home-slideshow","blocks":{"1566456250311-0":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/global-cheese-hero-image.jpg","image_alignment":"center","alignment":"left","text_color":"default","title":"Toronto's Best Cheese Shop","text":"<p>Serving Toronto since 1970, we are excited to announce our online store is coming soon. We look forward to serving you better!<\/p>","link_title":"Shop Now","link":"shopify:\/\/pages\/contact"}}},"block_order":["1566456250311-0"],"settings":{"slideshow_style":"minimal","title_size":3,"autoplay":false,"autoplay_speed":8,"slideshow_height":"medium","slideshow_width":"full","overlay_strength":50}},"1566456269728":{"type":"home-collection","disabled":true,"settings":{"title":"Featured collection","collection":"","mobile_layout":"carousel","grid":3,"grid_mobile":"1","rows":1,"link_title":"View all","link":""}},"1566456304723":{"type":"home-content","disabled":true,"blocks":{"1566456304723-0":{"type":"image","settings":{"bg_color":"#f0f0f0","title":"Image with text","desc":"<p>Use these blocks to share your brand's story. You can focus on a particular collection, a product detail, or even embed a video.<\/p>","video":"","link_title":"More info","link":""}},"1566456304723-1":{"type":"image","settings":{"bg_color":"#ffffff","title":"Image with text","desc":"<p>Use these blocks to share your brand's story. You can focus on a particular collection, a product detail, or even embed a video.<\/p>","video":"","link_title":"More info","link":""}}},"block_order":["1566456304723-0","1566456304723-1"],"settings":{}},"1566456346591":{"type":"home-map","blocks":{"1566456346591-0":{"type":"map","settings":{"title":"Kensington Market","desc":"<p>76 Kensington Ave<br\/>Toronto, ON M5T 2K1<br\/><a href=\"https:\/\/www.google.com\/search?client=firefox-b-d&q=global+cheese+kensington+market#\">(416) 593-9251<\/a><br\/><\/p>","sub_desc":"<p>Monday - Friday, 9:00 to 18:00<br\/>Saturday, 8:00 to 18:00<br\/>Sunday, 9:00 to 17:00<\/p>","address":"76 Kensington Ave, Toronto, ON M5T 2K1","map_image":"shopify:\/\/shop_images\/global-cheese-kensington.jpg"}}},"block_order":["1566456346591-0"],"settings":{"show_directions_btn":true,"bg_color":"#f0f0f0","google_api_key":"","map_style":"light"}},"list-collections-template":{"type":"list-collections-template","settings":{"display_type":"all","sort":"alphabetical","grid":2,"overlay_strength":30}},"page-contact":{"type":"page-contact","settings":{"show_form":true,"form_title":"Send us an email","show_map":false,"show_directions_btn":false,"google_api_key":"","map_style":"light"}},"1566460870233":{"type":"home-image-text","disabled":true,"settings":{"image_alignment":"center","text":"<p>Offer some insight into your brand and history. Use images, text and video to describe your value proposition.<\/p>","inline_image_width":200,"video":"","link_title":"Learn more","link":"","section_height":"small","overlay_color":"#ffffff","overlay_strength":30,"content_style":"dark"}},"1566460912234":{"type":"home-text-columns","disabled":true,"blocks":{"1566460912234-0":{"type":"text","settings":{"title":"Column heading","sub_title":"Subheading","desc":"<p>Describe the main features of your brand or products using a few lines of text along with images or icons.<\/p>"}},"1566460912234-1":{"type":"text","settings":{"title":"Column heading","sub_title":"Subheading","desc":"<p>Describe the main features of your brand or products using a few lines of text along with images or icons.<\/p>"}},"1566460912234-2":{"type":"text","settings":{"title":"Column heading","sub_title":"Subheading","desc":"<p>Describe the main features of your brand or products using a few lines of text along with images or icons.<\/p>"}}},"block_order":["1566460912234-0","1566460912234-1","1566460912234-2"],"settings":{"title":"Text columns with images","desc":"","content_align":"center","link_title":"Learn more","link":""}},"announcement":{"type":"announcement","settings":{"message_show":false,"home_page_only":false,"message_text":"Use this announcement bar to share some news and link to page or product.","message_link":"","message_color_bg":"#222222","message_color_text":"#ffffff"}},"1628279961315ebf5e":{"type":"home-map","blocks":{"1628279961315ebf5e-0":{"type":"map","settings":{"title":"Etobicoke","desc":"<p>224 Norseman St<br\/>Etobicoke, ON M8Z 2R4<br\/><a href=\"https:\/\/www.google.com\/search?client=firefox-b-d&q=global+cheese+etobicoke#\">(416) 239-3000<\/a><br\/><\/p>","sub_desc":"<p>Tuesday - Friday, 10:00 to 18:00<br\/>Saturday, 9:00 to 17:00<br\/>Sunday & Monday, Closed<\/p>","address":"224 Norseman St, Etobicoke, ON M8Z 2R4","map_image":"shopify:\/\/shop_images\/global-cheese-etobicoke.jpg"}}},"block_order":["1628279961315ebf5e-0"],"settings":{"show_directions_btn":true,"bg_color":"#f0f0f0","google_api_key":"","map_style":"light"}},"1628281022f633a5c6":{"type":"home-custom","blocks":{"1628281022f633a5c6-0":{"type":"text","settings":{"title":"Conveniently located in two locations","text":"","link_title":"","link":"","align":"center","width":"1\/2"}},"1628281022f633a5c6-1":{"type":"image","disabled":true,"settings":{"link":"","width":"2\/3"}},"1628281022f633a5c6-2":{"type":"button","disabled":true,"settings":{"title":"Button","link":"","color":"primary","size":"big","width":"1\/2"}}},"block_order":["1628281022f633a5c6-0","1628281022f633a5c6-1","1628281022f633a5c6-2"],"settings":{}}},"content_for_index":["1566456250311","1566456269728","1566456304723","1566460870233","1566460912234","1628281022f633a5c6","1566456346591","1628279961315ebf5e"]},"presets":{"Morning":{"color_headings":"#212121","color_text":"#212121","color_alt_text":"#666666","color_brand":"#212121","color_accent":"#fad018","color_button":"#ffffff","product_grid_sale_color":"#c00000","product_grid_bg":"#f0f0f0","color_drawer_bg":"#ffffff","color_drawer_style":"dark","type_base_font":"montserrat_n4","type_base_size":"15","type_header_font":"montserrat_n4","type_header_size":"0.85","type_header_letterspace":2,"type_header_capitalize":true,"type_header_underline":true,"type_header_underline_size":3,"type_nav_font":"montserrat_n4","type_nav_size":"11","type_nav_letterspace":2,"type_nav_capitalize":true,"type_button_font":"montserrat_n4","type_button_size":"11","type_button_letterspace":2,"type_button_capitalize":true,"product_grid_vendor":false,"product_grid_second_hover":true,"product_grid_quick_buy":"hover","product_grid_align":"center","product_grid_image_size":"natural","product_grid_masonry":false,"product_grid_label":true,"product_grid_label_sale_style":"text","product_grid_label_new":true,"product_grid_label_new_days":14,"product_grid_label_title":"Hot","product_grid_label_collection":"","product_grid_detail_style":"default","product_grid_price":true,"product_grid_swatch":false,"product_grid_swatch_image":false,"product_grid_reviews":false,"product_reviews":false,"anim_load":true,"anim_load_style":"interval","anim_interval_style":"fade_down","anim_zoom":true,"cart_notes_enable":false,"cart_vendor_enable":false,"cart_continue":true,"cart_type":"modal","search_enable":true,"search_limit":"product,article,page","search_linklist":"main-menu","share_facebook":true,"share_twitter":true,"share_pinterest":true,"share_fancy":true,"share_mail":true,"social_facebook_link":"","social_twitter_link":"","social_pinterest_link":"","social_instagram_link":"","social_tumblr_link":"","social_snapchat_link":"","social_youtube_link":"","social_vimeo_link":"","social_fancy_link":"","social_untappd_link":"","favicon":"","checkout_header_image":"","checkout_logo_image":"","checkout_logo_position":"left","checkout_logo_size":"medium","checkout_body_background_image":"","checkout_body_background_color":"#fff","checkout_input_background_color_mode":"white","checkout_sidebar_background_image":"","checkout_sidebar_background_color":"#fafafa","checkout_heading_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'","checkout_body_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'","checkout_accent_color":"#197bbd","checkout_button_color":"#197bbd","checkout_error_color":"#e32c2b","sections":{"footer":{"type":"footer","blocks":{"1494343961341":{"type":"linklist","settings":{"title":"Menu","linklist":"footer"}},"1494463355206":{"type":"linklist","settings":{"title":"Menu","linklist":"footer"}},"1494343958665":{"type":"contact","settings":{"title":"Contact","show_email":true,"show_number":true,"show_address":true,"show_social":true}},"1494463348419":{"type":"text","settings":{"title":"Text area","text":"<p>Add some text such as a mini biography or your mission statement.<\/p>"}}},"block_order":["1494343961341","1494463355206","1494343958665","1494463348419"],"settings":{"footer_newsletter_enable":true,"footer_newsletter_home":false,"newsletter_bg":"#f0f0f0","newsletter_style":"default","footer_newsletter_title":"Newsletter","footer_newsletter_desc":"<p>Let your customers know what to expect if they sign up to your mailing list.<\/p>","footer_bg":"#222222","footer_style":"light","show_payment_icons":true}},"header":{"type":"header","settings":{"show_border":true,"header_bg":"#ffffff","header_style":"dark","logo":"","logo_size":5,"logo_spacing":3,"main_linklist":"main-menu","layout":"left","style":"sticky","mega_nav":true,"mega_image":"","mega_image_link":"","mega_title":"","mega_text":"","mega_link_title":"Learn more","mega_link":""}},"mobile-drawer":{"type":"mobile-drawer","settings":{"main_linklist":"main-menu","contact_title":"Contact","show_contact_number":true,"show_contact_email":true,"show_social":true,"cta_image":"","cta_image_link":"","cta_title":"","cta_text":"","cta_link_title":"Learn more","cta_link":""}},"promo-pop":{"type":"promo-pop","settings":{"enable":false,"mobile":false,"title":"Popup","text":"<p>Use this popup to embed a mailing list sign up form. Alternatively use it as a simple call to action with a link to a product or a page.<\/p>","link_title":"More info","link":"","delay":10,"expiry":30,"enable_newsletter":true}},"age-checker":{"type":"age-checker","settings":{"enable":false,"image":"","title":"Age verification","text":"<p>By clicking enter you are verifying that you are old enough to consume alcohol.<\/p>","enter_btn_label":"Enter","leave_btn_label":"Leave","leave_link":""}},"collection-template":{"type":"collection-template","settings":{"grid":3,"grid_mobile":"2","rows":6,"center_title":true,"sort_enable":true,"show_collection_image":true,"collection_image_height":"4:1","image_alignment":"center","show_sidebar":false,"sidebar_layout":"drawer"}},"product-template":{"type":"product-template","settings":{"layout":"classic","show_breadcrumbs":true,"show_vendor":false,"product_variant_style":"buttons","use_swatch_images":false,"show_quantity_selector":true,"enable_payment_button":true,"image":"","show_share_buttons":true,"enable_zoom":true,"image_size":"large","bg_color":"rgba(0,0,0,0)","text_color":"default","bg_height":"full"}},"password-header":{"type":"password-header","settings":{"logo":"","logo_size":5,"logo_spacing":3,"show_border":true}},"password-content":{"type":"password-content","settings":{"bg_image":"","show_newsletter":true,"newsletter_text":"","newsletter_button_text":"Sign up","show_social":true}},"page-faq":{"type":"page-faq","blocks":{"1563305378357":{"type":"category","settings":{"title":"Category"}},"1563305326608":{"type":"article","settings":{"title":"Article heading","text":"<p>Use these articles to answer questions that customers have about your products and services. You can use text, links and images and also group articles into categories.<\/p>","image":""}},"1563305341300":{"type":"article","settings":{"title":"Article heading","text":"<p>Use these articles to answer questions that customers have about your products and services. You can use text, links and images and also group articles into categories.<\/p>","image":""}},"1563305384180":{"type":"category","settings":{"title":"Category"}},"1563305386011":{"type":"article","settings":{"title":"Article heading","text":"<p>Use these articles to answer questions that customers have about your products and services. You can use text, links and images and also group articles into categories.<\/p>","image":""}}},"block_order":["1563305378357","1563305326608","1563305341300","1563305384180","1563305386011"],"settings":{"enable_search":true,"enable_sidebar":true,"cta_link_title":"Contact us","cta_link":""}},"blog-template":{"type":"blog-template","settings":{"show_tags":true,"show_rss":false,"grid":2,"crop":true,"show_blog_date":true,"show_blog_author":false,"show_blog_comments":false,"show_blog_tags":false,"coll":"","coll_title":"Featured collection","coll_mobile_layout":"carousel","coll_grid":3,"coll_grid_mobile":"2","coll_rows":1,"coll_link_title":"View all","coll_link":""}},"product-recommendations":{"type":"product-recommendations","settings":{"show_related_products":true,"related_title":"You may also like","related_mobile_layout":"carousel","related_grid_num":3,"grid_mobile":"1","related_grid_row":1}},"article-template":{"type":"article-template","settings":{"show_img":true,"show_date":true,"show_author":true,"show_tags":true,"show_sharing":true,"coll":"","coll_title":"Featured collection","coll_mobile_layout":"carousel","coll_grid":3,"coll_grid_mobile":"1","coll_rows":1,"coll_link_title":"View all","coll_link":""}},"product-testimonials":{"type":"product-testimonials","settings":{"title":"Testimonials","style_desktop":"carousel","style_mobile":"carousel","link_title":"Shop now","link":""}},"product-sections":{"type":"product-sections","settings":{"container":"medium"}},"1566456250311":{"type":"home-slideshow","blocks":{"1566456250311-0":{"type":"image","settings":{"image":"","image_mobile":"","image_alignment":"center","alignment":"left","text_color":"default","title":"Image slide","text":"<p>Use these slides to tell the world about your brand. Use images or background video along with text and links.<\/p>","link_title":"More info","link":""}},"1566456250311-1":{"type":"image","settings":{"image":"","image_mobile":"","image_alignment":"center","alignment":"left","text_color":"default","title":"Image slide","text":"<p>Use these slides to tell the world about your brand. Use images or background video along with text and links.<\/p>","link_title":"More info","link":""}}},"block_order":["1566456250311-0","1566456250311-1"],"settings":{"slideshow_style":"semi","title_size":3,"autoplay":true,"autoplay_speed":8,"slideshow_height":"medium","slideshow_width":"full","overlay_strength":10}},"1566456269728":{"type":"home-collection","settings":{"title":"Featured collection","collection":"","mobile_layout":"carousel","grid":3,"grid_mobile":"1","rows":1,"link_title":"View all","link":""}},"1566456283593":{"type":"home-testimonials","blocks":{"1566456283593-0":{"type":"text","settings":{"media":"quote","image":"","image_round":true,"text":"Use these testimonials to share what customers are saying about your products and your brand.","name":"Customer name","source":"Source"}},"1566456283593-1":{"type":"text","settings":{"media":"quote","image":"","image_round":true,"text":"Use these testimonials to share what customers are saying about your products and your brand.","name":"Customer name","source":"Source"}},"1566456283593-2":{"type":"text","settings":{"media":"quote","image":"","image_round":true,"text":"Use these testimonials to share what customers are saying about your products and your brand.","name":"Customer name","source":"Source"}}},"block_order":["1566456283593-0","1566456283593-1","1566456283593-2"],"settings":{"title":"Testimonials","style_desktop":"carousel","style_mobile":"carousel","link_title":"Shop now","link":""}},"1566456294786":{"type":"home-image-grid","blocks":{"1566456294786-0":{"type":"image","settings":{"image":"","image_alignment":"center","text_alignment":"bottom","title":"Image block","text":"Use these image blocks to tell your story, promote your products or create a beautiful gallery.","link":""}},"1566456294786-1":{"type":"image","settings":{"image":"","image_alignment":"center","text_alignment":"bottom","title":"Image block","text":"Use these image blocks to tell your story, promote your products or create a beautiful gallery.","link":""}}},"block_order":["1566456294786-0","1566456294786-1"],"settings":{"featured":true,"height":"medium","overlay_strength":30}},"1566456304723":{"type":"home-content","blocks":{"1566456304723-0":{"type":"image","settings":{"image":"","bg_color":"#f0f0f0","title":"Image with text","desc":"<p>Use these blocks to share your brand's story. You can focus on a particular collection, a product detail, or even embed a video.<\/p>","video":"","link_title":"More info","link":""}},"1566456304723-1":{"type":"image","settings":{"image":"","bg_color":"rgba(0,0,0,0)","title":"Image with text","desc":"<p>Use these blocks to share your brand's story. You can focus on a particular collection, a product detail, or even embed a video.<\/p>","video":"","link_title":"More info","link":""}}},"block_order":["1566456304723-0","1566456304723-1"],"settings":{}},"1566456319558":{"type":"home-video","blocks":{"1566456319558-0":{"type":"video","settings":{"video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","image":""}},"1566456319558-1":{"type":"video","settings":{"video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","image":""}}},"block_order":["1566456319558-0","1566456319558-1"],"settings":{"title":"Video gallery","desc":"","link_title":"More videos","link":"","overlay_strength":50}},"1566456329415":{"type":"home-product","settings":{"featured_product":"","show_vendor":false,"product_variant_style":"buttons","use_swatch_images":false,"show_quantity_selector":true,"enable_payment_button":true,"content_align":"default"}},"1566456346591":{"type":"home-map","blocks":{"1566456346591-0":{"type":"map","settings":{"title":"Map 1","desc":"<p>273 Street Lane<br\/>San Francisco, CA 94102<br\/>(415) 557-4400<br\/>store@email.com<\/p>","sub_desc":"<p>Monday - Thursday, 12:00 to 23:00<br\/>Friday &amp; Saturday, 12:00 to 00:00<br\/>Sunday, Closed<\/p>","address":"100 Larkin St, San Francisco, CA 94102, USA","map_image":""}}},"block_order":["1566456346591-0"],"settings":{"show_directions_btn":false,"bg_color":"rgba(0,0,0,0)","google_api_key":"","map_style":"light"}},"list-collections-template":{"type":"list-collections-template","settings":{"display_type":"all","sort":"alphabetical","grid":2,"overlay_strength":30}},"page-contact":{"type":"page-contact","settings":{"show_form":true,"form_title":"Send us an email","show_map":false,"show_directions_btn":false,"google_api_key":"","map_style":"light"}}},"content_for_index":["1566456250311","1566456269728","1566456283593","1566456294786","1566456304723","1566456319558","1566456329415","1566456346591"]},"Evening":{"color_headings":"#212121","color_text":"#212121","color_alt_text":"#666666","color_brand":"#fad018","color_accent":"#f0f0f0","color_button":"#111111","product_grid_sale_color":"#c00000","product_grid_bg":"#f0f0f0","color_drawer_bg":"#fef7d7","color_drawer_style":"dark","type_base_font":"muli_n4","type_base_size":"15","type_header_font":"oswald_n4","type_header_size":"0.85","type_header_letterspace":1,"type_header_capitalize":true,"type_header_underline":true,"type_header_underline_size":3,"type_nav_font":"oswald_n4","type_nav_size":"13","type_nav_letterspace":1,"type_nav_capitalize":true,"type_button_font":"oswald_n4","type_button_size":"13","type_button_letterspace":1,"type_button_capitalize":true,"product_grid_vendor":false,"product_grid_second_hover":true,"product_grid_quick_buy":"hover","product_grid_align":"center","product_grid_image_size":"natural","product_grid_masonry":false,"product_grid_label":true,"product_grid_label_sale_style":"text","product_grid_label_new":true,"product_grid_label_new_days":14,"product_grid_label_title":"Hot","product_grid_label_collection":"","product_grid_detail_style":"default","product_grid_price":true,"product_grid_swatch":false,"product_grid_swatch_image":false,"product_grid_reviews":false,"product_reviews":false,"anim_load":true,"anim_load_style":"interval","anim_interval_style":"fade_down","anim_zoom":true,"cart_notes_enable":false,"cart_vendor_enable":false,"cart_continue":true,"cart_type":"modal","search_enable":true,"search_limit":"product,article,page","search_linklist":"main-menu","share_facebook":true,"share_twitter":true,"share_pinterest":true,"share_fancy":true,"share_mail":true,"social_facebook_link":"","social_twitter_link":"","social_pinterest_link":"","social_instagram_link":"","social_tumblr_link":"","social_snapchat_link":"","social_youtube_link":"","social_vimeo_link":"","social_fancy_link":"","social_untappd_link":"","favicon":"","checkout_header_image":"","checkout_logo_image":"","checkout_logo_position":"left","checkout_logo_size":"medium","checkout_body_background_image":"","checkout_body_background_color":"#fff","checkout_input_background_color_mode":"white","checkout_sidebar_background_image":"","checkout_sidebar_background_color":"#fafafa","checkout_heading_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'","checkout_body_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'","checkout_accent_color":"#197bbd","checkout_button_color":"#197bbd","checkout_error_color":"#e32c2b","sections":{"footer":{"type":"footer","blocks":{"1494343961341":{"type":"linklist","settings":{"title":"Menu","linklist":"footer"}},"1494463355206":{"type":"linklist","settings":{"title":"Menu","linklist":"footer"}},"1494343958665":{"type":"contact","settings":{"title":"Contact","show_email":true,"show_number":true,"show_address":true,"show_social":true}},"1494463348419":{"type":"text","settings":{"title":"Text area","text":"<p>Add some text such as a mini biography or your mission statement.<\/p>"}}},"block_order":["1494343961341","1494463355206","1494343958665","1494463348419"],"settings":{"footer_newsletter_enable":true,"footer_newsletter_home":false,"newsletter_bg":"#f0f0f0","newsletter_style":"default","footer_newsletter_title":"Newsletter","footer_newsletter_desc":"<p>Let your customers know what to expect if they sign up to your mailing list.<\/p>","footer_bg":"#222222","footer_style":"light","show_payment_icons":true}},"header":{"type":"header","settings":{"show_border":true,"header_bg":"#ffffff","header_style":"dark","logo":"","logo_size":5,"logo_spacing":3,"main_linklist":"main-menu","layout":"center","style":"static","mega_nav":true,"mega_image":"","mega_image_link":"","mega_title":"","mega_text":"","mega_link_title":"Learn more","mega_link":""}},"mobile-drawer":{"type":"mobile-drawer","settings":{"main_linklist":"main-menu","contact_title":"Contact","show_contact_number":true,"show_contact_email":true,"show_social":true,"cta_image":"","cta_image_link":"","cta_title":"","cta_text":"","cta_link_title":"Learn more","cta_link":""}},"promo-pop":{"type":"promo-pop","settings":{"enable":false,"mobile":false,"title":"Popup","text":"<p>Use this popup to embed a mailing list sign up form. Alternatively use it as a simple call to action with a link to a product or a page.<\/p>","link_title":"More info","link":"","delay":10,"expiry":30,"enable_newsletter":true}},"age-checker":{"type":"age-checker","settings":{"enable":false,"image":"","title":"Age verification","text":"<p>By clicking enter you are verifying that you are old enough to consume alcohol.<\/p>","enter_btn_label":"Enter","leave_btn_label":"Leave","leave_link":""}},"collection-template":{"type":"collection-template","settings":{"grid":3,"grid_mobile":"2","rows":6,"center_title":true,"sort_enable":true,"show_collection_image":true,"collection_image_height":"4:1","image_alignment":"center","show_sidebar":false,"sidebar_layout":"drawer"}},"product-template":{"type":"product-template","settings":{"layout":"full","show_breadcrumbs":true,"show_vendor":false,"product_variant_style":"buttons","use_swatch_images":false,"show_quantity_selector":true,"enable_payment_button":true,"image":"","show_share_buttons":true,"enable_zoom":true,"image_size":"large","bg_color":"rgba(0,0,0,0)","text_color":"default","bg_height":"default"}},"password-header":{"type":"password-header","settings":{"logo":"","logo_size":5,"logo_spacing":3,"show_border":true}},"password-content":{"type":"password-content","settings":{"bg_image":"","show_newsletter":true,"newsletter_text":"","newsletter_button_text":"Sign up","show_social":true}},"page-faq":{"type":"page-faq","blocks":{"1563305378357":{"type":"category","settings":{"title":"Category"}},"1563305326608":{"type":"article","settings":{"title":"Article heading","text":"<p>Use these articles to answer questions that customers have about your products and services. You can use text, links and images and also group articles into categories.<\/p>","image":""}},"1563305341300":{"type":"article","settings":{"title":"Article heading","text":"<p>Use these articles to answer questions that customers have about your products and services. You can use text, links and images and also group articles into categories.<\/p>","image":""}},"1563305384180":{"type":"category","settings":{"title":"Category"}},"1563305386011":{"type":"article","settings":{"title":"Article heading","text":"<p>Use these articles to answer questions that customers have about your products and services. You can use text, links and images and also group articles into categories.<\/p>","image":""}}},"block_order":["1563305378357","1563305326608","1563305341300","1563305384180","1563305386011"],"settings":{"enable_search":true,"enable_sidebar":true,"cta_link_title":"Contact us","cta_link":""}},"blog-template":{"type":"blog-template","settings":{"show_tags":true,"show_rss":false,"grid":2,"crop":true,"show_blog_date":true,"show_blog_author":false,"show_blog_comments":false,"show_blog_tags":false,"coll":"","coll_title":"Featured collection","coll_mobile_layout":"carousel","coll_grid":3,"coll_grid_mobile":"2","coll_rows":1,"coll_link_title":"View all","coll_link":""}},"product-recommendations":{"type":"product-recommendations","settings":{"show_related_products":true,"related_title":"You may also like","related_mobile_layout":"carousel","related_grid_num":3,"grid_mobile":"1","related_grid_row":1}},"article-template":{"type":"article-template","settings":{"show_img":true,"show_date":true,"show_author":true,"show_tags":true,"show_sharing":true,"coll":"","coll_title":"Featured collection","coll_mobile_layout":"carousel","coll_grid":3,"coll_grid_mobile":"1","coll_rows":1,"coll_link_title":"View all","coll_link":""}},"product-testimonials":{"type":"product-testimonials","settings":{"title":"Testimonials","style_desktop":"carousel","style_mobile":"carousel","link_title":"Shop now","link":""}},"product-sections":{"type":"product-sections","settings":{"container":"medium"}},"1566456250311":{"type":"home-slideshow","blocks":{"1566456250311-0":{"type":"image","settings":{"image":"","image_mobile":"","image_alignment":"center","alignment":"left","text_color":"default-light","title":"Image slide","text":"<p>Use these slides to tell the world about your brand. Use images or background video along with text and links.<\/p>","link_title":"More info","link":""}},"1566456250311-1":{"type":"image","settings":{"image":"","image_mobile":"","image_alignment":"center","alignment":"left","text_color":"default-light","title":"Image slide","text":"<p>Use these slides to tell the world about your brand. Use images or background video along with text and links.<\/p>","link_title":"More info","link":""}}},"block_order":["1566456250311-0","1566456250311-1"],"settings":{"slideshow_style":"minimal","title_size":3,"autoplay":true,"autoplay_speed":8,"slideshow_height":"medium","slideshow_width":"contained","overlay_strength":30}},"1566456269728":{"type":"home-collection","settings":{"title":"Featured collection","collection":"","mobile_layout":"carousel","grid":3,"grid_mobile":"1","rows":1,"link_title":"View all","link":""}},"1566456283593":{"type":"home-testimonials","blocks":{"1566456283593-0":{"type":"text","settings":{"media":"quote","image":"","image_round":true,"text":"Use these testimonials to share what customers are saying about your products and your brand.","name":"Customer name","source":"Source"}},"1566456283593-1":{"type":"text","settings":{"media":"quote","image":"","image_round":true,"text":"Use these testimonials to share what customers are saying about your products and your brand.","name":"Customer name","source":"Source"}},"1566456283593-2":{"type":"text","settings":{"media":"quote","image":"","image_round":true,"text":"Use these testimonials to share what customers are saying about your products and your brand.","name":"Customer name","source":"Source"}}},"block_order":["1566456283593-0","1566456283593-1","1566456283593-2"],"settings":{"title":"Testimonials","style_desktop":"carousel","style_mobile":"carousel","link_title":"Shop now","link":""}},"1566456304723":{"type":"home-content","blocks":{"1566456304723-0":{"type":"image","settings":{"image":"","bg_color":"#f0f0f0","title":"Image with text","desc":"<p>Use these blocks to share your brand's story. You can focus on a particular collection, a product detail, or even embed a video.<\/p>","video":"","link_title":"More info","link":""}},"1566456304723-1":{"type":"image","settings":{"image":"","bg_color":"#ffffff","title":"Image with text","desc":"<p>Use these blocks to share your brand's story. You can focus on a particular collection, a product detail, or even embed a video.<\/p>","video":"","link_title":"More info","link":""}}},"block_order":["1566456304723-0","1566456304723-1"],"settings":{}},"1566456319558":{"type":"home-video","blocks":{"1566456319558-0":{"type":"video","settings":{"video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","image":""}},"1566456319558-1":{"type":"video","settings":{"video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","image":""}}},"block_order":["1566456319558-0","1566456319558-1"],"settings":{"title":"Video gallery","desc":"","link_title":"More videos","link":"","overlay_strength":50}},"1566456346591":{"type":"home-map","blocks":{"1566456346591-0":{"type":"map","settings":{"title":"Map 1","desc":"<p>273 Street Lane<br\/>San Francisco, CA 94102<br\/>(415) 557-4400<br\/>store@email.com<\/p>","sub_desc":"<p>Monday - Thursday, 12:00 to 23:00<br\/>Friday &amp; Saturday, 12:00 to 00:00<br\/>Sunday, Closed<\/p>","address":"100 Larkin St, San Francisco, CA 94102, USA","map_image":""}}},"block_order":["1566456346591-0"],"settings":{"show_directions_btn":false,"bg_color":"#f0f0f0","google_api_key":"","map_style":"light"}},"list-collections-template":{"type":"list-collections-template","settings":{"display_type":"all","sort":"alphabetical","grid":2,"overlay_strength":30}},"page-contact":{"type":"page-contact","settings":{"show_form":true,"form_title":"Send us an email","show_map":false,"show_directions_btn":false,"google_api_key":"","map_style":"light"}},"1566460870233":{"type":"home-image-text","settings":{"bg_image":"","image_alignment":"center","text":"<p>Offer some insight into your brand and history. Use images, text and video to describe your value proposition.<\/p>","inline_image":"","inline_image_width":200,"video":"","link_title":"Learn more","link":"","section_height":"small","overlay_color":"#ffffff","overlay_strength":30,"content_style":"dark"}},"1566460897951":{"type":"home-events","settings":{"title":"Events","desc":"","link_title":"View all","link":"","mobile_layout":"carousel","overlay_strength":50,"api_key":"","events_limit":2,"show_link":true}},"1566460912234":{"type":"home-text-columns","blocks":{"1566460912234-0":{"type":"text","settings":{"image":"","title":"Column heading","sub_title":"Subheading","desc":"<p>Describe the main features of your brand or products using a few lines of text along with images or icons.<\/p>"}},"1566460912234-1":{"type":"text","settings":{"image":"","title":"Column heading","sub_title":"Subheading","desc":"<p>Describe the main features of your brand or products using a few lines of text along with images or icons.<\/p>"}},"1566460912234-2":{"type":"text","settings":{"image":"","title":"Column heading","sub_title":"Subheading","desc":"<p>Describe the main features of your brand or products using a few lines of text along with images or icons.<\/p>"}}},"block_order":["1566460912234-0","1566460912234-1","1566460912234-2"],"settings":{"title":"Text columns with images","desc":"","content_align":"center","link_title":"Learn more","link":""}},"1566460938967":{"type":"home-delivery","settings":{"bg_image":"","image_alignment":"center","delivery_service":"deliveroo","logo_override":"","title":"","desc":"<p>Use a logo and text to link to a delivery partner such as UberEATS or Favor. This section is not intended for products ordered through your Shopify store.<\/p>","link_title":"Learn more","link":"","section_height":"medium","overlay_strength":30}}},"content_for_index":["1566456250311","1566456269728","1566456283593","1566456304723","1566460870233","1566456319558","1566460912234","1566460897951","1566456346591","1566460938967"]},"Weekend":{"color_headings":"#212121","color_text":"#535353","color_alt_text":"#666666","color_brand":"#98b859","color_accent":"#f0f0f0","color_button":"#ffffff","product_grid_sale_color":"#c00000","product_grid_bg":"#f0f0f0","color_drawer_bg":"#f0f0f0","color_drawer_style":"dark","type_base_font":"nunito_sans_n3","type_base_size":"15","type_header_font":"old_standard_tt_n4","type_header_size":"0.85","type_header_letterspace":0,"type_header_capitalize":false,"type_header_underline":true,"type_header_underline_size":4,"type_nav_font":"nunito_sans_n3","type_nav_size":"13","type_nav_letterspace":1,"type_nav_capitalize":true,"type_button_font":"nunito_sans_n3","type_button_size":"13","type_button_letterspace":1,"type_button_capitalize":true,"product_grid_vendor":false,"product_grid_second_hover":true,"product_grid_quick_buy":"hover","product_grid_align":"center","product_grid_image_size":"natural","product_grid_masonry":false,"product_grid_label":true,"product_grid_label_sale_style":"text","product_grid_label_new":true,"product_grid_label_new_days":14,"product_grid_label_title":"Hot","product_grid_label_collection":"","product_grid_detail_style":"default","product_grid_price":true,"product_grid_swatch":false,"product_grid_swatch_image":false,"product_grid_reviews":false,"product_reviews":false,"anim_load":true,"anim_load_style":"interval","anim_interval_style":"fade_down","anim_zoom":true,"cart_notes_enable":false,"cart_vendor_enable":false,"cart_continue":true,"cart_type":"modal","search_enable":true,"search_limit":"product,article,page","search_linklist":"main-menu","share_facebook":true,"share_twitter":true,"share_pinterest":true,"share_fancy":true,"share_mail":true,"social_facebook_link":"","social_twitter_link":"","social_pinterest_link":"","social_instagram_link":"","social_tumblr_link":"","social_snapchat_link":"","social_youtube_link":"","social_vimeo_link":"","social_fancy_link":"","social_untappd_link":"","favicon":"","checkout_header_image":"","checkout_logo_image":"","checkout_logo_position":"left","checkout_logo_size":"medium","checkout_body_background_image":"","checkout_body_background_color":"#fff","checkout_input_background_color_mode":"white","checkout_sidebar_background_image":"","checkout_sidebar_background_color":"#fafafa","checkout_heading_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'","checkout_body_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'","checkout_accent_color":"#197bbd","checkout_button_color":"#197bbd","checkout_error_color":"#e32c2b","sections":{"footer":{"type":"footer","blocks":{"1494343961341":{"type":"linklist","settings":{"title":"Menu","linklist":"footer"}},"1494463355206":{"type":"linklist","settings":{"title":"Menu","linklist":"footer"}},"1494343958665":{"type":"contact","settings":{"title":"Contact","show_email":true,"show_number":true,"show_address":true,"show_social":true}},"1494463348419":{"type":"text","settings":{"title":"Text area","text":"<p>Add some text such as a mini biography or your mission statement.<\/p>"}}},"block_order":["1494343961341","1494463355206","1494343958665","1494463348419"],"settings":{"footer_newsletter_enable":true,"footer_newsletter_home":false,"newsletter_bg":"#f0f0f0","newsletter_style":"default","footer_newsletter_title":"Newsletter","footer_newsletter_desc":"<p>Let your customers know what to expect if they sign up to your mailing list.<\/p>","footer_bg":"#232f3d","footer_style":"light","show_payment_icons":true}},"header":{"type":"header","settings":{"show_border":false,"header_bg":"#ffffff","header_style":"dark","logo":"","logo_size":5,"logo_spacing":3,"main_linklist":"main-menu","layout":"left","style":"sticky","mega_nav":true,"mega_image":"","mega_image_link":"","mega_title":"","mega_text":"","mega_link_title":"Learn more","mega_link":""}},"mobile-drawer":{"type":"mobile-drawer","settings":{"main_linklist":"main-menu","contact_title":"Contact","show_contact_number":true,"show_contact_email":true,"show_social":true,"cta_image":"","cta_image_link":"","cta_title":"","cta_text":"","cta_link_title":"Learn more","cta_link":""}},"promo-pop":{"type":"promo-pop","settings":{"enable":false,"mobile":false,"title":"Popup","text":"<p>Use this popup to embed a mailing list sign up form. Alternatively use it as a simple call to action with a link to a product or a page.<\/p>","link_title":"More info","link":"","delay":10,"expiry":30,"enable_newsletter":true}},"age-checker":{"type":"age-checker","settings":{"enable":false,"image":"","title":"Age verification","text":"<p>By clicking enter you are verifying that you are old enough to consume alcohol.<\/p>","enter_btn_label":"Enter","leave_btn_label":"Leave","leave_link":""}},"collection-template":{"type":"collection-template","settings":{"grid":3,"grid_mobile":"2","rows":6,"center_title":true,"sort_enable":true,"show_collection_image":true,"collection_image_height":"4:1","image_alignment":"center","show_sidebar":false,"sidebar_layout":"drawer"}},"product-template":{"type":"product-template","settings":{"layout":"full","show_breadcrumbs":true,"show_vendor":false,"product_variant_style":"buttons","use_swatch_images":false,"show_quantity_selector":true,"enable_payment_button":true,"image":"","show_share_buttons":true,"enable_zoom":true,"image_size":"large","bg_color":"rgba(0,0,0,0)","text_color":"default","bg_height":"full"}},"password-header":{"type":"password-header","settings":{"logo":"","logo_size":5,"logo_spacing":3,"show_border":true}},"password-content":{"type":"password-content","settings":{"bg_image":"","show_newsletter":true,"newsletter_text":"","newsletter_button_text":"Sign up","show_social":true}},"page-faq":{"type":"page-faq","blocks":{"1563305378357":{"type":"category","settings":{"title":"Category"}},"1563305326608":{"type":"article","settings":{"title":"Article heading","text":"<p>Use these articles to answer questions that customers have about your products and services. You can use text, links and images and also group articles into categories.<\/p>","image":""}},"1563305341300":{"type":"article","settings":{"title":"Article heading","text":"<p>Use these articles to answer questions that customers have about your products and services. You can use text, links and images and also group articles into categories.<\/p>","image":""}},"1563305384180":{"type":"category","settings":{"title":"Category"}},"1563305386011":{"type":"article","settings":{"title":"Article heading","text":"<p>Use these articles to answer questions that customers have about your products and services. You can use text, links and images and also group articles into categories.<\/p>","image":""}}},"block_order":["1563305378357","1563305326608","1563305341300","1563305384180","1563305386011"],"settings":{"enable_search":true,"enable_sidebar":true,"cta_link_title":"Contact us","cta_link":""}},"blog-template":{"type":"blog-template","settings":{"show_tags":true,"show_rss":false,"grid":2,"crop":true,"show_blog_date":true,"show_blog_author":false,"show_blog_comments":false,"show_blog_tags":false,"coll":"","coll_title":"Featured collection","coll_mobile_layout":"carousel","coll_grid":3,"coll_grid_mobile":"2","coll_rows":1,"coll_link_title":"View all","coll_link":""}},"product-recommendations":{"type":"product-recommendations","settings":{"show_related_products":true,"related_title":"You may also like","related_mobile_layout":"carousel","related_grid_num":3,"grid_mobile":"1","related_grid_row":1}},"article-template":{"type":"article-template","settings":{"show_img":true,"show_date":true,"show_author":true,"show_tags":true,"show_sharing":true,"coll":"","coll_title":"Featured collection","coll_mobile_layout":"carousel","coll_grid":3,"coll_grid_mobile":"1","coll_rows":1,"coll_link_title":"View all","coll_link":""}},"product-testimonials":{"type":"product-testimonials","settings":{"title":"Testimonials","style_desktop":"carousel","style_mobile":"carousel","link_title":"Shop now","link":""}},"product-sections":{"type":"product-sections","settings":{"container":"medium"}},"1566456250311":{"type":"home-slideshow","blocks":{"1566456250311-0":{"type":"image","settings":{"image":"","image_mobile":"","image_alignment":"center","alignment":"left","text_color":"default-light","title":"Image slide","text":"<p>Use these slides to tell the world about your brand. Use images or background video along with text and links.<\/p>","link_title":"More info","link":""}},"1566456250311-1":{"type":"image","settings":{"image":"","image_mobile":"","image_alignment":"center","alignment":"left","text_color":"default-light","title":"Image slide","text":"<p>Use these slides to tell the world about your brand. Use images or background video along with text and links.<\/p>","link_title":"More info","link":""}}},"block_order":["1566456250311-0","1566456250311-1"],"settings":{"slideshow_style":"minimal","title_size":3,"autoplay":true,"autoplay_speed":8,"slideshow_height":"medium","slideshow_width":"full","overlay_strength":30}},"1566456269728":{"type":"home-collection","settings":{"title":"Featured collection","collection":"","mobile_layout":"carousel","grid":3,"grid_mobile":"1","rows":1,"link_title":"View all","link":""}},"1566456283593":{"type":"home-testimonials","blocks":{"1566456283593-0":{"type":"text","settings":{"media":"quote","image":"","image_round":true,"text":"Use these testimonials to share what customers are saying about your products and your brand.","name":"Customer name","source":"Source"}},"1566456283593-1":{"type":"text","settings":{"media":"quote","image":"","image_round":true,"text":"Use these testimonials to share what customers are saying about your products and your brand.","name":"Customer name","source":"Source"}},"1566456283593-2":{"type":"text","settings":{"media":"quote","image":"","image_round":true,"text":"Use these testimonials to share what customers are saying about your products and your brand.","name":"Customer name","source":"Source"}}},"block_order":["1566456283593-0","1566456283593-1","1566456283593-2"],"settings":{"title":"Testimonials","style_desktop":"carousel","style_mobile":"carousel","link_title":"Shop now","link":""}},"1566456294786":{"type":"home-image-grid","blocks":{"1566456294786-0":{"type":"image","settings":{"image":"","image_alignment":"center","text_alignment":"bottom","title":"Image block","text":"Use these image blocks to tell your story, promote your products or create a beautiful gallery.","link":""}},"1566456294786-1":{"type":"image","settings":{"image":"","image_alignment":"center","text_alignment":"bottom","title":"Image block","text":"Use these image blocks to tell your story, promote your products or create a beautiful gallery.","link":""}}},"block_order":["1566456294786-0","1566456294786-1"],"settings":{"featured":true,"height":"medium","overlay_strength":30}},"1566456319558":{"type":"home-video","blocks":{"1566456319558-0":{"type":"video","settings":{"video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","image":""}},"1566456319558-1":{"type":"video","settings":{"video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","image":""}}},"block_order":["1566456319558-0","1566456319558-1"],"settings":{"title":"Video gallery","desc":"","link_title":"More videos","link":"","overlay_strength":50}},"1566456346591":{"type":"home-map","blocks":{"1566456346591-0":{"type":"map","settings":{"title":"Map 1","desc":"<p>273 Street Lane<br\/>San Francisco, CA 94102<br\/>(415) 557-4400<br\/>store@email.com<\/p>","sub_desc":"<p>Monday - Thursday, 12:00 to 23:00<br\/>Friday &amp; Saturday, 12:00 to 00:00<br\/>Sunday, Closed<\/p>","address":"100 Larkin St, San Francisco, CA 94102, USA","map_image":""}}},"block_order":["1566456346591-0"],"settings":{"show_directions_btn":false,"bg_color":"rgba(0,0,0,0)","google_api_key":"","map_style":"light"}},"list-collections-template":{"type":"list-collections-template","settings":{"display_type":"all","sort":"alphabetical","grid":2,"overlay_strength":30}},"page-contact":{"type":"page-contact","settings":{"show_form":true,"form_title":"Send us an email","show_map":false,"show_directions_btn":false,"google_api_key":"","map_style":"light"}},"1566462063540":{"type":"home-product","settings":{"featured_product":"","show_vendor":false,"product_variant_style":"buttons","use_swatch_images":false,"show_quantity_selector":true,"enable_payment_button":true,"content_align":"default"}}},"content_for_index":["1566456250311","1566462063540","1566456269728","1566456294786","1566456283593","1566456319558","1566456346591"]}}}
+{
+  "current": {
+    "color_headings": "#260707",
+    "color_text": "#260707",
+    "color_alt_text": "#661111",
+    "color_brand": "#e42727",
+    "color_accent": "#ffa6a6",
+    "color_button": "#000000",
+    "product_grid_sale_color": "#c00000",
+    "product_grid_bg": "#f0f0f0",
+    "color_drawer_bg": "#fef7d7",
+    "color_drawer_style": "dark",
+    "type_base_font": "muli_n4",
+    "type_base_size": "15",
+    "type_header_font": "oswald_n4",
+    "type_header_size": "0.85",
+    "type_header_letterspace": 1,
+    "type_header_capitalize": true,
+    "type_header_underline": true,
+    "type_header_underline_size": 3,
+    "type_nav_font": "oswald_n4",
+    "type_nav_size": "13",
+    "type_nav_letterspace": 1,
+    "type_nav_capitalize": true,
+    "type_button_font": "oswald_n4",
+    "type_button_size": "13",
+    "type_button_letterspace": 1,
+    "type_button_capitalize": true,
+    "product_grid_vendor": false,
+    "product_grid_second_hover": true,
+    "product_grid_quick_buy": "hover",
+    "product_grid_align": "center",
+    "product_grid_image_size": "natural",
+    "product_grid_masonry": false,
+    "product_grid_label": true,
+    "product_grid_label_sale_style": "text",
+    "product_grid_label_new": true,
+    "product_grid_label_new_days": 14,
+    "product_grid_label_title": "Hot",
+    "product_grid_label_collection": "",
+    "product_grid_detail_style": "default",
+    "product_grid_price": true,
+    "product_grid_swatch": false,
+    "product_grid_swatch_image": false,
+    "product_grid_reviews": false,
+    "product_reviews": false,
+    "anim_load": true,
+    "anim_load_style": "interval",
+    "anim_interval_style": "fade_down",
+    "anim_zoom": true,
+    "cart_type": "modal",
+    "cart_notes_enable": false,
+    "cart_vendor_enable": false,
+    "cart_continue": true,
+    "search_enable": true,
+    "search_limit": "product,article,page",
+    "search_linklist": "main-menu",
+    "share_facebook": true,
+    "share_twitter": true,
+    "share_pinterest": true,
+    "share_fancy": true,
+    "share_mail": true,
+    "social_facebook_link": "",
+    "social_twitter_link": "",
+    "social_pinterest_link": "",
+    "social_instagram_link": "",
+    "social_tumblr_link": "",
+    "social_snapchat_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "social_fancy_link": "",
+    "social_untappd_link": "",
+    "favicon": "",
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#197bbd",
+    "checkout_button_color": "#197bbd",
+    "checkout_error_color": "#e32c2b",
+    "sections": {
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "1494343961341": {
+            "type": "linklist",
+            "settings": {
+              "title": "Menu",
+              "linklist": "main-menu"
+            }
+          },
+          "1494343958665": {
+            "type": "contact",
+            "settings": {
+              "title": "Contact",
+              "show_email": false,
+              "show_number": true,
+              "show_address": true,
+              "show_social": true
+            }
+          },
+          "4da3f61a-2da8-4c05-b74d-1b82999927c8": {
+            "type": "social",
+            "settings": {
+              "title": "Social"
+            }
+          }
+        },
+        "block_order": [
+          "1494343961341",
+          "1494343958665",
+          "4da3f61a-2da8-4c05-b74d-1b82999927c8"
+        ],
+        "settings": {
+          "footer_newsletter_enable": false,
+          "footer_newsletter_home": false,
+          "newsletter_bg": "#f0f0f0",
+          "newsletter_style": "default",
+          "footer_newsletter_title": "Newsletter",
+          "footer_newsletter_desc": "<p>Let your customers know what to expect if they sign up to your mailing list.<\/p>",
+          "footer_bg": "#222222",
+          "footer_style": "light",
+          "show_payment_icons": true,
+          "show_locale_selector": true,
+          "show_currency_selector": true
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "show_border": true,
+          "header_bg": "#ffffff",
+          "header_style": "dark",
+          "logo": "shopify:\/\/shop_images\/global-cheese-logo.png",
+          "logo_size": 8,
+          "logo_size_mobile": 5,
+          "logo_spacing": 3,
+          "main_linklist": "main-menu",
+          "layout": "left",
+          "style": "static",
+          "parent_links": true,
+          "mega_nav": false,
+          "mega_image_link": "",
+          "mega_title": "",
+          "mega_text": "",
+          "mega_link_title": "Learn more",
+          "mega_link": "",
+          "show_locale_selector": true,
+          "show_currency_selector": true
+        }
+      },
+      "mobile-drawer": {
+        "type": "mobile-drawer",
+        "settings": {
+          "main_linklist": "main-menu",
+          "contact_title": "Contact",
+          "show_contact_number": true,
+          "show_contact_email": true,
+          "show_locale_selector": true,
+          "show_currency_selector": true,
+          "show_social": true,
+          "cta_image_link": "",
+          "cta_title": "",
+          "cta_text": "",
+          "cta_link_title": "Learn more",
+          "cta_link": ""
+        }
+      },
+      "promo-pop": {
+        "type": "promo-pop",
+        "settings": {
+          "enable": false,
+          "mobile": false,
+          "title": "Popup",
+          "text": "<p>Use this popup to embed a mailing list sign up form. Alternatively use it as a simple call to action with a link to a product or a page.<\/p>",
+          "link_title": "More info",
+          "link": "",
+          "delay": 10,
+          "expiry": 30,
+          "enable_newsletter": false
+        }
+      },
+      "age-checker": {
+        "type": "age-checker",
+        "settings": {
+          "enable": false,
+          "title": "Age verification",
+          "text": "<p>By clicking enter you are verifying that you are old enough to consume alcohol.<\/p>",
+          "enter_btn_label": "Enter",
+          "leave_btn_label": "Leave",
+          "leave_link": ""
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "grid": 3,
+          "grid_mobile": "2",
+          "rows": 6,
+          "center_title": true,
+          "sort_enable": true,
+          "show_collection_image": true,
+          "collection_image_height": "4:1",
+          "image_alignment": "center",
+          "show_sidebar": false,
+          "sidebar_layout": "drawer"
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "layout": "full",
+          "show_breadcrumbs": true,
+          "show_vendor": false,
+          "product_variant_style": "buttons",
+          "use_swatch_images": false,
+          "show_quantity_selector": true,
+          "enable_payment_button": true,
+          "image": "",
+          "show_share_buttons": true,
+          "enable_zoom": true,
+          "image_size": "large",
+          "bg_color": "rgba(0,0,0,0)",
+          "text_color": "default",
+          "bg_height": "default"
+        }
+      },
+      "password-header": {
+        "type": "password-header",
+        "settings": {
+          "logo": "",
+          "logo_size": 5,
+          "logo_spacing": 3,
+          "show_border": true
+        }
+      },
+      "password-content": {
+        "type": "password-content",
+        "settings": {
+          "bg_image": "",
+          "show_newsletter": true,
+          "newsletter_text": "",
+          "newsletter_button_text": "Sign up",
+          "show_social": true
+        }
+      },
+      "page-faq": {
+        "type": "page-faq",
+        "blocks": {
+          "1563305378357": {
+            "type": "category",
+            "settings": {
+              "title": "Category"
+            }
+          },
+          "1563305326608": {
+            "type": "article",
+            "settings": {
+              "title": "Article heading",
+              "text": "<p>Use these articles to answer questions that customers have about your products and services. You can use text, links and images and also group articles into categories.<\/p>",
+              "image": ""
+            }
+          },
+          "1563305341300": {
+            "type": "article",
+            "settings": {
+              "title": "Article heading",
+              "text": "<p>Use these articles to answer questions that customers have about your products and services. You can use text, links and images and also group articles into categories.<\/p>",
+              "image": ""
+            }
+          },
+          "1563305384180": {
+            "type": "category",
+            "settings": {
+              "title": "Category"
+            }
+          },
+          "1563305386011": {
+            "type": "article",
+            "settings": {
+              "title": "Article heading",
+              "text": "<p>Use these articles to answer questions that customers have about your products and services. You can use text, links and images and also group articles into categories.<\/p>",
+              "image": ""
+            }
+          }
+        },
+        "block_order": [
+          "1563305378357",
+          "1563305326608",
+          "1563305341300",
+          "1563305384180",
+          "1563305386011"
+        ],
+        "settings": {
+          "enable_search": true,
+          "enable_sidebar": true,
+          "cta_link_title": "Contact us",
+          "cta_link": ""
+        }
+      },
+      "blog-template": {
+        "type": "blog-template",
+        "settings": {
+          "show_tags": true,
+          "show_rss": false,
+          "grid": 2,
+          "crop": true,
+          "show_blog_date": true,
+          "show_blog_author": false,
+          "show_blog_comments": false,
+          "show_blog_tags": false,
+          "coll": "",
+          "coll_title": "Featured collection",
+          "coll_mobile_layout": "carousel",
+          "coll_grid": 3,
+          "coll_grid_mobile": "2",
+          "coll_rows": 1,
+          "coll_link_title": "View all",
+          "coll_link": ""
+        }
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "show_related_products": true,
+          "related_title": "You may also like",
+          "related_mobile_layout": "carousel",
+          "related_grid_num": 3,
+          "grid_mobile": "1",
+          "related_grid_row": 1
+        }
+      },
+      "article-template": {
+        "type": "article-template",
+        "settings": {
+          "show_img": true,
+          "show_date": true,
+          "show_author": true,
+          "show_tags": true,
+          "show_sharing": true,
+          "coll": "",
+          "coll_title": "Featured collection",
+          "coll_mobile_layout": "carousel",
+          "coll_grid": 3,
+          "coll_grid_mobile": "1",
+          "coll_rows": 1,
+          "coll_link_title": "View all",
+          "coll_link": ""
+        }
+      },
+      "product-testimonials": {
+        "type": "product-testimonials",
+        "settings": {
+          "title": "Testimonials",
+          "style_desktop": "carousel",
+          "style_mobile": "carousel",
+          "link_title": "Shop now",
+          "link": ""
+        }
+      },
+      "product-sections": {
+        "type": "product-sections",
+        "settings": {
+          "container": "medium"
+        }
+      },
+      "1566456250311": {
+        "type": "home-slideshow",
+        "blocks": {
+          "1566456250311-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/global-cheese-hero-image.jpg",
+              "image_alignment": "center",
+              "alignment": "left",
+              "text_color": "default",
+              "title": "Toronto's Best Cheese Shop",
+              "text": "<p>Serving Toronto since 1970, we are excited to announce our online store is coming soon. We look forward to serving you better!<\/p>",
+              "link_title": "Shop Now",
+              "link": "shopify:\/\/pages\/contact"
+            }
+          }
+        },
+        "block_order": [
+          "1566456250311-0"
+        ],
+        "settings": {
+          "slideshow_style": "minimal",
+          "title_size": 3,
+          "autoplay": false,
+          "autoplay_speed": 8,
+          "slideshow_height": "medium",
+          "slideshow_width": "full",
+          "overlay_strength": 50
+        }
+      },
+      "1566456269728": {
+        "type": "home-collection",
+        "disabled": true,
+        "settings": {
+          "title": "Featured collection",
+          "collection": "",
+          "mobile_layout": "carousel",
+          "grid": 3,
+          "grid_mobile": "1",
+          "rows": 1,
+          "link_title": "View all",
+          "link": ""
+        }
+      },
+      "1566456304723": {
+        "type": "home-content",
+        "disabled": true,
+        "blocks": {
+          "1566456304723-0": {
+            "type": "image",
+            "settings": {
+              "bg_color": "#f0f0f0",
+              "title": "Image with text",
+              "desc": "<p>Use these blocks to share your brand's story. You can focus on a particular collection, a product detail, or even embed a video.<\/p>",
+              "video": "",
+              "link_title": "More info",
+              "link": ""
+            }
+          },
+          "1566456304723-1": {
+            "type": "image",
+            "settings": {
+              "bg_color": "#ffffff",
+              "title": "Image with text",
+              "desc": "<p>Use these blocks to share your brand's story. You can focus on a particular collection, a product detail, or even embed a video.<\/p>",
+              "video": "",
+              "link_title": "More info",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1566456304723-0",
+          "1566456304723-1"
+        ],
+        "settings": {
+        }
+      },
+      "1566456346591": {
+        "type": "home-map",
+        "blocks": {
+          "1566456346591-0": {
+            "type": "map",
+            "settings": {
+              "title": "Kensington Market",
+              "desc": "<p>76 Kensington Ave<br\/>Toronto, ON M5T 2K1<br\/><a href=\"https:\/\/www.google.com\/search?client=firefox-b-d&q=global+cheese+kensington+market#\">(416) 593-9251<\/a><br\/><\/p>",
+              "sub_desc": "<p>Monday - Friday, 9:00 to 18:00<br\/>Saturday, 8:00 to 18:00<br\/>Sunday, 9:00 to 17:00<\/p>",
+              "address": "76 Kensington Ave, Toronto, ON M5T 2K1",
+              "map_image": "shopify:\/\/shop_images\/global-cheese-kensington.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "1566456346591-0"
+        ],
+        "settings": {
+          "show_directions_btn": true,
+          "bg_color": "#f0f0f0",
+          "google_api_key": "",
+          "map_style": "light"
+        }
+      },
+      "list-collections-template": {
+        "type": "list-collections-template",
+        "settings": {
+          "display_type": "all",
+          "sort": "alphabetical",
+          "grid": 2,
+          "overlay_strength": 30
+        }
+      },
+      "page-contact": {
+        "type": "page-contact",
+        "settings": {
+          "show_form": true,
+          "form_title": "Send us an email",
+          "show_map": false,
+          "show_directions_btn": false,
+          "google_api_key": "",
+          "map_style": "light"
+        }
+      },
+      "1566460870233": {
+        "type": "home-image-text",
+        "disabled": true,
+        "settings": {
+          "image_alignment": "center",
+          "text": "<p>Offer some insight into your brand and history. Use images, text and video to describe your value proposition.<\/p>",
+          "inline_image_width": 200,
+          "video": "",
+          "link_title": "Learn more",
+          "link": "",
+          "section_height": "small",
+          "overlay_color": "#ffffff",
+          "overlay_strength": 30,
+          "content_style": "dark"
+        }
+      },
+      "1566460912234": {
+        "type": "home-text-columns",
+        "disabled": true,
+        "blocks": {
+          "1566460912234-0": {
+            "type": "text",
+            "settings": {
+              "title": "Column heading",
+              "sub_title": "Subheading",
+              "desc": "<p>Describe the main features of your brand or products using a few lines of text along with images or icons.<\/p>"
+            }
+          },
+          "1566460912234-1": {
+            "type": "text",
+            "settings": {
+              "title": "Column heading",
+              "sub_title": "Subheading",
+              "desc": "<p>Describe the main features of your brand or products using a few lines of text along with images or icons.<\/p>"
+            }
+          },
+          "1566460912234-2": {
+            "type": "text",
+            "settings": {
+              "title": "Column heading",
+              "sub_title": "Subheading",
+              "desc": "<p>Describe the main features of your brand or products using a few lines of text along with images or icons.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1566460912234-0",
+          "1566460912234-1",
+          "1566460912234-2"
+        ],
+        "settings": {
+          "title": "Text columns with images",
+          "desc": "",
+          "content_align": "center",
+          "link_title": "Learn more",
+          "link": ""
+        }
+      },
+      "announcement": {
+        "type": "announcement",
+        "settings": {
+          "message_show": false,
+          "home_page_only": false,
+          "message_text": "Use this announcement bar to share some news and link to page or product.",
+          "message_link": "",
+          "message_color_bg": "#222222",
+          "message_color_text": "#ffffff"
+        }
+      },
+      "1628279961315ebf5e": {
+        "type": "home-map",
+        "blocks": {
+          "1628279961315ebf5e-0": {
+            "type": "map",
+            "settings": {
+              "title": "Etobicoke",
+              "desc": "<p>224 Norseman St<br\/>Etobicoke, ON M8Z 2R4<br\/><a href=\"https:\/\/www.google.com\/search?client=firefox-b-d&q=global+cheese+etobicoke#\">(416) 239-3000<\/a><br\/><\/p>",
+              "sub_desc": "<p>Tuesday - Friday, 10:00 to 18:00<br\/>Saturday, 9:00 to 17:00<br\/>Sunday & Monday, Closed<\/p>",
+              "address": "224 Norseman St, Etobicoke, ON M8Z 2R4",
+              "map_image": "shopify:\/\/shop_images\/global-cheese-etobicoke.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "1628279961315ebf5e-0"
+        ],
+        "settings": {
+          "show_directions_btn": true,
+          "bg_color": "#f0f0f0",
+          "google_api_key": "",
+          "map_style": "light"
+        }
+      },
+      "1628281022f633a5c6": {
+        "type": "home-custom",
+        "blocks": {
+          "1628281022f633a5c6-0": {
+            "type": "text",
+            "settings": {
+              "title": "Conveniently located in two locations",
+              "text": "",
+              "link_title": "",
+              "link": "",
+              "align": "center",
+              "width": "1\/2"
+            }
+          },
+          "1628281022f633a5c6-1": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "link": "",
+              "width": "2\/3"
+            }
+          },
+          "1628281022f633a5c6-2": {
+            "type": "button",
+            "disabled": true,
+            "settings": {
+              "title": "Button",
+              "link": "",
+              "color": "primary",
+              "size": "big",
+              "width": "1\/2"
+            }
+          }
+        },
+        "block_order": [
+          "1628281022f633a5c6-0",
+          "1628281022f633a5c6-1",
+          "1628281022f633a5c6-2"
+        ],
+        "settings": {
+        }
+      },
+      "home-newsletter": {
+        "type": "home-newsletter",
+        "settings": {
+          "newsletter_bg": "#f0f0f0",
+          "newsletter_style": "default",
+          "footer_newsletter_title": "Sign up to be notified",
+          "footer_newsletter_desc": "<p>Let us contact you when online shopping at Global Cheese becomes available.<\/p>"
+        }
+      },
+      "page-sections-1": {
+        "type": "page-sections-1",
+        "settings": {
+          "container": "medium"
+        }
+      },
+      "home-map": {
+        "type": "home-map",
+        "settings": {
+          "show_directions_btn": false,
+          "bg_color": "rgba(0,0,0,0)",
+          "google_api_key": "",
+          "map_style": "light"
+        }
+      }
+    },
+    "content_for_index": [
+      "1566456250311",
+      "1566456269728",
+      "1566456304723",
+      "1566460870233",
+      "1566460912234",
+      "1628281022f633a5c6",
+      "1566456346591",
+      "1628279961315ebf5e"
+    ]
+  },
+  "presets": {
+    "Morning": {
+      "color_headings": "#212121",
+      "color_text": "#212121",
+      "color_alt_text": "#666666",
+      "color_brand": "#212121",
+      "color_accent": "#fad018",
+      "color_button": "#ffffff",
+      "product_grid_sale_color": "#c00000",
+      "product_grid_bg": "#f0f0f0",
+      "color_drawer_bg": "#ffffff",
+      "color_drawer_style": "dark",
+      "type_base_font": "montserrat_n4",
+      "type_base_size": "15",
+      "type_header_font": "montserrat_n4",
+      "type_header_size": "0.85",
+      "type_header_letterspace": 2,
+      "type_header_capitalize": true,
+      "type_header_underline": true,
+      "type_header_underline_size": 3,
+      "type_nav_font": "montserrat_n4",
+      "type_nav_size": "11",
+      "type_nav_letterspace": 2,
+      "type_nav_capitalize": true,
+      "type_button_font": "montserrat_n4",
+      "type_button_size": "11",
+      "type_button_letterspace": 2,
+      "type_button_capitalize": true,
+      "product_grid_vendor": false,
+      "product_grid_second_hover": true,
+      "product_grid_quick_buy": "hover",
+      "product_grid_align": "center",
+      "product_grid_image_size": "natural",
+      "product_grid_masonry": false,
+      "product_grid_label": true,
+      "product_grid_label_sale_style": "text",
+      "product_grid_label_new": true,
+      "product_grid_label_new_days": 14,
+      "product_grid_label_title": "Hot",
+      "product_grid_label_collection": "",
+      "product_grid_detail_style": "default",
+      "product_grid_price": true,
+      "product_grid_swatch": false,
+      "product_grid_swatch_image": false,
+      "product_grid_reviews": false,
+      "product_reviews": false,
+      "anim_load": true,
+      "anim_load_style": "interval",
+      "anim_interval_style": "fade_down",
+      "anim_zoom": true,
+      "cart_notes_enable": false,
+      "cart_vendor_enable": false,
+      "cart_continue": true,
+      "cart_type": "modal",
+      "search_enable": true,
+      "search_limit": "product,article,page",
+      "search_linklist": "main-menu",
+      "share_facebook": true,
+      "share_twitter": true,
+      "share_pinterest": true,
+      "share_fancy": true,
+      "share_mail": true,
+      "social_facebook_link": "",
+      "social_twitter_link": "",
+      "social_pinterest_link": "",
+      "social_instagram_link": "",
+      "social_tumblr_link": "",
+      "social_snapchat_link": "",
+      "social_youtube_link": "",
+      "social_vimeo_link": "",
+      "social_fancy_link": "",
+      "social_untappd_link": "",
+      "favicon": "",
+      "checkout_header_image": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#fff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "checkout_accent_color": "#197bbd",
+      "checkout_button_color": "#197bbd",
+      "checkout_error_color": "#e32c2b",
+      "sections": {
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "1494343961341": {
+              "type": "linklist",
+              "settings": {
+                "title": "Menu",
+                "linklist": "footer"
+              }
+            },
+            "1494463355206": {
+              "type": "linklist",
+              "settings": {
+                "title": "Menu",
+                "linklist": "footer"
+              }
+            },
+            "1494343958665": {
+              "type": "contact",
+              "settings": {
+                "title": "Contact",
+                "show_email": true,
+                "show_number": true,
+                "show_address": true,
+                "show_social": true
+              }
+            },
+            "1494463348419": {
+              "type": "text",
+              "settings": {
+                "title": "Text area",
+                "text": "<p>Add some text such as a mini biography or your mission statement.<\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "1494343961341",
+            "1494463355206",
+            "1494343958665",
+            "1494463348419"
+          ],
+          "settings": {
+            "footer_newsletter_enable": true,
+            "footer_newsletter_home": false,
+            "newsletter_bg": "#f0f0f0",
+            "newsletter_style": "default",
+            "footer_newsletter_title": "Newsletter",
+            "footer_newsletter_desc": "<p>Let your customers know what to expect if they sign up to your mailing list.<\/p>",
+            "footer_bg": "#222222",
+            "footer_style": "light",
+            "show_payment_icons": true
+          }
+        },
+        "header": {
+          "type": "header",
+          "settings": {
+            "show_border": true,
+            "header_bg": "#ffffff",
+            "header_style": "dark",
+            "logo": "",
+            "logo_size": 5,
+            "logo_spacing": 3,
+            "main_linklist": "main-menu",
+            "layout": "left",
+            "style": "sticky",
+            "mega_nav": true,
+            "mega_image": "",
+            "mega_image_link": "",
+            "mega_title": "",
+            "mega_text": "",
+            "mega_link_title": "Learn more",
+            "mega_link": ""
+          }
+        },
+        "mobile-drawer": {
+          "type": "mobile-drawer",
+          "settings": {
+            "main_linklist": "main-menu",
+            "contact_title": "Contact",
+            "show_contact_number": true,
+            "show_contact_email": true,
+            "show_social": true,
+            "cta_image": "",
+            "cta_image_link": "",
+            "cta_title": "",
+            "cta_text": "",
+            "cta_link_title": "Learn more",
+            "cta_link": ""
+          }
+        },
+        "promo-pop": {
+          "type": "promo-pop",
+          "settings": {
+            "enable": false,
+            "mobile": false,
+            "title": "Popup",
+            "text": "<p>Use this popup to embed a mailing list sign up form. Alternatively use it as a simple call to action with a link to a product or a page.<\/p>",
+            "link_title": "More info",
+            "link": "",
+            "delay": 10,
+            "expiry": 30,
+            "enable_newsletter": true
+          }
+        },
+        "age-checker": {
+          "type": "age-checker",
+          "settings": {
+            "enable": false,
+            "image": "",
+            "title": "Age verification",
+            "text": "<p>By clicking enter you are verifying that you are old enough to consume alcohol.<\/p>",
+            "enter_btn_label": "Enter",
+            "leave_btn_label": "Leave",
+            "leave_link": ""
+          }
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "grid": 3,
+            "grid_mobile": "2",
+            "rows": 6,
+            "center_title": true,
+            "sort_enable": true,
+            "show_collection_image": true,
+            "collection_image_height": "4:1",
+            "image_alignment": "center",
+            "show_sidebar": false,
+            "sidebar_layout": "drawer"
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "layout": "classic",
+            "show_breadcrumbs": true,
+            "show_vendor": false,
+            "product_variant_style": "buttons",
+            "use_swatch_images": false,
+            "show_quantity_selector": true,
+            "enable_payment_button": true,
+            "image": "",
+            "show_share_buttons": true,
+            "enable_zoom": true,
+            "image_size": "large",
+            "bg_color": "rgba(0,0,0,0)",
+            "text_color": "default",
+            "bg_height": "full"
+          }
+        },
+        "password-header": {
+          "type": "password-header",
+          "settings": {
+            "logo": "",
+            "logo_size": 5,
+            "logo_spacing": 3,
+            "show_border": true
+          }
+        },
+        "password-content": {
+          "type": "password-content",
+          "settings": {
+            "bg_image": "",
+            "show_newsletter": true,
+            "newsletter_text": "",
+            "newsletter_button_text": "Sign up",
+            "show_social": true
+          }
+        },
+        "page-faq": {
+          "type": "page-faq",
+          "blocks": {
+            "1563305378357": {
+              "type": "category",
+              "settings": {
+                "title": "Category"
+              }
+            },
+            "1563305326608": {
+              "type": "article",
+              "settings": {
+                "title": "Article heading",
+                "text": "<p>Use these articles to answer questions that customers have about your products and services. You can use text, links and images and also group articles into categories.<\/p>",
+                "image": ""
+              }
+            },
+            "1563305341300": {
+              "type": "article",
+              "settings": {
+                "title": "Article heading",
+                "text": "<p>Use these articles to answer questions that customers have about your products and services. You can use text, links and images and also group articles into categories.<\/p>",
+                "image": ""
+              }
+            },
+            "1563305384180": {
+              "type": "category",
+              "settings": {
+                "title": "Category"
+              }
+            },
+            "1563305386011": {
+              "type": "article",
+              "settings": {
+                "title": "Article heading",
+                "text": "<p>Use these articles to answer questions that customers have about your products and services. You can use text, links and images and also group articles into categories.<\/p>",
+                "image": ""
+              }
+            }
+          },
+          "block_order": [
+            "1563305378357",
+            "1563305326608",
+            "1563305341300",
+            "1563305384180",
+            "1563305386011"
+          ],
+          "settings": {
+            "enable_search": true,
+            "enable_sidebar": true,
+            "cta_link_title": "Contact us",
+            "cta_link": ""
+          }
+        },
+        "blog-template": {
+          "type": "blog-template",
+          "settings": {
+            "show_tags": true,
+            "show_rss": false,
+            "grid": 2,
+            "crop": true,
+            "show_blog_date": true,
+            "show_blog_author": false,
+            "show_blog_comments": false,
+            "show_blog_tags": false,
+            "coll": "",
+            "coll_title": "Featured collection",
+            "coll_mobile_layout": "carousel",
+            "coll_grid": 3,
+            "coll_grid_mobile": "2",
+            "coll_rows": 1,
+            "coll_link_title": "View all",
+            "coll_link": ""
+          }
+        },
+        "product-recommendations": {
+          "type": "product-recommendations",
+          "settings": {
+            "show_related_products": true,
+            "related_title": "You may also like",
+            "related_mobile_layout": "carousel",
+            "related_grid_num": 3,
+            "grid_mobile": "1",
+            "related_grid_row": 1
+          }
+        },
+        "article-template": {
+          "type": "article-template",
+          "settings": {
+            "show_img": true,
+            "show_date": true,
+            "show_author": true,
+            "show_tags": true,
+            "show_sharing": true,
+            "coll": "",
+            "coll_title": "Featured collection",
+            "coll_mobile_layout": "carousel",
+            "coll_grid": 3,
+            "coll_grid_mobile": "1",
+            "coll_rows": 1,
+            "coll_link_title": "View all",
+            "coll_link": ""
+          }
+        },
+        "product-testimonials": {
+          "type": "product-testimonials",
+          "settings": {
+            "title": "Testimonials",
+            "style_desktop": "carousel",
+            "style_mobile": "carousel",
+            "link_title": "Shop now",
+            "link": ""
+          }
+        },
+        "product-sections": {
+          "type": "product-sections",
+          "settings": {
+            "container": "medium"
+          }
+        },
+        "1566456250311": {
+          "type": "home-slideshow",
+          "blocks": {
+            "1566456250311-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "image_mobile": "",
+                "image_alignment": "center",
+                "alignment": "left",
+                "text_color": "default",
+                "title": "Image slide",
+                "text": "<p>Use these slides to tell the world about your brand. Use images or background video along with text and links.<\/p>",
+                "link_title": "More info",
+                "link": ""
+              }
+            },
+            "1566456250311-1": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "image_mobile": "",
+                "image_alignment": "center",
+                "alignment": "left",
+                "text_color": "default",
+                "title": "Image slide",
+                "text": "<p>Use these slides to tell the world about your brand. Use images or background video along with text and links.<\/p>",
+                "link_title": "More info",
+                "link": ""
+              }
+            }
+          },
+          "block_order": [
+            "1566456250311-0",
+            "1566456250311-1"
+          ],
+          "settings": {
+            "slideshow_style": "semi",
+            "title_size": 3,
+            "autoplay": true,
+            "autoplay_speed": 8,
+            "slideshow_height": "medium",
+            "slideshow_width": "full",
+            "overlay_strength": 10
+          }
+        },
+        "1566456269728": {
+          "type": "home-collection",
+          "settings": {
+            "title": "Featured collection",
+            "collection": "",
+            "mobile_layout": "carousel",
+            "grid": 3,
+            "grid_mobile": "1",
+            "rows": 1,
+            "link_title": "View all",
+            "link": ""
+          }
+        },
+        "1566456283593": {
+          "type": "home-testimonials",
+          "blocks": {
+            "1566456283593-0": {
+              "type": "text",
+              "settings": {
+                "media": "quote",
+                "image": "",
+                "image_round": true,
+                "text": "Use these testimonials to share what customers are saying about your products and your brand.",
+                "name": "Customer name",
+                "source": "Source"
+              }
+            },
+            "1566456283593-1": {
+              "type": "text",
+              "settings": {
+                "media": "quote",
+                "image": "",
+                "image_round": true,
+                "text": "Use these testimonials to share what customers are saying about your products and your brand.",
+                "name": "Customer name",
+                "source": "Source"
+              }
+            },
+            "1566456283593-2": {
+              "type": "text",
+              "settings": {
+                "media": "quote",
+                "image": "",
+                "image_round": true,
+                "text": "Use these testimonials to share what customers are saying about your products and your brand.",
+                "name": "Customer name",
+                "source": "Source"
+              }
+            }
+          },
+          "block_order": [
+            "1566456283593-0",
+            "1566456283593-1",
+            "1566456283593-2"
+          ],
+          "settings": {
+            "title": "Testimonials",
+            "style_desktop": "carousel",
+            "style_mobile": "carousel",
+            "link_title": "Shop now",
+            "link": ""
+          }
+        },
+        "1566456294786": {
+          "type": "home-image-grid",
+          "blocks": {
+            "1566456294786-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "image_alignment": "center",
+                "text_alignment": "bottom",
+                "title": "Image block",
+                "text": "Use these image blocks to tell your story, promote your products or create a beautiful gallery.",
+                "link": ""
+              }
+            },
+            "1566456294786-1": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "image_alignment": "center",
+                "text_alignment": "bottom",
+                "title": "Image block",
+                "text": "Use these image blocks to tell your story, promote your products or create a beautiful gallery.",
+                "link": ""
+              }
+            }
+          },
+          "block_order": [
+            "1566456294786-0",
+            "1566456294786-1"
+          ],
+          "settings": {
+            "featured": true,
+            "height": "medium",
+            "overlay_strength": 30
+          }
+        },
+        "1566456304723": {
+          "type": "home-content",
+          "blocks": {
+            "1566456304723-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "bg_color": "#f0f0f0",
+                "title": "Image with text",
+                "desc": "<p>Use these blocks to share your brand's story. You can focus on a particular collection, a product detail, or even embed a video.<\/p>",
+                "video": "",
+                "link_title": "More info",
+                "link": ""
+              }
+            },
+            "1566456304723-1": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "bg_color": "rgba(0,0,0,0)",
+                "title": "Image with text",
+                "desc": "<p>Use these blocks to share your brand's story. You can focus on a particular collection, a product detail, or even embed a video.<\/p>",
+                "video": "",
+                "link_title": "More info",
+                "link": ""
+              }
+            }
+          },
+          "block_order": [
+            "1566456304723-0",
+            "1566456304723-1"
+          ],
+          "settings": {
+          }
+        },
+        "1566456319558": {
+          "type": "home-video",
+          "blocks": {
+            "1566456319558-0": {
+              "type": "video",
+              "settings": {
+                "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+                "image": ""
+              }
+            },
+            "1566456319558-1": {
+              "type": "video",
+              "settings": {
+                "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+                "image": ""
+              }
+            }
+          },
+          "block_order": [
+            "1566456319558-0",
+            "1566456319558-1"
+          ],
+          "settings": {
+            "title": "Video gallery",
+            "desc": "",
+            "link_title": "More videos",
+            "link": "",
+            "overlay_strength": 50
+          }
+        },
+        "1566456329415": {
+          "type": "home-product",
+          "settings": {
+            "featured_product": "",
+            "show_vendor": false,
+            "product_variant_style": "buttons",
+            "use_swatch_images": false,
+            "show_quantity_selector": true,
+            "enable_payment_button": true,
+            "content_align": "default"
+          }
+        },
+        "1566456346591": {
+          "type": "home-map",
+          "blocks": {
+            "1566456346591-0": {
+              "type": "map",
+              "settings": {
+                "title": "Map 1",
+                "desc": "<p>273 Street Lane<br\/>San Francisco, CA 94102<br\/>(415) 557-4400<br\/>store@email.com<\/p>",
+                "sub_desc": "<p>Monday - Thursday, 12:00 to 23:00<br\/>Friday &amp; Saturday, 12:00 to 00:00<br\/>Sunday, Closed<\/p>",
+                "address": "100 Larkin St, San Francisco, CA 94102, USA",
+                "map_image": ""
+              }
+            }
+          },
+          "block_order": [
+            "1566456346591-0"
+          ],
+          "settings": {
+            "show_directions_btn": false,
+            "bg_color": "rgba(0,0,0,0)",
+            "google_api_key": "",
+            "map_style": "light"
+          }
+        },
+        "list-collections-template": {
+          "type": "list-collections-template",
+          "settings": {
+            "display_type": "all",
+            "sort": "alphabetical",
+            "grid": 2,
+            "overlay_strength": 30
+          }
+        },
+        "page-contact": {
+          "type": "page-contact",
+          "settings": {
+            "show_form": true,
+            "form_title": "Send us an email",
+            "show_map": false,
+            "show_directions_btn": false,
+            "google_api_key": "",
+            "map_style": "light"
+          }
+        }
+      },
+      "content_for_index": [
+        "1566456250311",
+        "1566456269728",
+        "1566456283593",
+        "1566456294786",
+        "1566456304723",
+        "1566456319558",
+        "1566456329415",
+        "1566456346591"
+      ]
+    },
+    "Evening": {
+      "color_headings": "#212121",
+      "color_text": "#212121",
+      "color_alt_text": "#666666",
+      "color_brand": "#fad018",
+      "color_accent": "#f0f0f0",
+      "color_button": "#111111",
+      "product_grid_sale_color": "#c00000",
+      "product_grid_bg": "#f0f0f0",
+      "color_drawer_bg": "#fef7d7",
+      "color_drawer_style": "dark",
+      "type_base_font": "muli_n4",
+      "type_base_size": "15",
+      "type_header_font": "oswald_n4",
+      "type_header_size": "0.85",
+      "type_header_letterspace": 1,
+      "type_header_capitalize": true,
+      "type_header_underline": true,
+      "type_header_underline_size": 3,
+      "type_nav_font": "oswald_n4",
+      "type_nav_size": "13",
+      "type_nav_letterspace": 1,
+      "type_nav_capitalize": true,
+      "type_button_font": "oswald_n4",
+      "type_button_size": "13",
+      "type_button_letterspace": 1,
+      "type_button_capitalize": true,
+      "product_grid_vendor": false,
+      "product_grid_second_hover": true,
+      "product_grid_quick_buy": "hover",
+      "product_grid_align": "center",
+      "product_grid_image_size": "natural",
+      "product_grid_masonry": false,
+      "product_grid_label": true,
+      "product_grid_label_sale_style": "text",
+      "product_grid_label_new": true,
+      "product_grid_label_new_days": 14,
+      "product_grid_label_title": "Hot",
+      "product_grid_label_collection": "",
+      "product_grid_detail_style": "default",
+      "product_grid_price": true,
+      "product_grid_swatch": false,
+      "product_grid_swatch_image": false,
+      "product_grid_reviews": false,
+      "product_reviews": false,
+      "anim_load": true,
+      "anim_load_style": "interval",
+      "anim_interval_style": "fade_down",
+      "anim_zoom": true,
+      "cart_notes_enable": false,
+      "cart_vendor_enable": false,
+      "cart_continue": true,
+      "cart_type": "modal",
+      "search_enable": true,
+      "search_limit": "product,article,page",
+      "search_linklist": "main-menu",
+      "share_facebook": true,
+      "share_twitter": true,
+      "share_pinterest": true,
+      "share_fancy": true,
+      "share_mail": true,
+      "social_facebook_link": "",
+      "social_twitter_link": "",
+      "social_pinterest_link": "",
+      "social_instagram_link": "",
+      "social_tumblr_link": "",
+      "social_snapchat_link": "",
+      "social_youtube_link": "",
+      "social_vimeo_link": "",
+      "social_fancy_link": "",
+      "social_untappd_link": "",
+      "favicon": "",
+      "checkout_header_image": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#fff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "checkout_accent_color": "#197bbd",
+      "checkout_button_color": "#197bbd",
+      "checkout_error_color": "#e32c2b",
+      "sections": {
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "1494343961341": {
+              "type": "linklist",
+              "settings": {
+                "title": "Menu",
+                "linklist": "footer"
+              }
+            },
+            "1494463355206": {
+              "type": "linklist",
+              "settings": {
+                "title": "Menu",
+                "linklist": "footer"
+              }
+            },
+            "1494343958665": {
+              "type": "contact",
+              "settings": {
+                "title": "Contact",
+                "show_email": true,
+                "show_number": true,
+                "show_address": true,
+                "show_social": true
+              }
+            },
+            "1494463348419": {
+              "type": "text",
+              "settings": {
+                "title": "Text area",
+                "text": "<p>Add some text such as a mini biography or your mission statement.<\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "1494343961341",
+            "1494463355206",
+            "1494343958665",
+            "1494463348419"
+          ],
+          "settings": {
+            "footer_newsletter_enable": true,
+            "footer_newsletter_home": false,
+            "newsletter_bg": "#f0f0f0",
+            "newsletter_style": "default",
+            "footer_newsletter_title": "Newsletter",
+            "footer_newsletter_desc": "<p>Let your customers know what to expect if they sign up to your mailing list.<\/p>",
+            "footer_bg": "#222222",
+            "footer_style": "light",
+            "show_payment_icons": true
+          }
+        },
+        "header": {
+          "type": "header",
+          "settings": {
+            "show_border": true,
+            "header_bg": "#ffffff",
+            "header_style": "dark",
+            "logo": "",
+            "logo_size": 5,
+            "logo_spacing": 3,
+            "main_linklist": "main-menu",
+            "layout": "center",
+            "style": "static",
+            "mega_nav": true,
+            "mega_image": "",
+            "mega_image_link": "",
+            "mega_title": "",
+            "mega_text": "",
+            "mega_link_title": "Learn more",
+            "mega_link": ""
+          }
+        },
+        "mobile-drawer": {
+          "type": "mobile-drawer",
+          "settings": {
+            "main_linklist": "main-menu",
+            "contact_title": "Contact",
+            "show_contact_number": true,
+            "show_contact_email": true,
+            "show_social": true,
+            "cta_image": "",
+            "cta_image_link": "",
+            "cta_title": "",
+            "cta_text": "",
+            "cta_link_title": "Learn more",
+            "cta_link": ""
+          }
+        },
+        "promo-pop": {
+          "type": "promo-pop",
+          "settings": {
+            "enable": false,
+            "mobile": false,
+            "title": "Popup",
+            "text": "<p>Use this popup to embed a mailing list sign up form. Alternatively use it as a simple call to action with a link to a product or a page.<\/p>",
+            "link_title": "More info",
+            "link": "",
+            "delay": 10,
+            "expiry": 30,
+            "enable_newsletter": true
+          }
+        },
+        "age-checker": {
+          "type": "age-checker",
+          "settings": {
+            "enable": false,
+            "image": "",
+            "title": "Age verification",
+            "text": "<p>By clicking enter you are verifying that you are old enough to consume alcohol.<\/p>",
+            "enter_btn_label": "Enter",
+            "leave_btn_label": "Leave",
+            "leave_link": ""
+          }
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "grid": 3,
+            "grid_mobile": "2",
+            "rows": 6,
+            "center_title": true,
+            "sort_enable": true,
+            "show_collection_image": true,
+            "collection_image_height": "4:1",
+            "image_alignment": "center",
+            "show_sidebar": false,
+            "sidebar_layout": "drawer"
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "layout": "full",
+            "show_breadcrumbs": true,
+            "show_vendor": false,
+            "product_variant_style": "buttons",
+            "use_swatch_images": false,
+            "show_quantity_selector": true,
+            "enable_payment_button": true,
+            "image": "",
+            "show_share_buttons": true,
+            "enable_zoom": true,
+            "image_size": "large",
+            "bg_color": "rgba(0,0,0,0)",
+            "text_color": "default",
+            "bg_height": "default"
+          }
+        },
+        "password-header": {
+          "type": "password-header",
+          "settings": {
+            "logo": "",
+            "logo_size": 5,
+            "logo_spacing": 3,
+            "show_border": true
+          }
+        },
+        "password-content": {
+          "type": "password-content",
+          "settings": {
+            "bg_image": "",
+            "show_newsletter": true,
+            "newsletter_text": "",
+            "newsletter_button_text": "Sign up",
+            "show_social": true
+          }
+        },
+        "page-faq": {
+          "type": "page-faq",
+          "blocks": {
+            "1563305378357": {
+              "type": "category",
+              "settings": {
+                "title": "Category"
+              }
+            },
+            "1563305326608": {
+              "type": "article",
+              "settings": {
+                "title": "Article heading",
+                "text": "<p>Use these articles to answer questions that customers have about your products and services. You can use text, links and images and also group articles into categories.<\/p>",
+                "image": ""
+              }
+            },
+            "1563305341300": {
+              "type": "article",
+              "settings": {
+                "title": "Article heading",
+                "text": "<p>Use these articles to answer questions that customers have about your products and services. You can use text, links and images and also group articles into categories.<\/p>",
+                "image": ""
+              }
+            },
+            "1563305384180": {
+              "type": "category",
+              "settings": {
+                "title": "Category"
+              }
+            },
+            "1563305386011": {
+              "type": "article",
+              "settings": {
+                "title": "Article heading",
+                "text": "<p>Use these articles to answer questions that customers have about your products and services. You can use text, links and images and also group articles into categories.<\/p>",
+                "image": ""
+              }
+            }
+          },
+          "block_order": [
+            "1563305378357",
+            "1563305326608",
+            "1563305341300",
+            "1563305384180",
+            "1563305386011"
+          ],
+          "settings": {
+            "enable_search": true,
+            "enable_sidebar": true,
+            "cta_link_title": "Contact us",
+            "cta_link": ""
+          }
+        },
+        "blog-template": {
+          "type": "blog-template",
+          "settings": {
+            "show_tags": true,
+            "show_rss": false,
+            "grid": 2,
+            "crop": true,
+            "show_blog_date": true,
+            "show_blog_author": false,
+            "show_blog_comments": false,
+            "show_blog_tags": false,
+            "coll": "",
+            "coll_title": "Featured collection",
+            "coll_mobile_layout": "carousel",
+            "coll_grid": 3,
+            "coll_grid_mobile": "2",
+            "coll_rows": 1,
+            "coll_link_title": "View all",
+            "coll_link": ""
+          }
+        },
+        "product-recommendations": {
+          "type": "product-recommendations",
+          "settings": {
+            "show_related_products": true,
+            "related_title": "You may also like",
+            "related_mobile_layout": "carousel",
+            "related_grid_num": 3,
+            "grid_mobile": "1",
+            "related_grid_row": 1
+          }
+        },
+        "article-template": {
+          "type": "article-template",
+          "settings": {
+            "show_img": true,
+            "show_date": true,
+            "show_author": true,
+            "show_tags": true,
+            "show_sharing": true,
+            "coll": "",
+            "coll_title": "Featured collection",
+            "coll_mobile_layout": "carousel",
+            "coll_grid": 3,
+            "coll_grid_mobile": "1",
+            "coll_rows": 1,
+            "coll_link_title": "View all",
+            "coll_link": ""
+          }
+        },
+        "product-testimonials": {
+          "type": "product-testimonials",
+          "settings": {
+            "title": "Testimonials",
+            "style_desktop": "carousel",
+            "style_mobile": "carousel",
+            "link_title": "Shop now",
+            "link": ""
+          }
+        },
+        "product-sections": {
+          "type": "product-sections",
+          "settings": {
+            "container": "medium"
+          }
+        },
+        "1566456250311": {
+          "type": "home-slideshow",
+          "blocks": {
+            "1566456250311-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "image_mobile": "",
+                "image_alignment": "center",
+                "alignment": "left",
+                "text_color": "default-light",
+                "title": "Image slide",
+                "text": "<p>Use these slides to tell the world about your brand. Use images or background video along with text and links.<\/p>",
+                "link_title": "More info",
+                "link": ""
+              }
+            },
+            "1566456250311-1": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "image_mobile": "",
+                "image_alignment": "center",
+                "alignment": "left",
+                "text_color": "default-light",
+                "title": "Image slide",
+                "text": "<p>Use these slides to tell the world about your brand. Use images or background video along with text and links.<\/p>",
+                "link_title": "More info",
+                "link": ""
+              }
+            }
+          },
+          "block_order": [
+            "1566456250311-0",
+            "1566456250311-1"
+          ],
+          "settings": {
+            "slideshow_style": "minimal",
+            "title_size": 3,
+            "autoplay": true,
+            "autoplay_speed": 8,
+            "slideshow_height": "medium",
+            "slideshow_width": "contained",
+            "overlay_strength": 30
+          }
+        },
+        "1566456269728": {
+          "type": "home-collection",
+          "settings": {
+            "title": "Featured collection",
+            "collection": "",
+            "mobile_layout": "carousel",
+            "grid": 3,
+            "grid_mobile": "1",
+            "rows": 1,
+            "link_title": "View all",
+            "link": ""
+          }
+        },
+        "1566456283593": {
+          "type": "home-testimonials",
+          "blocks": {
+            "1566456283593-0": {
+              "type": "text",
+              "settings": {
+                "media": "quote",
+                "image": "",
+                "image_round": true,
+                "text": "Use these testimonials to share what customers are saying about your products and your brand.",
+                "name": "Customer name",
+                "source": "Source"
+              }
+            },
+            "1566456283593-1": {
+              "type": "text",
+              "settings": {
+                "media": "quote",
+                "image": "",
+                "image_round": true,
+                "text": "Use these testimonials to share what customers are saying about your products and your brand.",
+                "name": "Customer name",
+                "source": "Source"
+              }
+            },
+            "1566456283593-2": {
+              "type": "text",
+              "settings": {
+                "media": "quote",
+                "image": "",
+                "image_round": true,
+                "text": "Use these testimonials to share what customers are saying about your products and your brand.",
+                "name": "Customer name",
+                "source": "Source"
+              }
+            }
+          },
+          "block_order": [
+            "1566456283593-0",
+            "1566456283593-1",
+            "1566456283593-2"
+          ],
+          "settings": {
+            "title": "Testimonials",
+            "style_desktop": "carousel",
+            "style_mobile": "carousel",
+            "link_title": "Shop now",
+            "link": ""
+          }
+        },
+        "1566456304723": {
+          "type": "home-content",
+          "blocks": {
+            "1566456304723-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "bg_color": "#f0f0f0",
+                "title": "Image with text",
+                "desc": "<p>Use these blocks to share your brand's story. You can focus on a particular collection, a product detail, or even embed a video.<\/p>",
+                "video": "",
+                "link_title": "More info",
+                "link": ""
+              }
+            },
+            "1566456304723-1": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "bg_color": "#ffffff",
+                "title": "Image with text",
+                "desc": "<p>Use these blocks to share your brand's story. You can focus on a particular collection, a product detail, or even embed a video.<\/p>",
+                "video": "",
+                "link_title": "More info",
+                "link": ""
+              }
+            }
+          },
+          "block_order": [
+            "1566456304723-0",
+            "1566456304723-1"
+          ],
+          "settings": {
+          }
+        },
+        "1566456319558": {
+          "type": "home-video",
+          "blocks": {
+            "1566456319558-0": {
+              "type": "video",
+              "settings": {
+                "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+                "image": ""
+              }
+            },
+            "1566456319558-1": {
+              "type": "video",
+              "settings": {
+                "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+                "image": ""
+              }
+            }
+          },
+          "block_order": [
+            "1566456319558-0",
+            "1566456319558-1"
+          ],
+          "settings": {
+            "title": "Video gallery",
+            "desc": "",
+            "link_title": "More videos",
+            "link": "",
+            "overlay_strength": 50
+          }
+        },
+        "1566456346591": {
+          "type": "home-map",
+          "blocks": {
+            "1566456346591-0": {
+              "type": "map",
+              "settings": {
+                "title": "Map 1",
+                "desc": "<p>273 Street Lane<br\/>San Francisco, CA 94102<br\/>(415) 557-4400<br\/>store@email.com<\/p>",
+                "sub_desc": "<p>Monday - Thursday, 12:00 to 23:00<br\/>Friday &amp; Saturday, 12:00 to 00:00<br\/>Sunday, Closed<\/p>",
+                "address": "100 Larkin St, San Francisco, CA 94102, USA",
+                "map_image": ""
+              }
+            }
+          },
+          "block_order": [
+            "1566456346591-0"
+          ],
+          "settings": {
+            "show_directions_btn": false,
+            "bg_color": "#f0f0f0",
+            "google_api_key": "",
+            "map_style": "light"
+          }
+        },
+        "list-collections-template": {
+          "type": "list-collections-template",
+          "settings": {
+            "display_type": "all",
+            "sort": "alphabetical",
+            "grid": 2,
+            "overlay_strength": 30
+          }
+        },
+        "page-contact": {
+          "type": "page-contact",
+          "settings": {
+            "show_form": true,
+            "form_title": "Send us an email",
+            "show_map": false,
+            "show_directions_btn": false,
+            "google_api_key": "",
+            "map_style": "light"
+          }
+        },
+        "1566460870233": {
+          "type": "home-image-text",
+          "settings": {
+            "bg_image": "",
+            "image_alignment": "center",
+            "text": "<p>Offer some insight into your brand and history. Use images, text and video to describe your value proposition.<\/p>",
+            "inline_image": "",
+            "inline_image_width": 200,
+            "video": "",
+            "link_title": "Learn more",
+            "link": "",
+            "section_height": "small",
+            "overlay_color": "#ffffff",
+            "overlay_strength": 30,
+            "content_style": "dark"
+          }
+        },
+        "1566460897951": {
+          "type": "home-events",
+          "settings": {
+            "title": "Events",
+            "desc": "",
+            "link_title": "View all",
+            "link": "",
+            "mobile_layout": "carousel",
+            "overlay_strength": 50,
+            "api_key": "",
+            "events_limit": 2,
+            "show_link": true
+          }
+        },
+        "1566460912234": {
+          "type": "home-text-columns",
+          "blocks": {
+            "1566460912234-0": {
+              "type": "text",
+              "settings": {
+                "image": "",
+                "title": "Column heading",
+                "sub_title": "Subheading",
+                "desc": "<p>Describe the main features of your brand or products using a few lines of text along with images or icons.<\/p>"
+              }
+            },
+            "1566460912234-1": {
+              "type": "text",
+              "settings": {
+                "image": "",
+                "title": "Column heading",
+                "sub_title": "Subheading",
+                "desc": "<p>Describe the main features of your brand or products using a few lines of text along with images or icons.<\/p>"
+              }
+            },
+            "1566460912234-2": {
+              "type": "text",
+              "settings": {
+                "image": "",
+                "title": "Column heading",
+                "sub_title": "Subheading",
+                "desc": "<p>Describe the main features of your brand or products using a few lines of text along with images or icons.<\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "1566460912234-0",
+            "1566460912234-1",
+            "1566460912234-2"
+          ],
+          "settings": {
+            "title": "Text columns with images",
+            "desc": "",
+            "content_align": "center",
+            "link_title": "Learn more",
+            "link": ""
+          }
+        },
+        "1566460938967": {
+          "type": "home-delivery",
+          "settings": {
+            "bg_image": "",
+            "image_alignment": "center",
+            "delivery_service": "deliveroo",
+            "logo_override": "",
+            "title": "",
+            "desc": "<p>Use a logo and text to link to a delivery partner such as UberEATS or Favor. This section is not intended for products ordered through your Shopify store.<\/p>",
+            "link_title": "Learn more",
+            "link": "",
+            "section_height": "medium",
+            "overlay_strength": 30
+          }
+        }
+      },
+      "content_for_index": [
+        "1566456250311",
+        "1566456269728",
+        "1566456283593",
+        "1566456304723",
+        "1566460870233",
+        "1566456319558",
+        "1566460912234",
+        "1566460897951",
+        "1566456346591",
+        "1566460938967"
+      ]
+    },
+    "Weekend": {
+      "color_headings": "#212121",
+      "color_text": "#535353",
+      "color_alt_text": "#666666",
+      "color_brand": "#98b859",
+      "color_accent": "#f0f0f0",
+      "color_button": "#ffffff",
+      "product_grid_sale_color": "#c00000",
+      "product_grid_bg": "#f0f0f0",
+      "color_drawer_bg": "#f0f0f0",
+      "color_drawer_style": "dark",
+      "type_base_font": "nunito_sans_n3",
+      "type_base_size": "15",
+      "type_header_font": "old_standard_tt_n4",
+      "type_header_size": "0.85",
+      "type_header_letterspace": 0,
+      "type_header_capitalize": false,
+      "type_header_underline": true,
+      "type_header_underline_size": 4,
+      "type_nav_font": "nunito_sans_n3",
+      "type_nav_size": "13",
+      "type_nav_letterspace": 1,
+      "type_nav_capitalize": true,
+      "type_button_font": "nunito_sans_n3",
+      "type_button_size": "13",
+      "type_button_letterspace": 1,
+      "type_button_capitalize": true,
+      "product_grid_vendor": false,
+      "product_grid_second_hover": true,
+      "product_grid_quick_buy": "hover",
+      "product_grid_align": "center",
+      "product_grid_image_size": "natural",
+      "product_grid_masonry": false,
+      "product_grid_label": true,
+      "product_grid_label_sale_style": "text",
+      "product_grid_label_new": true,
+      "product_grid_label_new_days": 14,
+      "product_grid_label_title": "Hot",
+      "product_grid_label_collection": "",
+      "product_grid_detail_style": "default",
+      "product_grid_price": true,
+      "product_grid_swatch": false,
+      "product_grid_swatch_image": false,
+      "product_grid_reviews": false,
+      "product_reviews": false,
+      "anim_load": true,
+      "anim_load_style": "interval",
+      "anim_interval_style": "fade_down",
+      "anim_zoom": true,
+      "cart_notes_enable": false,
+      "cart_vendor_enable": false,
+      "cart_continue": true,
+      "cart_type": "modal",
+      "search_enable": true,
+      "search_limit": "product,article,page",
+      "search_linklist": "main-menu",
+      "share_facebook": true,
+      "share_twitter": true,
+      "share_pinterest": true,
+      "share_fancy": true,
+      "share_mail": true,
+      "social_facebook_link": "",
+      "social_twitter_link": "",
+      "social_pinterest_link": "",
+      "social_instagram_link": "",
+      "social_tumblr_link": "",
+      "social_snapchat_link": "",
+      "social_youtube_link": "",
+      "social_vimeo_link": "",
+      "social_fancy_link": "",
+      "social_untappd_link": "",
+      "favicon": "",
+      "checkout_header_image": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#fff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "checkout_accent_color": "#197bbd",
+      "checkout_button_color": "#197bbd",
+      "checkout_error_color": "#e32c2b",
+      "sections": {
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "1494343961341": {
+              "type": "linklist",
+              "settings": {
+                "title": "Menu",
+                "linklist": "footer"
+              }
+            },
+            "1494463355206": {
+              "type": "linklist",
+              "settings": {
+                "title": "Menu",
+                "linklist": "footer"
+              }
+            },
+            "1494343958665": {
+              "type": "contact",
+              "settings": {
+                "title": "Contact",
+                "show_email": true,
+                "show_number": true,
+                "show_address": true,
+                "show_social": true
+              }
+            },
+            "1494463348419": {
+              "type": "text",
+              "settings": {
+                "title": "Text area",
+                "text": "<p>Add some text such as a mini biography or your mission statement.<\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "1494343961341",
+            "1494463355206",
+            "1494343958665",
+            "1494463348419"
+          ],
+          "settings": {
+            "footer_newsletter_enable": true,
+            "footer_newsletter_home": false,
+            "newsletter_bg": "#f0f0f0",
+            "newsletter_style": "default",
+            "footer_newsletter_title": "Newsletter",
+            "footer_newsletter_desc": "<p>Let your customers know what to expect if they sign up to your mailing list.<\/p>",
+            "footer_bg": "#232f3d",
+            "footer_style": "light",
+            "show_payment_icons": true
+          }
+        },
+        "header": {
+          "type": "header",
+          "settings": {
+            "show_border": false,
+            "header_bg": "#ffffff",
+            "header_style": "dark",
+            "logo": "",
+            "logo_size": 5,
+            "logo_spacing": 3,
+            "main_linklist": "main-menu",
+            "layout": "left",
+            "style": "sticky",
+            "mega_nav": true,
+            "mega_image": "",
+            "mega_image_link": "",
+            "mega_title": "",
+            "mega_text": "",
+            "mega_link_title": "Learn more",
+            "mega_link": ""
+          }
+        },
+        "mobile-drawer": {
+          "type": "mobile-drawer",
+          "settings": {
+            "main_linklist": "main-menu",
+            "contact_title": "Contact",
+            "show_contact_number": true,
+            "show_contact_email": true,
+            "show_social": true,
+            "cta_image": "",
+            "cta_image_link": "",
+            "cta_title": "",
+            "cta_text": "",
+            "cta_link_title": "Learn more",
+            "cta_link": ""
+          }
+        },
+        "promo-pop": {
+          "type": "promo-pop",
+          "settings": {
+            "enable": false,
+            "mobile": false,
+            "title": "Popup",
+            "text": "<p>Use this popup to embed a mailing list sign up form. Alternatively use it as a simple call to action with a link to a product or a page.<\/p>",
+            "link_title": "More info",
+            "link": "",
+            "delay": 10,
+            "expiry": 30,
+            "enable_newsletter": true
+          }
+        },
+        "age-checker": {
+          "type": "age-checker",
+          "settings": {
+            "enable": false,
+            "image": "",
+            "title": "Age verification",
+            "text": "<p>By clicking enter you are verifying that you are old enough to consume alcohol.<\/p>",
+            "enter_btn_label": "Enter",
+            "leave_btn_label": "Leave",
+            "leave_link": ""
+          }
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "grid": 3,
+            "grid_mobile": "2",
+            "rows": 6,
+            "center_title": true,
+            "sort_enable": true,
+            "show_collection_image": true,
+            "collection_image_height": "4:1",
+            "image_alignment": "center",
+            "show_sidebar": false,
+            "sidebar_layout": "drawer"
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "layout": "full",
+            "show_breadcrumbs": true,
+            "show_vendor": false,
+            "product_variant_style": "buttons",
+            "use_swatch_images": false,
+            "show_quantity_selector": true,
+            "enable_payment_button": true,
+            "image": "",
+            "show_share_buttons": true,
+            "enable_zoom": true,
+            "image_size": "large",
+            "bg_color": "rgba(0,0,0,0)",
+            "text_color": "default",
+            "bg_height": "full"
+          }
+        },
+        "password-header": {
+          "type": "password-header",
+          "settings": {
+            "logo": "",
+            "logo_size": 5,
+            "logo_spacing": 3,
+            "show_border": true
+          }
+        },
+        "password-content": {
+          "type": "password-content",
+          "settings": {
+            "bg_image": "",
+            "show_newsletter": true,
+            "newsletter_text": "",
+            "newsletter_button_text": "Sign up",
+            "show_social": true
+          }
+        },
+        "page-faq": {
+          "type": "page-faq",
+          "blocks": {
+            "1563305378357": {
+              "type": "category",
+              "settings": {
+                "title": "Category"
+              }
+            },
+            "1563305326608": {
+              "type": "article",
+              "settings": {
+                "title": "Article heading",
+                "text": "<p>Use these articles to answer questions that customers have about your products and services. You can use text, links and images and also group articles into categories.<\/p>",
+                "image": ""
+              }
+            },
+            "1563305341300": {
+              "type": "article",
+              "settings": {
+                "title": "Article heading",
+                "text": "<p>Use these articles to answer questions that customers have about your products and services. You can use text, links and images and also group articles into categories.<\/p>",
+                "image": ""
+              }
+            },
+            "1563305384180": {
+              "type": "category",
+              "settings": {
+                "title": "Category"
+              }
+            },
+            "1563305386011": {
+              "type": "article",
+              "settings": {
+                "title": "Article heading",
+                "text": "<p>Use these articles to answer questions that customers have about your products and services. You can use text, links and images and also group articles into categories.<\/p>",
+                "image": ""
+              }
+            }
+          },
+          "block_order": [
+            "1563305378357",
+            "1563305326608",
+            "1563305341300",
+            "1563305384180",
+            "1563305386011"
+          ],
+          "settings": {
+            "enable_search": true,
+            "enable_sidebar": true,
+            "cta_link_title": "Contact us",
+            "cta_link": ""
+          }
+        },
+        "blog-template": {
+          "type": "blog-template",
+          "settings": {
+            "show_tags": true,
+            "show_rss": false,
+            "grid": 2,
+            "crop": true,
+            "show_blog_date": true,
+            "show_blog_author": false,
+            "show_blog_comments": false,
+            "show_blog_tags": false,
+            "coll": "",
+            "coll_title": "Featured collection",
+            "coll_mobile_layout": "carousel",
+            "coll_grid": 3,
+            "coll_grid_mobile": "2",
+            "coll_rows": 1,
+            "coll_link_title": "View all",
+            "coll_link": ""
+          }
+        },
+        "product-recommendations": {
+          "type": "product-recommendations",
+          "settings": {
+            "show_related_products": true,
+            "related_title": "You may also like",
+            "related_mobile_layout": "carousel",
+            "related_grid_num": 3,
+            "grid_mobile": "1",
+            "related_grid_row": 1
+          }
+        },
+        "article-template": {
+          "type": "article-template",
+          "settings": {
+            "show_img": true,
+            "show_date": true,
+            "show_author": true,
+            "show_tags": true,
+            "show_sharing": true,
+            "coll": "",
+            "coll_title": "Featured collection",
+            "coll_mobile_layout": "carousel",
+            "coll_grid": 3,
+            "coll_grid_mobile": "1",
+            "coll_rows": 1,
+            "coll_link_title": "View all",
+            "coll_link": ""
+          }
+        },
+        "product-testimonials": {
+          "type": "product-testimonials",
+          "settings": {
+            "title": "Testimonials",
+            "style_desktop": "carousel",
+            "style_mobile": "carousel",
+            "link_title": "Shop now",
+            "link": ""
+          }
+        },
+        "product-sections": {
+          "type": "product-sections",
+          "settings": {
+            "container": "medium"
+          }
+        },
+        "1566456250311": {
+          "type": "home-slideshow",
+          "blocks": {
+            "1566456250311-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "image_mobile": "",
+                "image_alignment": "center",
+                "alignment": "left",
+                "text_color": "default-light",
+                "title": "Image slide",
+                "text": "<p>Use these slides to tell the world about your brand. Use images or background video along with text and links.<\/p>",
+                "link_title": "More info",
+                "link": ""
+              }
+            },
+            "1566456250311-1": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "image_mobile": "",
+                "image_alignment": "center",
+                "alignment": "left",
+                "text_color": "default-light",
+                "title": "Image slide",
+                "text": "<p>Use these slides to tell the world about your brand. Use images or background video along with text and links.<\/p>",
+                "link_title": "More info",
+                "link": ""
+              }
+            }
+          },
+          "block_order": [
+            "1566456250311-0",
+            "1566456250311-1"
+          ],
+          "settings": {
+            "slideshow_style": "minimal",
+            "title_size": 3,
+            "autoplay": true,
+            "autoplay_speed": 8,
+            "slideshow_height": "medium",
+            "slideshow_width": "full",
+            "overlay_strength": 30
+          }
+        },
+        "1566456269728": {
+          "type": "home-collection",
+          "settings": {
+            "title": "Featured collection",
+            "collection": "",
+            "mobile_layout": "carousel",
+            "grid": 3,
+            "grid_mobile": "1",
+            "rows": 1,
+            "link_title": "View all",
+            "link": ""
+          }
+        },
+        "1566456283593": {
+          "type": "home-testimonials",
+          "blocks": {
+            "1566456283593-0": {
+              "type": "text",
+              "settings": {
+                "media": "quote",
+                "image": "",
+                "image_round": true,
+                "text": "Use these testimonials to share what customers are saying about your products and your brand.",
+                "name": "Customer name",
+                "source": "Source"
+              }
+            },
+            "1566456283593-1": {
+              "type": "text",
+              "settings": {
+                "media": "quote",
+                "image": "",
+                "image_round": true,
+                "text": "Use these testimonials to share what customers are saying about your products and your brand.",
+                "name": "Customer name",
+                "source": "Source"
+              }
+            },
+            "1566456283593-2": {
+              "type": "text",
+              "settings": {
+                "media": "quote",
+                "image": "",
+                "image_round": true,
+                "text": "Use these testimonials to share what customers are saying about your products and your brand.",
+                "name": "Customer name",
+                "source": "Source"
+              }
+            }
+          },
+          "block_order": [
+            "1566456283593-0",
+            "1566456283593-1",
+            "1566456283593-2"
+          ],
+          "settings": {
+            "title": "Testimonials",
+            "style_desktop": "carousel",
+            "style_mobile": "carousel",
+            "link_title": "Shop now",
+            "link": ""
+          }
+        },
+        "1566456294786": {
+          "type": "home-image-grid",
+          "blocks": {
+            "1566456294786-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "image_alignment": "center",
+                "text_alignment": "bottom",
+                "title": "Image block",
+                "text": "Use these image blocks to tell your story, promote your products or create a beautiful gallery.",
+                "link": ""
+              }
+            },
+            "1566456294786-1": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "image_alignment": "center",
+                "text_alignment": "bottom",
+                "title": "Image block",
+                "text": "Use these image blocks to tell your story, promote your products or create a beautiful gallery.",
+                "link": ""
+              }
+            }
+          },
+          "block_order": [
+            "1566456294786-0",
+            "1566456294786-1"
+          ],
+          "settings": {
+            "featured": true,
+            "height": "medium",
+            "overlay_strength": 30
+          }
+        },
+        "1566456319558": {
+          "type": "home-video",
+          "blocks": {
+            "1566456319558-0": {
+              "type": "video",
+              "settings": {
+                "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+                "image": ""
+              }
+            },
+            "1566456319558-1": {
+              "type": "video",
+              "settings": {
+                "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+                "image": ""
+              }
+            }
+          },
+          "block_order": [
+            "1566456319558-0",
+            "1566456319558-1"
+          ],
+          "settings": {
+            "title": "Video gallery",
+            "desc": "",
+            "link_title": "More videos",
+            "link": "",
+            "overlay_strength": 50
+          }
+        },
+        "1566456346591": {
+          "type": "home-map",
+          "blocks": {
+            "1566456346591-0": {
+              "type": "map",
+              "settings": {
+                "title": "Map 1",
+                "desc": "<p>273 Street Lane<br\/>San Francisco, CA 94102<br\/>(415) 557-4400<br\/>store@email.com<\/p>",
+                "sub_desc": "<p>Monday - Thursday, 12:00 to 23:00<br\/>Friday &amp; Saturday, 12:00 to 00:00<br\/>Sunday, Closed<\/p>",
+                "address": "100 Larkin St, San Francisco, CA 94102, USA",
+                "map_image": ""
+              }
+            }
+          },
+          "block_order": [
+            "1566456346591-0"
+          ],
+          "settings": {
+            "show_directions_btn": false,
+            "bg_color": "rgba(0,0,0,0)",
+            "google_api_key": "",
+            "map_style": "light"
+          }
+        },
+        "list-collections-template": {
+          "type": "list-collections-template",
+          "settings": {
+            "display_type": "all",
+            "sort": "alphabetical",
+            "grid": 2,
+            "overlay_strength": 30
+          }
+        },
+        "page-contact": {
+          "type": "page-contact",
+          "settings": {
+            "show_form": true,
+            "form_title": "Send us an email",
+            "show_map": false,
+            "show_directions_btn": false,
+            "google_api_key": "",
+            "map_style": "light"
+          }
+        },
+        "1566462063540": {
+          "type": "home-product",
+          "settings": {
+            "featured_product": "",
+            "show_vendor": false,
+            "product_variant_style": "buttons",
+            "use_swatch_images": false,
+            "show_quantity_selector": true,
+            "enable_payment_button": true,
+            "content_align": "default"
+          }
+        }
+      },
+      "content_for_index": [
+        "1566456250311",
+        "1566462063540",
+        "1566456269728",
+        "1566456294786",
+        "1566456283593",
+        "1566456319558",
+        "1566456346591"
+      ]
+    }
+  }
+}
