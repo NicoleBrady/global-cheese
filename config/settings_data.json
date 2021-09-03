@@ -630,11 +630,23 @@
               "text": "",
               "link": ""
             }
+          },
+          "069b1c0f-a39a-4b4f-a11f-9160923f81b5": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/global-cheese-canada-day.jpg",
+              "image_alignment": "center",
+              "text_alignment": "bottom",
+              "title": "We are family",
+              "text": "Mention about being a part of community, family business, regular customers, etc.",
+              "link": ""
+            }
           }
         },
         "block_order": [
           "163069274704821749-0",
-          "163069274704821749-1"
+          "163069274704821749-1",
+          "069b1c0f-a39a-4b4f-a11f-9160923f81b5"
         ],
         "settings": {
           "featured": true,
