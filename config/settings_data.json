@@ -618,6 +618,7 @@
           "163069274704821749-0": {
             "type": "image",
             "settings": {
+              "image": "shopify:\/\/shop_images\/global-cheese-toronto-old.jpg",
               "image_alignment": "center",
               "text_alignment": "bottom",
               "title": "Image block",
