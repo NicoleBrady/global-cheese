@@ -56,14 +56,14 @@
     "search_limit": "product,article,page",
     "search_linklist": "main-menu",
     "share_facebook": true,
-    "share_twitter": true,
-    "share_pinterest": true,
-    "share_fancy": true,
-    "share_mail": true,
-    "social_facebook_link": "",
+    "share_twitter": false,
+    "share_pinterest": false,
+    "share_fancy": false,
+    "share_mail": false,
+    "social_facebook_link": "https:\/\/www.facebook.com\/GlobalCheese\/",
     "social_twitter_link": "",
     "social_pinterest_link": "",
-    "social_instagram_link": "",
+    "social_instagram_link": "https:\/\/www.instagram.com\/official_global_cheese\/",
     "social_tumblr_link": "",
     "social_snapchat_link": "",
     "social_youtube_link": "",
@@ -111,12 +111,20 @@
             "settings": {
               "title": "Social"
             }
+          },
+          "d81931a5-b3b0-480a-bd9c-82b0eb132578": {
+            "type": "image",
+            "settings": {
+              "image_width": 200,
+              "link": ""
+            }
           }
         },
         "block_order": [
           "1494343961341",
           "1494343958665",
-          "4da3f61a-2da8-4c05-b74d-1b82999927c8"
+          "4da3f61a-2da8-4c05-b74d-1b82999927c8",
+          "d81931a5-b3b0-480a-bd9c-82b0eb132578"
         ],
         "settings": {
           "footer_newsletter_enable": false,
