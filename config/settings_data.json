@@ -653,7 +653,7 @@
             "type": "text",
             "settings": {
               "title": "",
-              "text": "<p>The Global Cheese team is working to develop an online store for our customers. Please be patient while we develop an extraordinary online shopping experience. Please come visit us at either of our in-person locations. <\/p>",
+              "text": "<p>The Global Cheese team is working to develop an online store for our customers. Please be patient while we develop an extraordinary online shopping experience. Visit us at either of our in-person locations. <\/p>",
               "link_title": "Visit us",
               "link": "shopify:\/\/pages\/contact",
               "align": "center",
