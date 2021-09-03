@@ -384,7 +384,7 @@
               "title": "Toronto's Best Cheese Shop",
               "text": "<p>Serving Toronto since 1970, we are excited to announce our online store is coming soon. We look forward to serving you better!<\/p>",
               "link_title": "Shop Now",
-              "link": "shopify:\/\/pages\/contact"
+              "link": "shopify:\/\/pages\/store-coming-soon"
             }
           }
         },
@@ -468,7 +468,7 @@
         ],
         "settings": {
           "show_directions_btn": true,
-          "bg_color": "#f0f0f0",
+          "bg_color": "#FFFFFF",
           "google_api_key": "",
           "map_style": "light"
         }
@@ -581,7 +581,7 @@
         ],
         "settings": {
           "show_directions_btn": true,
-          "bg_color": "#f0f0f0",
+          "bg_color": "#FFFFFF",
           "google_api_key": "",
           "map_style": "light"
         }
