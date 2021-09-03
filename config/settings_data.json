@@ -670,6 +670,20 @@
       },
       "home-map": {
         "type": "home-map",
+        "blocks": {
+          "fd22f5b0-635f-4111-91df-9f954e6f4fc4": {
+            "type": "map",
+            "settings": {
+              "title": "Map",
+              "desc": "<p>273 Street Lane<br\/>San Francisco, CA 94102<br\/>(415) 557-4400<br\/>store@email.com<\/p>",
+              "sub_desc": "<p>Monday - Thursday, 12:00 to 23:00<br\/>Friday &amp; Saturday, 12:00 to 00:00<br\/>Sunday, Closed<\/p>",
+              "address": "100 Larkin St, San Francisco, CA 94102, USA"
+            }
+          }
+        },
+        "block_order": [
+          "fd22f5b0-635f-4111-91df-9f954e6f4fc4"
+        ],
         "settings": {
           "show_directions_btn": false,
           "bg_color": "rgba(0,0,0,0)",
