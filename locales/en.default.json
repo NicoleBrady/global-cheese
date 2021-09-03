@@ -11,8 +11,8 @@
     },
     "newsletter_form": {
       "newsletter_email": "email@example.com",
-      "submit": "Subscribe",
-      "confirmation": "Subscription successful. Thank you!"
+      "submit": "Sign up",
+      "confirmation": "Sign up successful. We will let you know as soon online shopping goes live. Thank you!"
     },
     "search": {
       "heading": {
