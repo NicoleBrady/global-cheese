@@ -639,6 +639,20 @@
       },
       "page-sections-1": {
         "type": "page-sections-1",
+        "blocks": {
+          "51a43099-2037-447c-a729-8ac0706db7c1": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/global-cheese-delivery-truck.jpg",
+              "link": "",
+              "width": "1\/1",
+              "overlay_strength": 10
+            }
+          }
+        },
+        "block_order": [
+          "51a43099-2037-447c-a729-8ac0706db7c1"
+        ],
         "settings": {
           "container": "medium"
         }
