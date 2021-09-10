@@ -110,7 +110,9 @@
 
 	<!-- Header hook for plugins ================================================== -->
   	{{ content_for_header }}
-</head>
+<!-- BEGIN XO GALLERY -->
+  {% include "xo-gallery" %}
+  <!-- END XO GALLERY --></head>
 
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" data-anim-load="{{ settings.anim_load }}" data-anim-interval-style="{{ settings.anim_interval_style }}" data-anim-zoom="{{ settings.anim_zoom }}" data-anim-interval="{% if settings.anim_load_style == 'interval' %}true{% else %}false{% endif %}" data-heading-border="{{ settings.type_header_underline }}">
 	<script type="text/javascript">
