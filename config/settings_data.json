@@ -425,7 +425,7 @@
         ],
         "settings": {
           "show_directions_btn": true,
-          "bg_color": "#b94d4d",
+          "bg_color": "#eadfdf",
           "google_api_key": "",
           "map_style": "light"
         }
