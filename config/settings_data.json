@@ -96,12 +96,6 @@
               "linklist": "main-menu"
             }
           },
-          "4da3f61a-2da8-4c05-b74d-1b82999927c8": {
-            "type": "social",
-            "settings": {
-              "title": "Social"
-            }
-          },
           "d6095f00-faf1-4080-bda8-98c1c2f24d90": {
             "type": "text",
             "settings": {
@@ -115,13 +109,19 @@
               "title": "Etobicoke",
               "text": "<p>224 Norseman St<\/p><p>Etobicoke, Ontario<\/p><p>M8Z 2R4<\/p>"
             }
+          },
+          "4da3f61a-2da8-4c05-b74d-1b82999927c8": {
+            "type": "social",
+            "settings": {
+              "title": "Follow Us"
+            }
           }
         },
         "block_order": [
           "1494343961341",
-          "4da3f61a-2da8-4c05-b74d-1b82999927c8",
           "d6095f00-faf1-4080-bda8-98c1c2f24d90",
-          "e80eb704-f8e4-42bb-86ca-f8837a3ab6c6"
+          "e80eb704-f8e4-42bb-86ca-f8837a3ab6c6",
+          "4da3f61a-2da8-4c05-b74d-1b82999927c8"
         ],
         "settings": {
           "footer_newsletter_enable": false,
