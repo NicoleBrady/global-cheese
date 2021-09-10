@@ -112,11 +112,11 @@
               "title": "Social"
             }
           },
-          "d81931a5-b3b0-480a-bd9c-82b0eb132578": {
-            "type": "image",
+          "d6095f00-faf1-4080-bda8-98c1c2f24d90": {
+            "type": "text",
             "settings": {
-              "image_width": 200,
-              "link": ""
+              "title": "Kensington",
+              "text": "<p>76 Kensington Ave<\/p><p>Toronto, Ontario<\/p><p>M5T2K1<br\/>                                    <\/p>"
             }
           }
         },
@@ -124,7 +124,7 @@
           "1494343961341",
           "1494343958665",
           "4da3f61a-2da8-4c05-b74d-1b82999927c8",
-          "d81931a5-b3b0-480a-bd9c-82b0eb132578"
+          "d6095f00-faf1-4080-bda8-98c1c2f24d90"
         ],
         "settings": {
           "footer_newsletter_enable": false,
@@ -684,6 +684,12 @@
           "content_align": "center",
           "link_title": "",
           "link": ""
+        }
+      },
+      "page-sections-2": {
+        "type": "page-sections-2",
+        "settings": {
+          "container": "medium"
         }
       }
     },
