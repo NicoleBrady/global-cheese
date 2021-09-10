@@ -96,16 +96,6 @@
               "linklist": "main-menu"
             }
           },
-          "1494343958665": {
-            "type": "contact",
-            "settings": {
-              "title": "Contact",
-              "show_email": false,
-              "show_number": true,
-              "show_address": true,
-              "show_social": true
-            }
-          },
           "4da3f61a-2da8-4c05-b74d-1b82999927c8": {
             "type": "social",
             "settings": {
@@ -118,13 +108,20 @@
               "title": "Kensington",
               "text": "<p>76 Kensington Ave<\/p><p>Toronto, Ontario<\/p><p>M5T2K1<br\/>                                    <\/p>"
             }
+          },
+          "e80eb704-f8e4-42bb-86ca-f8837a3ab6c6": {
+            "type": "text",
+            "settings": {
+              "title": "Etobicoke",
+              "text": "<p>224 Norseman St<\/p><p>Etobicoke, Ontario<\/p><p>M8Z 2R4<\/p>"
+            }
           }
         },
         "block_order": [
           "1494343961341",
-          "1494343958665",
           "4da3f61a-2da8-4c05-b74d-1b82999927c8",
-          "d6095f00-faf1-4080-bda8-98c1c2f24d90"
+          "d6095f00-faf1-4080-bda8-98c1c2f24d90",
+          "e80eb704-f8e4-42bb-86ca-f8837a3ab6c6"
         ],
         "settings": {
           "footer_newsletter_enable": false,
