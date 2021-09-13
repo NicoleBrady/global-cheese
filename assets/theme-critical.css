@@ -5056,6 +5056,6 @@ body:before {
 
 @media screen and (max-width: 480px){
 .header__logo-img {
-    max-width: 100% !important;
+    max-width: 90% !important;
 }
 }
