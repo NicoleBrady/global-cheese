@@ -145,7 +145,7 @@
           "header_style": "dark",
           "logo": "shopify:\/\/shop_images\/global-cheese-logo.png",
           "logo_size": 8,
-          "logo_size_mobile": 1,
+          "logo_size_mobile": 6,
           "logo_spacing": 3,
           "main_linklist": "main-menu",
           "layout": "left",
