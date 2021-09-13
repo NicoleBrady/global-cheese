@@ -5053,3 +5053,9 @@ body:before {
 
 .u-text-right {
   text-align: right; }
+
+@media screen and (max-width: 480px){
+.header__logo-img {
+    max-width: 100% !important;
+}
+}
