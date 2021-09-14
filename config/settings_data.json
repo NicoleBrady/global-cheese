@@ -149,7 +149,7 @@
           "logo_spacing": 0,
           "main_linklist": "main-menu",
           "layout": "left",
-          "style": "scroll",
+          "style": "sticky",
           "parent_links": true,
           "mega_nav": false,
           "mega_image_link": "",
