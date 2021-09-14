@@ -657,9 +657,9 @@
           "163069294512253ecf-0": {
             "type": "text",
             "settings": {
-              "title": "What we sell",
-              "sub_title": "We stock over 500 types of cheese!",
-              "desc": "<p>Cheese (obviously!), oils, butter, olives, I need to add a few more products here to even out with other side & more!<\/p>"
+              "title": "Specializing in fine imported and domestic cheeses from around the globe",
+              "sub_title": "We also offer...",
+              "desc": "<p>- a spectacular selection of fine imported and local artisan spreads, preserves and honeys to delight with any cheese.<\/p><p>- delicious pâtés, terrines, mousses and charcuterie style deli meats such as schinkenspeck, prosciutto di parma, Serrano ham, dry cured salamis and saucisson.<\/p><p><em><strong>- we sell butter the old fashioned way by the block! Fresh, pure and natural Ontario butter!<\/strong><\/em><\/p><p>- large variety of biscuits, crackers and crisp breads<\/p>"
             }
           },
           "163069294512253ecf-1": {
@@ -678,7 +678,7 @@
         "settings": {
           "title": "Our Products & Services",
           "desc": "<p><strong>We stock over 500 types of cheese!<\/strong> <em>There's always a cheese deal at Global!<\/em><\/p>",
-          "content_align": "center",
+          "content_align": "inline",
           "link_title": "",
           "link": ""
         }
