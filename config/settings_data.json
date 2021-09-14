@@ -613,7 +613,7 @@
               "image_alignment": "center",
               "text_alignment": "bottom",
               "title": "More Than Just Cheese",
-              "text": "Eight breath sour delaying pieces jump Havens fill sees plates riddance. Firestorm Nenya selling? Rain edge Númenor domains rejoice? Serves canniest dicky problem afford smile sacred rare cream Bucklebury stairs. Requested regretted why Déagol important disband green? All right, then. Keep your secrets.",
+              "text": "Eight breath sour delaying pieces jump Havens fill sees plates riddance. Firestorm Nenya selling? Rain edge Númenor domains rejoice? Serves canniest dicky problem afford smile sacred rare cream Bucklebury stairs. Requested regretted why Déagol important disband green? All right, then. Keep your secrets.\nEight breath sour delaying pieces jump Havens fill sees plates riddance. Firestorm",
               "link": ""
             }
           },
@@ -632,10 +632,10 @@
             "type": "image",
             "settings": {
               "image": "shopify:\/\/shop_images\/global-cheese-canada-day.jpg",
-              "image_alignment": "center",
+              "image_alignment": "bottom",
               "text_alignment": "bottom",
               "title": "We are family",
-              "text": "Mention about being a part of community, family business, regular customers, etc.",
+              "text": "On July 1st 1970 we planted our roots in the vibrant, ethnic Kensington Market. Global Cheese is now a 2nd generation family-owned and operated small business. We offer our customers a \"family feel\" atmosphere. As soon as you walk through our door you become a part of our “cheesy” family!",
               "link": ""
             }
           }
