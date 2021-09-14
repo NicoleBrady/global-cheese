@@ -610,7 +610,7 @@
             "type": "image",
             "settings": {
               "image": "shopify:\/\/shop_images\/global-cheese-toronto-old.jpg",
-              "image_alignment": "center",
+              "image_alignment": "bottom",
               "text_alignment": "bottom",
               "title": "More Than Just Cheese",
               "text": "Global Cheese started with the dreams and ambitions of a young, hard working, dedicated immigrant, who gave up school to help support his mother and brothers after his father passed shortly after arriving to Canada. With determination and a passion for cheese, GC’s forefather made it his goal to provide cheese lovers the very best the cheese world has to offer! Over  the years our cheese list and product offerings have expanded to a phenominal size and  continues to grow.",
