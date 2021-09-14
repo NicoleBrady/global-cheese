@@ -140,7 +140,7 @@
     {% endif %}
     <div class="header-trigger header-trigger--far-right cart-draw-trigger-icon u-flex u-flex--middle js-cart-draw-icon" style="display: none">
         <a href="{{ routes.cart_url }}" class="header-trigger__link header-trigger__link--cart icon-fallback{% if cart.item_count > 0 %} js-cart-full{% endif %}{% if settings.cart_type == 'modal' %} js-cart-trigger js-no-transition{% endif %}">
-            <i class="icon icon--cart" aria-hidden="true"></i>
+            <!-- <i class="icon icon--cart" aria-hidden="true"></i> -->
             <span class="icon-fallback__text">{{ 'layout.navigation.cart' | t }}</span>
         </a>
     </div>
@@ -238,7 +238,7 @@
             </ul>
         </nav>
 
-        <nav class="secondary-nav header-navs__items js-secondary-nav">
+        <!-- <nav class="secondary-nav header-navs__items js-secondary-nav">
             <ul class="secondary-nav__items">
 
                 {%- assign locale_selector = false -%}
@@ -352,7 +352,7 @@
                 {% endif %}
 
             </ul>
-        </nav>
+        </nav> -->
         
     </div>
 </header>
