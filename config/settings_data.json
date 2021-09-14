@@ -93,7 +93,7 @@
             "type": "linklist",
             "settings": {
               "title": "Menu",
-              "linklist": "main-menu"
+              "linklist": "footer"
             }
           },
           "d6095f00-faf1-4080-bda8-98c1c2f24d90": {
