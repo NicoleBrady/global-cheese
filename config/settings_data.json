@@ -685,6 +685,21 @@
       },
       "page-sections-2": {
         "type": "page-sections-2",
+        "blocks": {
+          "c2b857f0-adfb-4851-9c97-509a16c119cb": {
+            "type": "button",
+            "settings": {
+              "title": "Follow us on Instagram",
+              "link": "",
+              "color": "dark",
+              "size": "biggest",
+              "width": "1\/1"
+            }
+          }
+        },
+        "block_order": [
+          "c2b857f0-adfb-4851-9c97-509a16c119cb"
+        ],
         "settings": {
           "container": "medium"
         }
