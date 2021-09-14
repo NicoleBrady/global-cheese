@@ -518,7 +518,7 @@
             "type": "text",
             "settings": {
               "title": "Conveniently located in two locations",
-              "text": "",
+              "text": "<p><em>Visit us in store and \"try before you buy\"!<\/em><\/p>",
               "link_title": "",
               "link": "",
               "align": "center",
