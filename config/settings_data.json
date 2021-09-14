@@ -677,7 +677,7 @@
         ],
         "settings": {
           "title": "Our Products & Services",
-          "desc": "",
+          "desc": "<p><strong>We stock over 500 types of cheese!<\/strong> <em>There's always a cheese deal at Global!<\/em><\/p>",
           "content_align": "center",
           "link_title": "",
           "link": ""
